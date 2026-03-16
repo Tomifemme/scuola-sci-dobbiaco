@@ -54,8 +54,8 @@ const HeroSection = () => {
         >
           <Link
             to="/contact"
-            className="px-8 py-4 rounded-lg text-lg font-semibold text-accent-foreground transition-all hover:opacity-90 hover:scale-105"
-            style={{ background: "var(--gradient-gold)" }}
+            className="px-8 py-4 rounded-lg text-lg font-semibold text-primary-foreground transition-all hover:opacity-90 hover:scale-105"
+            style={{ background: "var(--gradient-alpine)" }}
           >
             {t(n.bookNow, lang)}
           </Link>

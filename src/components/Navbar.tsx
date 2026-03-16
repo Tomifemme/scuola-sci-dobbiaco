@@ -173,8 +173,8 @@ const Navbar = () => {
               <Link
                 to="/contact"
                 onClick={() => setIsOpen(false)}
-                className="block mx-4 mt-4 px-5 py-3 rounded-lg text-sm font-semibold text-accent-foreground text-center"
-                style={{ background: "var(--gradient-gold)" }}
+                className="block mx-4 mt-4 px-5 py-3 rounded-lg text-sm font-semibold text-primary-foreground text-center"
+                style={{ background: "var(--gradient-alpine)" }}
               >
                 {t(n.bookNow, lang)}
               </Link>
