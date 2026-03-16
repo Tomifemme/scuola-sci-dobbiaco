@@ -13,6 +13,7 @@ const ChatWidget = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
+  const sessionId = useRef(`session_${Date.now()}_${Math.random().toString(36).slice(2)}`);
 
   const labels = {
     title: { it: "Assistente FAQ", de: "FAQ-Assistent", en: "FAQ Assistant" }[lang]!,
@@ -47,7 +48,6 @@ const ChatWidget = () => {
     setLoading(true);
 
     try {
-      // n8n webhook URL - replace with your actual webhook URL
       const N8N_WEBHOOK_URL = import.meta.env.VITE_N8N_WEBHOOK_URL;
 
       if (!N8N_WEBHOOK_URL) {
@@ -59,7 +59,7 @@ const ChatWidget = () => {
       const res = await fetch(N8N_WEBHOOK_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userMsg, language: lang }),
+        body: JSON.stringify({ chatInput: userMsg, sessionId: sessionId.current }),
       });
 
       const data = await res.json();
