@@ -44,13 +44,13 @@ const WelcomeSection = () => {
           >
             <h3 className="alpine-subheading text-foreground mb-6">{t(w.info, lang)}</h3>
             <div className="space-y-5">
-              <div className="flex items-start gap-4">
+              <Link to="/contact" className="flex items-start gap-4 group">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">{t(w.address, lang)}</p>
-                  <p className="text-muted-foreground">Via Dolomiti 5, 39040 Dobbiaco (BZ), Italia</p>
+                  <p className="text-muted-foreground group-hover:text-primary transition-colors">Via Dolomiti 5, 39040 Dobbiaco (BZ), Italia</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
