@@ -63,6 +63,16 @@ const ChatWidget = () => {
       });
 
       const data = await res.json();
+      if (data.executionStarted && !data.output && !data.response && !data.text && !data.message) {
+        // n8n acknowledged but didn't return a response — workflow may be stuck
+        const pendingMsg = {
+          it: "Sto elaborando la tua richiesta, potrebbe volerci un momento...",
+          de: "Ich verarbeite Ihre Anfrage, es kann einen Moment dauern...",
+          en: "Processing your request, this may take a moment...",
+        }[lang]!;
+        setMessages((prev) => [...prev, { role: "bot", text: pendingMsg }]);
+        return;
+      }
       const reply = data.output || data.response || data.text || data.message || labels.error;
       setMessages((prev) => [...prev, { role: "bot", text: reply }]);
     } catch {
