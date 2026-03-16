@@ -53,7 +53,7 @@ const BookingForm = () => {
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nDate: ${formData.date}\nCourse: ${formData.courseType}\nParticipants: ${formData.participants}\nLevel: ${formData.level}\n\nMessage:\n${formData.message}`
     );
-    window.location.href = `mailto:info@scuolasci-dobbiaco.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:secretarydobbiaco@gmail.com?subject=${subject}&body=${body}`;
     toast({
       title: { it: "Email aperta!", de: "E-Mail geöffnet!", en: "Email opened!" }[lang],
       description: { it: "Completa l'invio nel tuo client email.", de: "Vervollständigen Sie den Versand in Ihrem E-Mail-Programm.", en: "Complete sending in your email client." }[lang],
