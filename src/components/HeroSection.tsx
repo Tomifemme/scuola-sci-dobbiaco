@@ -36,7 +36,7 @@ const HeroSection = () => {
         >
           {t(h.title1, lang)}
           <br />
-          <span className="text-alpine-gold">{t(h.title2, lang)}</span>
+          <span className="text-alpine-sky">{t(h.title2, lang)}</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}

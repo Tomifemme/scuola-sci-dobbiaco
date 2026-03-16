@@ -37,10 +37,10 @@ const Footer = () => {
           <div>
             <h4 className="font-display text-lg font-semibold mb-4">{t(f.contacts, lang)}</h4>
             <div className="space-y-3 font-body">
-              <div className="flex items-center gap-3 text-background/70">
+              <Link to="/contact" className="flex items-center gap-3 text-background/70 hover:text-background transition-colors">
                 <MapPin className="w-4 h-4 flex-shrink-0" />
                 <span>Via Dolomiti 5, 39040 Dobbiaco (BZ)</span>
-              </div>
+              </Link>
               <div className="flex items-center gap-3 text-background/70">
                 <Phone className="w-4 h-4 flex-shrink-0" />
                 <a href="tel:+390474972581" className="hover:text-background transition-colors">+39 0474 972581</a>

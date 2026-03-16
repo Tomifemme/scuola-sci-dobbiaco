@@ -40,7 +40,7 @@ const QuickLinksSection = () => {
               viewport={{ once: true }}
               className="text-center"
             >
-              <stat.icon className="w-8 h-8 text-alpine-gold mx-auto mb-3" />
+              <stat.icon className="w-8 h-8 text-alpine-sky mx-auto mb-3" />
               <p className="text-3xl md:text-4xl font-display font-bold text-primary-foreground mb-1">{stat.value}</p>
               <p className="text-sm text-alpine-ice/70 font-body">{stat.label}</p>
             </motion.div>
