@@ -186,7 +186,7 @@ const PricesPage = () => {
                   {cat.rows.map((row, j) => (
                     <div key={j} className="grid grid-cols-3 items-center px-6 py-3">
                       <span className="text-foreground font-body text-sm">{row.label}</span>
-                      <span className="font-display font-bold text-red-600 dark:text-red-400 text-center text-sm">{row.high}</span>
+                      <span className="font-display font-bold text-destructive text-center text-sm">{row.high}</span>
                       <span className="font-display font-bold text-primary text-center text-sm">{row.low}</span>
                     </div>
                   ))}
