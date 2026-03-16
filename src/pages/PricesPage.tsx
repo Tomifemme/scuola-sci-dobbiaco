@@ -121,8 +121,8 @@ const PricesPage = () => {
             viewport={{ once: true }}
             className="flex flex-col sm:flex-row gap-4 mb-10 justify-center"
           >
-            <div className="flex items-center gap-3 bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-800 rounded-xl px-5 py-3">
-              <Sun className="w-5 h-5 text-red-500" />
+            <div className="flex items-center gap-3 bg-destructive/10 border border-destructive/20 rounded-xl px-5 py-3">
+              <Sun className="w-5 h-5 text-destructive" />
               <div>
                 <p className="font-display font-bold text-foreground text-sm">{highLabel}</p>
                 <p className="text-xs text-muted-foreground">{highDates}</p>
