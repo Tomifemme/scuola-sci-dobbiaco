@@ -13,6 +13,7 @@ const ChatWidget = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
+  const sessionId = useRef(`session_${Date.now()}_${Math.random().toString(36).slice(2)}`);
 
   const labels = {
     title: { it: "Assistente FAQ", de: "FAQ-Assistent", en: "FAQ Assistant" }[lang]!,
