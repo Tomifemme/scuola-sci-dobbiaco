@@ -59,21 +59,11 @@ const ChatWidget = () => {
       const res = await fetch(N8N_WEBHOOK_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ action: "sendMessage", chatInput: userMsg, sessionId: sessionId.current }),
+        body: JSON.stringify({ chatInput: userMsg, sessionId: sessionId.current, lang }),
       });
 
       const data = await res.json();
-      if (data.executionStarted && !data.output && !data.response && !data.text && !data.message) {
-        // n8n acknowledged but didn't return a response — workflow may be stuck
-        const pendingMsg = {
-          it: "Sto elaborando la tua richiesta, potrebbe volerci un momento...",
-          de: "Ich verarbeite Ihre Anfrage, es kann einen Moment dauern...",
-          en: "Processing your request, this may take a moment...",
-        }[lang]!;
-        setMessages((prev) => [...prev, { role: "bot", text: pendingMsg }]);
-        return;
-      }
-      const reply = data.output || data.response || data.text || data.message || labels.error;
+      const reply = data.output || data.response || data.text || data.message || (typeof data === "string" ? data : labels.error);
       setMessages((prev) => [...prev, { role: "bot", text: reply }]);
     } catch {
       setMessages((prev) => [...prev, { role: "bot", text: labels.error }]);
