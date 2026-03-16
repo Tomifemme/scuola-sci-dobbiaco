@@ -340,6 +340,6 @@ export function t(key: Record<Language, string>, lang: Language): string {
   return key[lang] || key.it;
 }
 
-export function tArray(key: Record<Language, string[]>, lang: Language): string[] {
+export function tArray(key: Record<Language, readonly string[]>, lang: Language): readonly string[] {
   return key[lang] || key.it;
 }
