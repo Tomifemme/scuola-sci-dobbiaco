@@ -86,7 +86,7 @@ const Navbar = () => {
                   to={item.href}
                   className={`px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 ${
                     location.pathname === item.href
-                      ? "text-alpine-gold"
+                      ? "text-alpine-sky"
                       : "text-alpine-ice/90 hover:text-primary-foreground"
                   }`}
                 >
@@ -119,8 +119,8 @@ const Navbar = () => {
             <LanguageSwitcher />
             <Link
               to="/contact"
-              className="ml-3 px-5 py-2.5 rounded-lg text-sm font-semibold text-accent-foreground transition-all hover:opacity-90 hover:scale-105"
-              style={{ background: "var(--gradient-gold)" }}
+              className="ml-3 px-5 py-2.5 rounded-lg text-sm font-semibold text-primary-foreground transition-all hover:opacity-90 hover:scale-105"
+              style={{ background: "var(--gradient-alpine)" }}
             >
               {t(n.bookNow, lang)}
             </Link>
@@ -173,8 +173,8 @@ const Navbar = () => {
               <Link
                 to="/contact"
                 onClick={() => setIsOpen(false)}
-                className="block mx-4 mt-4 px-5 py-3 rounded-lg text-sm font-semibold text-accent-foreground text-center"
-                style={{ background: "var(--gradient-gold)" }}
+                className="block mx-4 mt-4 px-5 py-3 rounded-lg text-sm font-semibold text-primary-foreground text-center"
+                style={{ background: "var(--gradient-alpine)" }}
               >
                 {t(n.bookNow, lang)}
               </Link>

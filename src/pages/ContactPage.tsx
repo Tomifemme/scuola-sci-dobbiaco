@@ -1,10 +1,11 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
+import BookingForm from "@/components/BookingForm";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
-import { Phone, Mail, MapPin, Clock, ExternalLink } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import instructorsImg from "@/assets/instructors.jpg";
 
 const ContactPage = () => {
@@ -36,7 +37,14 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground text-lg">{t(w.address, lang)}</p>
-                    <p className="text-muted-foreground font-body">Via Dolomiti 5<br />39040 Dobbiaco (BZ)<br />Italia</p>
+                    <a
+                      href="https://maps.google.com/?q=Via+Dolomiti+5,+39040+Dobbiaco+BZ"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline font-body"
+                    >
+                      Via Dolomiti 5<br />39040 Dobbiaco (BZ)<br />Italia
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -68,16 +76,8 @@ const ContactPage = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
-              <div className="bg-card rounded-2xl p-8 border border-border" style={{ boxShadow: "var(--shadow-elevated)" }}>
+              <div className="mt-8 bg-card rounded-2xl p-8 border border-border" style={{ boxShadow: "var(--shadow-card)" }}>
                 <h3 className="font-display text-xl font-bold text-foreground mb-4">
                   {{ it: "Direttore", de: "Direktor", en: "Director" }[lang]}
                 </h3>
@@ -87,8 +87,7 @@ const ContactPage = () => {
                 </p>
               </div>
 
-              {/* Map Embed */}
-              <div className="bg-card rounded-2xl overflow-hidden border border-border" style={{ boxShadow: "var(--shadow-card)" }}>
+              <div className="mt-6 bg-card rounded-2xl overflow-hidden border border-border" style={{ boxShadow: "var(--shadow-card)" }}>
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2714.123!2d12.2225!3d46.7350!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDbCsDQ0JzA2LjAiTiAxMsKwMTMnMjEuMCJF!5e0!3m2!1sit!2sit!4v1234567890"
                   width="100%"
@@ -100,17 +99,15 @@ const ContactPage = () => {
                   title="Scuola Sci Dobbiaco Map"
                 />
               </div>
+            </motion.div>
 
-              <a
-                href="https://www.scuolasci-dobbiaco.com/it/PRENOTA"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full px-8 py-4 rounded-lg text-lg font-semibold text-accent-foreground transition-all hover:opacity-90"
-                style={{ background: "var(--gradient-gold)" }}
-              >
-                {{ it: "Prenota Online", de: "Online Buchen", en: "Book Online" }[lang]}
-                <ExternalLink className="w-5 h-5" />
-              </a>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <BookingForm />
             </motion.div>
           </div>
         </div>

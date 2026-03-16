@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
-import { Users, User, Zap, Calendar } from "lucide-react";
+import { Users, User, Zap, Calendar, ArrowRight } from "lucide-react";
 import lezioneImg from "@/assets/lezione.jpg";
 
 const LessonsPage = () => {
@@ -14,7 +15,7 @@ const LessonsPage = () => {
   const sections = [
     { id: "private", icon: User, ...p.private, color: "bg-primary" },
     { id: "group", icon: Users, ...p.group, color: "bg-alpine-sky" },
-    { id: "super", icon: Zap, ...p.super, color: "bg-alpine-gold" },
+    { id: "super", icon: Zap, ...p.super, color: "bg-primary" },
     { id: "weekend", icon: Calendar, ...p.weekend, color: "bg-alpine-forest" },
   ];
 
@@ -46,6 +47,23 @@ const LessonsPage = () => {
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="mt-12 text-center"
+          >
+            <Link
+              to="/prices"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg text-lg font-semibold text-primary-foreground transition-all hover:opacity-90 hover:scale-105"
+              style={{ background: "var(--gradient-alpine)" }}
+            >
+              {{ it: "Vedi i Prezzi", de: "Preise anzeigen", en: "View Prices" }[lang]}
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </motion.div>
         </div>
       </section>
       <Footer />

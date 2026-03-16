@@ -24,7 +24,7 @@
     --muted: 210 15% 93%;
     --muted-foreground: 215 12% 48%;
 
-    --accent: 35 90% 55%;
+    --accent: 205 85% 48%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -40,7 +40,7 @@
     --alpine-sky: 205 85% 58%;
     --alpine-snow: 210 30% 98%;
     --alpine-ice: 200 40% 92%;
-    --alpine-gold: 35 90% 55%;
+    --alpine-gold: 205 80% 52%;
     --alpine-forest: 155 35% 32%;
 
     --font-display: 'Playfair Display', serif;
@@ -53,7 +53,7 @@
     --gradient-alpine: linear-gradient(135deg, hsl(210 80% 42%), hsl(205 85% 58%));
     --gradient-sky: linear-gradient(180deg, hsl(205 85% 58%), hsl(210 80% 42%));
     --gradient-overlay: linear-gradient(180deg, hsl(215 45% 18% / 0.6), hsl(215 45% 18% / 0.3));
-    --gradient-gold: linear-gradient(135deg, hsl(35 90% 55%), hsl(40 95% 62%));
+    --gradient-gold: linear-gradient(135deg, hsl(205 80% 45%), hsl(210 85% 55%));
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
