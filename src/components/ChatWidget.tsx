@@ -47,7 +47,6 @@ const ChatWidget = () => {
     setLoading(true);
 
     try {
-      // n8n webhook URL - replace with your actual webhook URL
       const N8N_WEBHOOK_URL = import.meta.env.VITE_N8N_WEBHOOK_URL;
 
       if (!N8N_WEBHOOK_URL) {
@@ -59,7 +58,7 @@ const ChatWidget = () => {
       const res = await fetch(N8N_WEBHOOK_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userMsg, language: lang }),
+        body: JSON.stringify({ chatInput: userMsg, sessionId: sessionId.current }),
       });
 
       const data = await res.json();
