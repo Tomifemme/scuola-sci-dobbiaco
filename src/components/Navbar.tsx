@@ -1,64 +1,79 @@
-import { useState } from "react";
-import { Menu, X, Phone, Mail, MapPin, ChevronDown } from "lucide-react";
-
-const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "Programma", href: "#programma" },
-  {
-    label: "Lezioni",
-    href: "#lezioni",
-    children: [
-      { label: "Lezioni Private", href: "#lezioni-private" },
-      { label: "Corso Collettivo", href: "#corso-collettivo" },
-      { label: "Supercorsi", href: "#supercorsi" },
-      { label: "Corso Weekend", href: "#corso-weekend" },
-    ],
-  },
-  {
-    label: "Bambini",
-    href: "#bambini",
-    children: [
-      { label: "Lezioni Private", href: "#bambini-private" },
-      { label: "Corsi Collettivi", href: "#bambini-collettivi" },
-      { label: "Junior Club", href: "#junior-club" },
-      { label: "Special Full Day", href: "#full-day" },
-    ],
-  },
-  {
-    label: "Freeride",
-    href: "#freeride",
-    children: [
-      { label: "Principianti", href: "#freeride-principianti" },
-      { label: "Esperti", href: "#freeride-esperti" },
-    ],
-  },
-  {
-    label: "Snowboard",
-    href: "#snowboard",
-    children: [
-      { label: "Lezioni Private", href: "#snowboard-private" },
-      { label: "Corso Collettivo", href: "#snowboard-collettivo" },
-    ],
-  },
-  { label: "Prezzi", href: "#prezzi" },
-  { label: "Contatto", href: "#contatto" },
-];
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
+import { translations, t } from "@/i18n/translations";
+import LanguageSwitcher from "./LanguageSwitcher";
+import logo from "@/assets/logo.jpeg";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+  const { lang } = useLanguage();
+  const location = useLocation();
+  const n = translations.nav;
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const navItems = [
+    { label: t(n.home, lang), href: "/" },
+    {
+      label: t(n.lessons, lang),
+      href: "/lessons",
+      children: [
+        { label: t(n.privateLessons, lang), href: "/lessons#private" },
+        { label: t(n.groupLessons, lang), href: "/lessons#group" },
+        { label: t(n.superCourses, lang), href: "/lessons#super" },
+        { label: t(n.weekendCourse, lang), href: "/lessons#weekend" },
+      ],
+    },
+    {
+      label: t(n.kids, lang),
+      href: "/kids",
+      children: [
+        { label: t(n.kidsPrivate, lang), href: "/kids#private" },
+        { label: t(n.kidsGroup, lang), href: "/kids#group" },
+        { label: t(n.juniorClub, lang), href: "/kids#junior" },
+        { label: t(n.fullDay, lang), href: "/kids#fullday" },
+      ],
+    },
+    {
+      label: t(n.freeride, lang),
+      href: "/freeride",
+      children: [
+        { label: t(n.freerideBeginner, lang), href: "/freeride#beginners" },
+        { label: t(n.freerideExpert, lang), href: "/freeride#experts" },
+      ],
+    },
+    {
+      label: t(n.snowboard, lang),
+      href: "/snowboard",
+      children: [
+        { label: t(n.snowboardPrivate, lang), href: "/snowboard#private" },
+        { label: t(n.snowboardGroup, lang), href: "/snowboard#group" },
+      ],
+    },
+    { label: t(n.prices, lang), href: "/prices" },
+    { label: t(n.contact, lang), href: "/contact" },
+  ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-alpine-deep/95 backdrop-blur-md border-b border-primary/20">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-alpine-deep/98 backdrop-blur-lg shadow-lg" : "bg-alpine-deep/80 backdrop-blur-md"} border-b border-primary/20`}>
       <div className="alpine-container">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <a href="#home" className="flex items-center gap-3">
-            <span className="font-display text-xl md:text-2xl font-bold text-primary-foreground tracking-tight">
+          <Link to="/" className="flex items-center gap-3">
+            <img src={logo} alt="Scuola Sci Dobbiaco" className="h-10 md:h-12 w-10 md:w-12 rounded-full object-cover" />
+            <span className="font-display text-lg md:text-xl font-bold text-primary-foreground tracking-tight">
               Scuola Sci Dobbiaco
             </span>
-          </a>
+          </Link>
 
-          {/* Desktop nav */}
           <div className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
               <div
@@ -67,88 +82,106 @@ const Navbar = () => {
                 onMouseEnter={() => item.children && setOpenDropdown(item.label)}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <a
-                  href={item.href}
-                  className="px-3 py-2 text-sm font-medium text-alpine-ice/90 hover:text-primary-foreground transition-colors flex items-center gap-1"
+                <Link
+                  to={item.href}
+                  className={`px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 ${
+                    location.pathname === item.href
+                      ? "text-alpine-gold"
+                      : "text-alpine-ice/90 hover:text-primary-foreground"
+                  }`}
                 >
                   {item.label}
                   {item.children && <ChevronDown className="w-3 h-3" />}
-                </a>
-                {item.children && openDropdown === item.label && (
-                  <div className="absolute top-full left-0 mt-0 bg-card rounded-lg shadow-lg border border-border py-2 min-w-[200px] animate-fade-in">
-                    {item.children.map((child) => (
-                      <a
-                        key={child.label}
-                        href={child.href}
-                        className="block px-4 py-2 text-sm text-card-foreground hover:bg-secondary transition-colors"
-                      >
-                        {child.label}
-                      </a>
-                    ))}
-                  </div>
-                )}
+                </Link>
+                <AnimatePresence>
+                  {item.children && openDropdown === item.label && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -5 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute top-full left-0 mt-0 bg-card rounded-lg shadow-lg border border-border py-2 min-w-[200px]"
+                    >
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.label}
+                          to={child.href}
+                          className="block px-4 py-2 text-sm text-card-foreground hover:bg-secondary transition-colors"
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             ))}
-            <a
-              href="#prenota"
-              className="ml-4 px-5 py-2.5 rounded-lg text-sm font-semibold text-accent-foreground transition-all hover:opacity-90"
+            <LanguageSwitcher />
+            <Link
+              to="/contact"
+              className="ml-3 px-5 py-2.5 rounded-lg text-sm font-semibold text-accent-foreground transition-all hover:opacity-90 hover:scale-105"
               style={{ background: "var(--gradient-gold)" }}
             >
-              Prenota Ora
-            </a>
+              {t(n.bookNow, lang)}
+            </Link>
           </div>
 
-          {/* Mobile toggle */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-primary-foreground"
-            aria-label="Menu"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex items-center gap-2 lg:hidden">
+            <LanguageSwitcher />
+            <button onClick={() => setIsOpen(!isOpen)} className="p-2 text-primary-foreground" aria-label="Menu">
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {isOpen && (
-        <div className="lg:hidden bg-alpine-deep/98 backdrop-blur-md border-t border-primary/20 max-h-[80vh] overflow-y-auto">
-          <div className="py-4 px-4 space-y-1">
-            {navItems.map((item) => (
-              <div key={item.label}>
-                <a
-                  href={item.href}
-                  onClick={() => !item.children && setIsOpen(false)}
-                  className="block px-4 py-3 text-primary-foreground/90 hover:text-primary-foreground font-medium transition-colors"
-                >
-                  {item.label}
-                </a>
-                {item.children && (
-                  <div className="pl-6 space-y-1">
-                    {item.children.map((child) => (
-                      <a
-                        key={child.label}
-                        href={child.href}
-                        onClick={() => setIsOpen(false)}
-                        className="block px-4 py-2 text-sm text-alpine-ice/70 hover:text-primary-foreground transition-colors"
-                      >
-                        {child.label}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-            <a
-              href="#prenota"
-              onClick={() => setIsOpen(false)}
-              className="block mx-4 mt-4 px-5 py-3 rounded-lg text-sm font-semibold text-accent-foreground text-center"
-              style={{ background: "var(--gradient-gold)" }}
-            >
-              Prenota Ora
-            </a>
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="lg:hidden bg-alpine-deep/98 backdrop-blur-md border-t border-primary/20 overflow-hidden"
+          >
+            <div className="py-4 px-4 space-y-1 max-h-[80vh] overflow-y-auto">
+              {navItems.map((item) => (
+                <div key={item.label}>
+                  <Link
+                    to={item.href}
+                    onClick={() => !item.children && setIsOpen(false)}
+                    className="block px-4 py-3 text-primary-foreground/90 hover:text-primary-foreground font-medium transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                  {item.children && (
+                    <div className="pl-6 space-y-1">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.label}
+                          to={child.href}
+                          onClick={() => setIsOpen(false)}
+                          className="block px-4 py-2 text-sm text-alpine-ice/70 hover:text-primary-foreground transition-colors"
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+              <Link
+                to="/contact"
+                onClick={() => setIsOpen(false)}
+                className="block mx-4 mt-4 px-5 py-3 rounded-lg text-sm font-semibold text-accent-foreground text-center"
+                style={{ background: "var(--gradient-gold)" }}
+              >
+                {t(n.bookNow, lang)}
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
