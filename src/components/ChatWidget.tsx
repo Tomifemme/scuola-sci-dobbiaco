@@ -62,8 +62,16 @@ const ChatWidget = () => {
         body: JSON.stringify({ chatInput: userMsg, sessionId: sessionId.current, lang }),
       });
 
-      const data = await res.json();
-      const reply = data.output || data.response || data.text || data.message || (typeof data === "string" ? data : labels.error);
+      const text = await res.text();
+      let reply: string;
+      try {
+        const data = JSON.parse(text);
+        reply = data.output || data.response || data.text || data.message || (typeof data === "string" ? data : text);
+      } catch {
+        // Response is plain text (from n8n Respond to Webhook)
+        reply = text;
+      }
+      if (!reply || reply.trim() === "") reply = labels.error;
       setMessages((prev) => [...prev, { role: "bot", text: reply }]);
     } catch {
       setMessages((prev) => [...prev, { role: "bot", text: labels.error }]);
