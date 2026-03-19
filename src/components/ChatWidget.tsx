@@ -48,15 +48,17 @@ const ChatWidget = () => {
     setLoading(true);
 
     try {
-      const N8N_WEBHOOK_URL = import.meta.env.VITE_N8N_WEBHOOK_URL;
+      const webhookUrl =
+        import.meta.env.VITE_N8N_WEBHOOK_URL ||
+        "https://tomifemme.app.n8n.cloud/webhook/dceb4d90-ab4a-490c-80ed-75b12f5fa2be";
 
-      if (!N8N_WEBHOOK_URL) {
+      if (!webhookUrl) {
         setMessages((prev) => [...prev, { role: "bot", text: labels.error }]);
         setLoading(false);
         return;
       }
 
-      const res = await fetch(N8N_WEBHOOK_URL, {
+      const res = await fetch(webhookUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ chatInput: userMsg, sessionId: sessionId.current, lang }),
