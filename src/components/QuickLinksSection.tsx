@@ -15,12 +15,10 @@ const QuickLinksSection = () => {
   ];
 
   const quickLinks = [
-    { label: "News & Offerte", href: "https://www.scuolasci-dobbiaco.com/it/NEWS-%26-OFFERTE" },
     { label: "Video", href: "https://www.scuolasci-dobbiaco.com/it/VIDEO" },
-    { label: "Web Cam", href: "https://www.scuolasci-dobbiaco.com/it/WEB-CAM" },
     { label: "Skilift", href: "http://www.ski-rienza.it/" },
     { label: { it: "Noleggio", de: "Skiverleih", en: "Rental" }[lang], href: "http://www.ski-rent.it/it/HOME/" },
-    { label: { it: "Galleria", de: "Galerie", en: "Gallery" }[lang], href: "https://www.scuolasci-dobbiaco.com/it/GALLERIA" },
+    { label: { it: "Galleria", de: "Galerie", en: "Gallery" }[lang], href: "/gallery" },
   ];
 
   return (

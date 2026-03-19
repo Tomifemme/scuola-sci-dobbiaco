@@ -153,33 +153,33 @@ export const translations = {
       private: {
         title: { it: "Lezioni Private", de: "Privatunterricht", en: "Private Lessons" },
         desc: {
-          it: "Lezioni individuali con un maestro dedicato. Perfette per chi vuole progressi rapidi e un programma personalizzato. Disponibili per tutti i livelli, dallo sciatore principiante all'esperto che vuole perfezionare la tecnica.",
-          de: "Einzelunterricht mit einem persönlichen Skilehrer. Perfekt für schnelle Fortschritte und ein individuelles Programm. Für alle Levels verfügbar.",
-          en: "Individual lessons with a dedicated instructor. Perfect for rapid progress and a personalized program. Available for all levels.",
+          it: "Volete perfezionarvi o imparare a sciare in breve tempo? La lezione privata è il modo più rapido per raggiungere ottimi risultati. Il maestro si concentra sui vostri bisogni individuali. Durata: 55 minuti. Disponibili tutti i giorni dalle 9:00 alle 16:00 al campo scuola Rienza (Dobbiaco), Monte Elmo o su richiesta su tutte le piste del comprensorio.",
+          de: "Möchten Sie Ihre Technik perfektionieren oder schnell Skifahren lernen? Privatunterricht ist der schnellste Weg zu hervorragenden Ergebnissen. Der Lehrer konzentriert sich auf Ihre individuellen Bedürfnisse. Dauer: 55 Minuten. Täglich von 9:00 bis 16:00 am Übungsgelände Rienza (Toblach), Monte Elmo oder auf Wunsch auf allen Pisten.",
+          en: "Want to perfect your technique or learn to ski quickly? Private lessons are the fastest way to achieve great results. Your instructor focuses on your individual needs. Duration: 55 minutes. Available daily from 9:00 to 16:00 at Rienza training area (Dobbiaco), Monte Elmo, or on request on all slopes.",
         },
       },
       group: {
         title: { it: "Corso Collettivo", de: "Gruppenkurs", en: "Group Course" },
         desc: {
-          it: "Corsi collettivi di 2 ore per tutti i livelli. Gruppi piccoli per garantire massima attenzione. Durata corso 1:50 min. Con 2 persone durata del corso = 1:30 min.",
-          de: "2-stündige Gruppenkurse für alle Levels. Kleine Gruppen für maximale Aufmerksamkeit. Kursdauer 1:50 Min. Bei 2 Personen Kursdauer = 1:30 Min.",
-          en: "2-hour group courses for all levels. Small groups for maximum attention. Course duration 1:50 min. With 2 people course duration = 1:30 min.",
+          it: "Per migliorare o imparare a sciare non è mai troppo tardi! Corso per adulti dal lunedì al venerdì/sabato, ore 10:00–11:50 (durata 1:50 min). I maestri ti trasmetteranno il fascino dello sci attraverso un adeguato insegnamento. Il venerdì gara di fine corso! Nel periodo natalizio i corsi iniziano alle 11:00. Con 2 persone durata 1:30 min.",
+          de: "Es ist nie zu spät, Skifahren zu lernen oder sich zu verbessern! Kurs für Erwachsene, Montag bis Freitag/Samstag, 10:00–11:50 (Dauer 1:50 Min). Unsere Lehrer vermitteln die Faszination des Skisports. Freitags Abschlussrennen! In der Weihnachtszeit beginnen die Kurse um 11:00 Uhr. Bei 2 Personen Dauer 1:30 Min.",
+          en: "It's never too late to learn or improve your skiing! Course for adults, Monday to Friday/Saturday, 10:00–11:50 (duration 1:50 min). Our instructors will share the fascination of skiing through proper teaching. Friday end-of-course race! During Christmas period, courses start at 11:00. With 2 people, duration 1:30 min.",
         },
       },
       super: {
         title: { it: "Supercorsi", de: "Superkurse", en: "Super Courses" },
         desc: {
-          it: "Corsi intensivi per chi vuole migliorare rapidamente. Combina lezioni tecniche con sessioni pratiche sulle piste più belle delle Dolomiti.",
-          de: "Intensivkurse für schnelle Verbesserung. Kombiniert technische Lektionen mit praktischen Einheiten auf den schönsten Pisten der Dolomiten.",
-          en: "Intensive courses for rapid improvement. Combines technical lessons with practical sessions on the most beautiful slopes of the Dolomites.",
+          it: "Scegliete voi la pista, il maestro e l'ora! Un'alternativa al corso di gruppo che offre la possibilità, come nella lezione privata, di personalizzare tutto. Piccolo gruppo di minimo 3 persone con livello simile. Disponibili tutti i giorni dalle 9:00 alle 16:00.",
+          de: "Wählen Sie selbst die Piste, den Lehrer und die Uhrzeit! Eine Alternative zum Gruppenkurs mit der Möglichkeit, alles individuell zu gestalten. Kleine Gruppe von mindestens 3 Personen mit ähnlichem Niveau. Täglich von 9:00 bis 16:00 verfügbar.",
+          en: "Choose the slope, instructor, and time yourself! An alternative to group courses that lets you customize everything like a private lesson. Small group of minimum 3 people with similar level. Available daily from 9:00 to 16:00.",
         },
       },
       weekend: {
         title: { it: "Corso Weekend", de: "Wochenendkurs", en: "Weekend Course" },
         desc: {
-          it: "Per famiglie e amici: venerdì, sabato e domenica. Il modo perfetto per godersi un weekend sugli sci con un programma strutturato.",
-          de: "Für Familien und Freunde: Freitag, Samstag und Sonntag. Der perfekte Weg, ein Skiwochenende mit einem strukturierten Programm zu genießen.",
-          en: "For families and friends: Friday, Saturday and Sunday. The perfect way to enjoy a ski weekend with a structured program.",
+          it: "Ogni fine settimana a partire dal 09.01.2026. 3 giorni di corso: Venerdì 14:00–16:00, Sabato e Domenica 10:00–12:00. Piccoli gruppi da 2 a 5 persone. A richiesta anche orario differente. Perfetto per famiglie e amici!",
+          de: "Jedes Wochenende ab 09.01.2026. 3 Kurstage: Freitag 14:00–16:00, Samstag und Sonntag 10:00–12:00. Kleine Gruppen von 2 bis 5 Personen. Auf Wunsch auch andere Zeiten. Perfekt für Familien und Freunde!",
+          en: "Every weekend from 09.01.2026. 3 course days: Friday 14:00–16:00, Saturday and Sunday 10:00–12:00. Small groups of 2 to 5 people. Different times available on request. Perfect for families and friends!",
         },
       },
     },
@@ -201,33 +201,33 @@ export const translations = {
       privateLessons: {
         title: { it: "Lezioni Private Bambini", de: "Privatunterricht Kinder", en: "Kids Private Lessons" },
         desc: {
-          it: "Lezioni individuali con maestro dedicato per bambini di tutte le età e livelli. Attenzione personalizzata per i più piccoli.",
-          de: "Einzelunterricht mit persönlichem Skilehrer für Kinder aller Altersgruppen und Levels.",
-          en: "Individual lessons with a dedicated instructor for children of all ages and levels.",
+          it: "Un maestro solo per voi! Potete perfino sceglierlo. A volte c'è bisogno di un maestro individuale per imparare più in fretta o per avere più fiducia e pazienza. Punto di ritrovo: davanti al Rifugio sulla pista Rienza. Età: dai 3 anni. Durata: 55 minuti.",
+          de: "Ein Lehrer nur für euch! Ihr könnt ihn sogar aussuchen. Manchmal braucht man einen Privatlehrer, um schneller zu lernen oder mehr Vertrauen und Geduld zu haben. Treffpunkt: vor der Hütte an der Piste Rienz. Alter: ab 3 Jahren. Dauer: 55 Minuten.",
+          en: "An instructor just for you! You can even choose them. Sometimes you need a private instructor to learn faster or to have more confidence and patience. Meeting point: in front of the Refuge on the Rienza slope. Age: from 3 years. Duration: 55 minutes.",
         },
       },
       groupCourses: {
         title: { it: "Corsi Collettivi Bambini", de: "Gruppenkurse Kinder", en: "Kids Group Courses" },
         desc: {
-          it: "Corsi di gruppo per bambini suddivisi per età e livello. Imparare divertendosi con altri bambini.",
-          de: "Gruppenkurse für Kinder, aufgeteilt nach Alter und Niveau. Mit Spaß und anderen Kindern lernen.",
-          en: "Group courses for children divided by age and level. Learn while having fun with other kids.",
+          it: "Imparare a sciare in gruppo è divertente! Il maestro insegnerà la tecnica dello sci e le regole di comportamento in pista. Conoscerai nuovi amici! Il venerdì grande gara di slalom con premiazione e medaglie per tutti. Orario: 10:00–11:50, Lun–Sab. Punto di ritrovo: Rifugio pista Rienza. Età: dai 3 anni. Durata: 1:55 min.",
+          de: "Skifahren lernen in der Gruppe macht Spaß! Der Lehrer unterrichtet Skitechnik und Pistenregeln. Neue Freunde kennenlernen! Freitags großes Slalomrennen mit Preisverleihung und Medaillen für alle. Zeit: 10:00–11:50, Mo–Sa. Treffpunkt: Hütte Piste Rienz. Alter: ab 3 Jahren. Dauer: 1:55 Min.",
+          en: "Learning to ski in a group is fun! The instructor teaches ski technique and slope rules. Meet new friends! Friday big slalom race with awards and medals for everyone. Hours: 10:00–11:50, Mon–Sat. Meeting point: Refuge Rienza slope. Age: from 3 years. Duration: 1:55 min.",
         },
       },
       juniorClub: {
-        title: { it: "Junior Club", de: "Junior Club", en: "Junior Club" },
+        title: { it: "Junior & Baby Club", de: "Junior & Baby Club", en: "Junior & Baby Club" },
         desc: {
-          it: "Mezza giornata con pranzo incluso. Un programma completo di sci e divertimento per i giovani sciatori.",
-          de: "Halbtag mit Mittagessen inklusive. Ein komplettes Ski- und Spaßprogramm für junge Skifahrer.",
-          en: "Half day with lunch included. A complete ski and fun program for young skiers.",
+          it: "Ideale per bambini che vogliono sciare e giocare il più possibile! Dopo il corso mattutino, pranzo insieme e nuove avventure sulla neve. Dal lunedì al venerdì 12:00–15:00. Include: pranzo, accesso al Babypark, slitta/bob. Servizio shuttle dall'albergo su richiesta. Min. 3 bambini. Prezzo: 50€ (pranzo incluso).",
+          de: "Ideal für Kinder, die so viel wie möglich Skifahren und spielen wollen! Nach dem Vormittagskurs gemeinsames Mittagessen und neue Schnee-Abenteuer. Mo–Fr 12:00–15:00. Inklusive: Mittagessen, Babypark-Zugang, Schlitten/Bob. Shuttle-Service vom Hotel auf Anfrage. Min. 3 Kinder. Preis: 50€ (Mittagessen inkl.).",
+          en: "Ideal for kids who want to ski and play as much as possible! After the morning course, lunch together and new snow adventures. Mon–Fri 12:00–15:00. Includes: lunch, Babypark access, sledge/bob. Shuttle service from hotel on request. Min. 3 children. Price: €50 (lunch included).",
         },
       },
       specialFullDay: {
         title: { it: "Special Full Day", de: "Special Full Day", en: "Special Full Day" },
         desc: {
-          it: "Tutto il giorno con il maestro, pranzo incluso. L'esperienza completa per i bambini che vogliono sciare tutto il giorno.",
-          de: "Ganztägig mit Skilehrer, Mittagessen inklusive. Das komplette Erlebnis für Kinder, die den ganzen Tag Ski fahren möchten.",
-          en: "All day with the instructor, lunch included. The complete experience for kids who want to ski all day.",
+          it: "Per ragazzi che sanno sciare a sci paralleli! 5 ore al giorno (10:00–15:30), Lun–Ven. Nuove piste, passaggi segreti, tecniche avanzate in compagnia dei coetanei. Piste: Monte Elmo, San Candido, Croda Rossa, Cortina, Plan de Corones. Età minima: 7 anni. Pranzo e transfer (su richiesta) inclusi. Min. 3 partecipanti.",
+          de: "Für Jugendliche mit Parallelski-Technik! 5 Std/Tag (10:00–15:30), Mo–Fr. Neue Pisten, geheime Passagen, fortgeschrittene Techniken mit Gleichaltrigen. Pisten: Monte Elmo, San Candido, Croda Rossa, Cortina, Kronplatz. Mindestalter: 7 Jahre. Mittagessen und Transfer (auf Anfrage) inklusive. Min. 3 Teilnehmer.",
+          en: "For kids who can ski parallel! 5 hours/day (10:00–15:30), Mon–Fri. New slopes, secret passages, advanced techniques with peers. Slopes: Monte Elmo, San Candido, Croda Rossa, Cortina, Plan de Corones. Min. age: 7 years. Lunch and transfer (on request) included. Min. 3 participants.",
         },
       },
     },
