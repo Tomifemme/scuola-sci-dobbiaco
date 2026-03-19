@@ -201,33 +201,33 @@ export const translations = {
       privateLessons: {
         title: { it: "Lezioni Private Bambini", de: "Privatunterricht Kinder", en: "Kids Private Lessons" },
         desc: {
-          it: "Lezioni individuali con maestro dedicato per bambini di tutte le età e livelli. Attenzione personalizzata per i più piccoli.",
-          de: "Einzelunterricht mit persönlichem Skilehrer für Kinder aller Altersgruppen und Levels.",
-          en: "Individual lessons with a dedicated instructor for children of all ages and levels.",
+          it: "Un maestro solo per voi! Potete perfino sceglierlo. A volte c'è bisogno di un maestro individuale per imparare più in fretta o per avere più fiducia e pazienza. Punto di ritrovo: davanti al Rifugio sulla pista Rienza. Età: dai 3 anni. Durata: 55 minuti.",
+          de: "Ein Lehrer nur für euch! Ihr könnt ihn sogar aussuchen. Manchmal braucht man einen Privatlehrer, um schneller zu lernen oder mehr Vertrauen und Geduld zu haben. Treffpunkt: vor der Hütte an der Piste Rienz. Alter: ab 3 Jahren. Dauer: 55 Minuten.",
+          en: "An instructor just for you! You can even choose them. Sometimes you need a private instructor to learn faster or to have more confidence and patience. Meeting point: in front of the Refuge on the Rienza slope. Age: from 3 years. Duration: 55 minutes.",
         },
       },
       groupCourses: {
         title: { it: "Corsi Collettivi Bambini", de: "Gruppenkurse Kinder", en: "Kids Group Courses" },
         desc: {
-          it: "Corsi di gruppo per bambini suddivisi per età e livello. Imparare divertendosi con altri bambini.",
-          de: "Gruppenkurse für Kinder, aufgeteilt nach Alter und Niveau. Mit Spaß und anderen Kindern lernen.",
-          en: "Group courses for children divided by age and level. Learn while having fun with other kids.",
+          it: "Imparare a sciare in gruppo è divertente! Il maestro insegnerà la tecnica dello sci e le regole di comportamento in pista. Conoscerai nuovi amici! Il venerdì grande gara di slalom con premiazione e medaglie per tutti. Orario: 10:00–11:50, Lun–Sab. Punto di ritrovo: Rifugio pista Rienza. Età: dai 3 anni. Durata: 1:55 min.",
+          de: "Skifahren lernen in der Gruppe macht Spaß! Der Lehrer unterrichtet Skitechnik und Pistenregeln. Neue Freunde kennenlernen! Freitags großes Slalomrennen mit Preisverleihung und Medaillen für alle. Zeit: 10:00–11:50, Mo–Sa. Treffpunkt: Hütte Piste Rienz. Alter: ab 3 Jahren. Dauer: 1:55 Min.",
+          en: "Learning to ski in a group is fun! The instructor teaches ski technique and slope rules. Meet new friends! Friday big slalom race with awards and medals for everyone. Hours: 10:00–11:50, Mon–Sat. Meeting point: Refuge Rienza slope. Age: from 3 years. Duration: 1:55 min.",
         },
       },
       juniorClub: {
-        title: { it: "Junior Club", de: "Junior Club", en: "Junior Club" },
+        title: { it: "Junior & Baby Club", de: "Junior & Baby Club", en: "Junior & Baby Club" },
         desc: {
-          it: "Mezza giornata con pranzo incluso. Un programma completo di sci e divertimento per i giovani sciatori.",
-          de: "Halbtag mit Mittagessen inklusive. Ein komplettes Ski- und Spaßprogramm für junge Skifahrer.",
-          en: "Half day with lunch included. A complete ski and fun program for young skiers.",
+          it: "Ideale per bambini che vogliono sciare e giocare il più possibile! Dopo il corso mattutino, pranzo insieme e nuove avventure sulla neve. Dal lunedì al venerdì 12:00–15:00. Include: pranzo, accesso al Babypark, slitta/bob. Servizio shuttle dall'albergo su richiesta. Min. 3 bambini. Prezzo: 50€ (pranzo incluso).",
+          de: "Ideal für Kinder, die so viel wie möglich Skifahren und spielen wollen! Nach dem Vormittagskurs gemeinsames Mittagessen und neue Schnee-Abenteuer. Mo–Fr 12:00–15:00. Inklusive: Mittagessen, Babypark-Zugang, Schlitten/Bob. Shuttle-Service vom Hotel auf Anfrage. Min. 3 Kinder. Preis: 50€ (Mittagessen inkl.).",
+          en: "Ideal for kids who want to ski and play as much as possible! After the morning course, lunch together and new snow adventures. Mon–Fri 12:00–15:00. Includes: lunch, Babypark access, sledge/bob. Shuttle service from hotel on request. Min. 3 children. Price: €50 (lunch included).",
         },
       },
       specialFullDay: {
         title: { it: "Special Full Day", de: "Special Full Day", en: "Special Full Day" },
         desc: {
-          it: "Tutto il giorno con il maestro, pranzo incluso. L'esperienza completa per i bambini che vogliono sciare tutto il giorno.",
-          de: "Ganztägig mit Skilehrer, Mittagessen inklusive. Das komplette Erlebnis für Kinder, die den ganzen Tag Ski fahren möchten.",
-          en: "All day with the instructor, lunch included. The complete experience for kids who want to ski all day.",
+          it: "Per ragazzi che sanno sciare a sci paralleli! 5 ore al giorno (10:00–15:30), Lun–Ven. Nuove piste, passaggi segreti, tecniche avanzate in compagnia dei coetanei. Piste: Monte Elmo, San Candido, Croda Rossa, Cortina, Plan de Corones. Età minima: 7 anni. Pranzo e transfer (su richiesta) inclusi. Min. 3 partecipanti.",
+          de: "Für Jugendliche mit Parallelski-Technik! 5 Std/Tag (10:00–15:30), Mo–Fr. Neue Pisten, geheime Passagen, fortgeschrittene Techniken mit Gleichaltrigen. Pisten: Monte Elmo, San Candido, Croda Rossa, Cortina, Kronplatz. Mindestalter: 7 Jahre. Mittagessen und Transfer (auf Anfrage) inklusive. Min. 3 Teilnehmer.",
+          en: "For kids who can ski parallel! 5 hours/day (10:00–15:30), Mon–Fri. New slopes, secret passages, advanced techniques with peers. Slopes: Monte Elmo, San Candido, Croda Rossa, Cortina, Plan de Corones. Min. age: 7 years. Lunch and transfer (on request) included. Min. 3 participants.",
         },
       },
     },

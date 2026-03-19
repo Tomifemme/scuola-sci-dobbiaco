@@ -76,6 +76,37 @@ const KidsPage = () => {
           </div>
         </div>
       </section>
+
+      {/* YouTube Video Section */}
+      <section className="alpine-section bg-secondary/30">
+        <div className="alpine-container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <h2 className="font-display text-3xl font-bold text-foreground mb-4">
+              {{ it: "Imparare a sciare a 3 anni!", de: "Skifahren lernen mit 3 Jahren!", en: "Learn to ski at 3 years old!" }[lang]}
+            </h2>
+            <p className="text-muted-foreground font-body text-lg mb-8">
+              {{ it: "Guarda i nostri piccoli campioni in azione", de: "Schaut unsere kleinen Champions in Aktion", en: "Watch our little champions in action" }[lang]}
+            </p>
+            <div className="max-w-3xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-lg">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/6r9R1TDa0DI?si=BNzRoSWROEBoYCnb"
+                title="Imparare a sciare a 3 anni - Scuola Sci Dobbiaco"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
