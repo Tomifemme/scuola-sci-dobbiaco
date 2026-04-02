@@ -89,7 +89,7 @@ const KidsPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={kidsImg} />
+      <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={headerImg} />
 
       {/* Yeti Park Section */}
       <section className="alpine-section bg-secondary/30">
