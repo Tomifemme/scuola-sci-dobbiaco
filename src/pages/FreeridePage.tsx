@@ -68,7 +68,7 @@ const FreeridePage = () => {
               className="bg-card rounded-2xl overflow-hidden border border-border"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
-              <img src={img20200106} alt={t(p.beginners.title, lang)} className="w-full h-48 object-cover" />
+              <img src={imgBeginners} alt={t(p.beginners.title, lang)} className="w-full h-48 object-cover" />
               <div className="p-8">
                 <div className="bg-alpine-sky w-12 h-12 rounded-xl flex items-center justify-center mb-4">
                   <Shield className="w-6 h-6 text-primary-foreground" />
