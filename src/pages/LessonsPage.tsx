@@ -59,7 +59,7 @@ const LessonsPage = () => {
       priceIcon: Star,
       ...p.super,
       color: "bg-primary",
-      image: img5705,
+      image: superImg,
       priceTitle: { it: "Supercorsi", de: "Superkurse", en: "Super Courses" } as Record<Language, string>,
       rows: [
         { label: d("3 pers. – 5 ore", "3 Pers. – 5 Std.", "3 pers. – 5 hrs"), high: "€ 135", low: "€ 125" },
