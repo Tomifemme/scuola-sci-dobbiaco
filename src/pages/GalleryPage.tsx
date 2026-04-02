@@ -29,13 +29,13 @@ const GalleryPage = () => {
   const images = [
     { src: instructorsImg, caption: { it: "Il nostro team di maestri", de: "Unser Skilehrerteam", en: "Our instructor team" }[lang]! },
     { src: lezioneImg, caption: { it: "Lezione sulle piste", de: "Unterricht auf der Piste", en: "Lesson on the slopes" }[lang]! },
-    { src: kidsSkiingImg, caption: { it: "Bambini sugli sci", de: "Kinder auf Skiern", en: "Kids skiing" }[lang]! },
+    { src: img20211218, caption: { it: "Bambini sugli sci", de: "Kinder auf Skiern", en: "Kids skiing" }[lang]! },
     { src: kidsLessonImg, caption: { it: "Lezione per bambini", de: "Kinderskikurs", en: "Kids lesson" }[lang]! },
-    { src: freerideImg, caption: { it: "Freeride nelle Dolomiti", de: "Freeride in den Dolomiten", en: "Freeride in the Dolomites" }[lang]! },
-    { src: snowboardImg, caption: { it: "Snowboard", de: "Snowboard", en: "Snowboard" }[lang]! },
-    { src: privateLessonImg, caption: { it: "Lezione privata", de: "Privatunterricht", en: "Private lesson" }[lang]! },
+    { src: imgERJZ, caption: { it: "Freeride nelle Dolomiti", de: "Freeride in den Dolomiten", en: "Freeride in the Dolomites" }[lang]! },
+    { src: img5705, caption: { it: "Snowboard", de: "Snowboard", en: "Snowboard" }[lang]! },
+    { src: img5854, caption: { it: "Lezione privata", de: "Privatunterricht", en: "Private lesson" }[lang]! },
     { src: scuolaSci1Img, caption: { it: "La nostra scuola", de: "Unsere Schule", en: "Our school" }[lang]! },
-    { src: heroImg, caption: { it: "Dolomiti panorama", de: "Dolomiten Panorama", en: "Dolomites panorama" }[lang]! },
+    { src: imgOTBA, caption: { it: "Dolomiti panorama", de: "Dolomiten Panorama", en: "Dolomites panorama" }[lang]! },
   ];
 
   const navigate = (dir: number) => {
