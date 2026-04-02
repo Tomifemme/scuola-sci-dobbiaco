@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
-import lezioneImg from "@/assets/lezione.jpg";
+import instructorsImg from "@/assets/instructors.jpg";
 
 const WelcomeSection = () => {
   const { lang } = useLanguage();
@@ -25,7 +25,7 @@ const WelcomeSection = () => {
             <p className="text-lg text-muted-foreground leading-relaxed mb-6 font-body">{t(w.text2, lang)}</p>
             
             <div className="relative rounded-xl overflow-hidden mb-6">
-              <img src={lezioneImg} alt="Lezione di sci" className="w-full h-48 object-cover rounded-xl" />
+              <img src={instructorsImg} alt="Il nostro team" className="w-full h-48 object-cover rounded-xl" />
             </div>
 
             <p className="text-base text-muted-foreground italic font-body">

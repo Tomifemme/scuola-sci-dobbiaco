@@ -7,11 +7,11 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, Language } from "@/i18n/translations";
 import { Snowflake, User, Users, Star, Sun, Baby, Clock } from "lucide-react";
-import kidsImg from "@/assets/kids-lesson.jpg";
-import scuolaSciImg from "@/assets/scuola-sci1.jpg";
-import img5854 from "@/assets/IMG_5854.JPG";
+import headerImg from "@/assets/20190114_111830 (2).jpg";
+import campImg from "@/assets/20200106_111652.jpg";
+import privateImg from "@/assets/Bild Nr. 2.jpg";
 import img5517 from "@/assets/IMG_5517.JPG";
-import img6020 from "@/assets/IMG_6020.JPG";
+import fullDayImg from "@/assets/20211218_113244 copy.jpg";
 import imgERJZ from "@/assets/ERJZ9913.JPG";
 
 const KidsPage = () => {
@@ -26,7 +26,7 @@ const KidsPage = () => {
       priceIcon: Clock,
       ...p.privateLessons,
       color: "bg-primary",
-      image: img5854,
+      image: privateImg,
       priceTitle: { it: "Lezioni Private - 1 ora = 55 min.", de: "Privatunterricht - 1 Stunde = 55 Min.", en: "Private Lessons - 1 hour = 55 min." } as Record<Language, string>,
       rows: [
         { label: d("1 persona", "1 Person", "1 person"), high: "€ 60/h", low: "€ 55/h" },
@@ -73,7 +73,7 @@ const KidsPage = () => {
       priceIcon: Baby,
       ...p.specialFullDay,
       color: "bg-alpine-forest",
-      image: img6020,
+      image: fullDayImg,
       priceTitle: { it: "Special Full Day - pranzo incluso", de: "Special Full Day - Mittagessen inklusive", en: "Special Full Day - lunch included" } as Record<Language, string>,
       rows: [
         { label: d("1 giorno", "1 Tag", "1 day"), high: "€ 125", low: "€ 115" },
@@ -89,7 +89,7 @@ const KidsPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={kidsImg} />
+      <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={headerImg} />
 
       {/* Yeti Park Section */}
       <section className="alpine-section bg-secondary/30">
@@ -113,7 +113,7 @@ const KidsPage = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <img src={scuolaSciImg} alt="Yeti Park" className="rounded-2xl shadow-lg w-full" />
+              <img src={campImg} alt="Yeti Park" className="rounded-2xl shadow-lg w-full" />
             </motion.div>
           </div>
         </div>

@@ -8,10 +8,10 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, Language } from "@/i18n/translations";
 import { Users, User, Zap, Calendar, Clock, Star, Tag, Percent } from "lucide-react";
 import lezioneImg from "@/assets/lezione.jpg";
-import img5514 from "@/assets/IMG_5514.JPG";
-import scuolaSci1 from "@/assets/scuola-sci1.jpg";
-import img5705 from "@/assets/IMG_5705.JPG";
-import img2950 from "@/assets/IMG_2950.jpg";
+import privateImg from "@/assets/lezione.jpg";
+import groupImg from "@/assets/IMG_5705.JPG";
+import superImg from "@/assets/20190114_111744.jpg";
+import weekendImg from "@/assets/IMG_5854.JPG";
 
 const LessonsPage = () => {
   const { lang } = useLanguage();
@@ -25,7 +25,7 @@ const LessonsPage = () => {
       priceIcon: Clock,
       ...p.private,
       color: "bg-primary",
-      image: img5514,
+      image: privateImg,
       priceTitle: { it: "Lezioni Private - 1 ora = 55 min.", de: "Privatunterricht - 1 Stunde = 55 Min.", en: "Private Lessons - 1 hour = 55 min." } as Record<Language, string>,
       rows: [
         { label: d("1 persona", "1 Person", "1 person"), high: "€ 60/h", low: "€ 55/h" },
@@ -41,7 +41,7 @@ const LessonsPage = () => {
       priceIcon: Users,
       ...p.group,
       color: "bg-alpine-sky",
-      image: scuolaSci1,
+      image: groupImg,
       priceTitle: { it: "Corso Collettivo 2 ore", de: "Gruppenkurs 2 Stunden", en: "Group Course 2 hours" } as Record<Language, string>,
       rows: [
         { label: d("1 giorno", "1 Tag", "1 day"), high: "€ 62", low: "€ 57" },
@@ -59,7 +59,7 @@ const LessonsPage = () => {
       priceIcon: Star,
       ...p.super,
       color: "bg-primary",
-      image: img5705,
+      image: superImg,
       priceTitle: { it: "Supercorsi", de: "Superkurse", en: "Super Courses" } as Record<Language, string>,
       rows: [
         { label: d("3 pers. – 5 ore", "3 Pers. – 5 Std.", "3 pers. – 5 hrs"), high: "€ 135", low: "€ 125" },
@@ -76,7 +76,7 @@ const LessonsPage = () => {
       priceIcon: Calendar,
       ...p.weekend,
       color: "bg-alpine-forest",
-      image: img2950,
+      image: weekendImg,
       priceTitle: { it: "Corso Weekend", de: "Wochenendkurs", en: "Weekend Course" } as Record<Language, string>,
       rows: [
         { label: d("3 giorni (Ven-Dom)", "3 Tage (Fr-So)", "3 days (Fri-Sun)"), high: "—", low: "€ 155" },

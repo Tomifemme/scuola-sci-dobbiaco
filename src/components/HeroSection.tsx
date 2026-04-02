@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
-import instructorsImg from "@/assets/instructors.jpg";
+import heroImg from "@/assets/scuola-sci1.jpg";
 
 const HeroSection = () => {
   const { lang } = useLanguage();
@@ -13,7 +13,7 @@ const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <img
-        src={instructorsImg}
+        src={heroImg}
         alt="Scuola Sci Dobbiaco Team"
         className="absolute inset-0 w-full h-full object-cover"
       />
