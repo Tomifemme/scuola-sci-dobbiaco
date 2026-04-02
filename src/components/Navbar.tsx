@@ -59,7 +59,7 @@ const Navbar = () => {
         { label: t(n.snowboardGroup, lang), href: "/snowboard#group" },
       ],
     },
-    { label: t(n.prices, lang), href: "/prices" },
+    { label: t(n.prices, lang), href: "/lessons" },
     { label: { it: "Galleria", de: "Galerie", en: "Gallery" }[lang]!, href: "/gallery" },
     { label: t(n.contact, lang), href: "/contact" },
   ];
