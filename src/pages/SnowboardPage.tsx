@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, tArray, Language } from "@/i18n/translations";
 import { Check, User, Users, Clock } from "lucide-react";
-import imgOTBA from "@/assets/OTBA3681.JPG";
-import bildNr1 from "@/assets/Bild Nr. 1.jpg";
-import bildNr2 from "@/assets/Bild Nr. 2.jpg";
+import imgHeader from "@/assets/18041813380098.jpg";
+import imgPrivate from "@/assets/_ARC6927.JPG";
+import imgGroup from "@/assets/Imm. BR AMSI∏ _Ph S. Confortola (16).jpg";
 
 const SnowboardPage = () => {
   const { lang } = useLanguage();
