@@ -10,7 +10,7 @@ import LessonsPage from "./pages/LessonsPage";
 import KidsPage from "./pages/KidsPage";
 import FreeridePage from "./pages/FreeridePage";
 import SnowboardPage from "./pages/SnowboardPage";
-import PricesPage from "./pages/PricesPage";
+// PricesPage removed - prices integrated into lesson pages
 import ContactPage from "./pages/ContactPage";
 import GalleryPage from "./pages/GalleryPage";
 import NotFound from "./pages/NotFound";
@@ -30,7 +30,7 @@ const App = () => (
             <Route path="/kids" element={<KidsPage />} />
             <Route path="/freeride" element={<FreeridePage />} />
             <Route path="/snowboard" element={<SnowboardPage />} />
-            <Route path="/prices" element={<PricesPage />} />
+            <Route path="/prices" element={<LessonsPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="*" element={<NotFound />} />
