@@ -8,7 +8,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, tArray, Language } from "@/i18n/translations";
 import { Check, User, Users, Clock } from "lucide-react";
 import imgHeader from "@/assets/18041813380098.jpg";
-import imgPrivate from "@/assets/_ARC6927.JPG";
+import imgPrivate from "@/assets/Bild Nr. 1.jpg";
 import imgGroup from "@/assets/Imm. BR AMSI∏ _Ph S. Confortola (16).jpg";
 
 const SnowboardPage = () => {
