@@ -41,7 +41,7 @@ const LessonsPage = () => {
       priceIcon: Users,
       ...p.group,
       color: "bg-alpine-sky",
-      image: scuolaSci1,
+      image: groupImg,
       priceTitle: { it: "Corso Collettivo 2 ore", de: "Gruppenkurs 2 Stunden", en: "Group Course 2 hours" } as Record<Language, string>,
       rows: [
         { label: d("1 giorno", "1 Tag", "1 day"), high: "€ 62", low: "€ 57" },
