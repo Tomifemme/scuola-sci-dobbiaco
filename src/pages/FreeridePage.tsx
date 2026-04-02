@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, tArray } from "@/i18n/translations";
 import { Mountain, MapPin, Shield, Compass } from "lucide-react";
-import imgE9909 from "@/assets/IMG_E9909.JPG";
-import img20200106 from "@/assets/20200106_111652.jpg";
-import imgConfortola from "@/assets/Imm. BR AMSI∏ _Ph S. Confortola (16).jpg";
+import imgHeader from "@/assets/IMG_5220 (2).jpg";
+import imgBeginners from "@/assets/DJI_20260320120749_0039_1D.JPG";
+import imgExperts from "@/assets/IMG_6020.JPG";
 
 const FreeridePage = () => {
   const { lang } = useLanguage();
