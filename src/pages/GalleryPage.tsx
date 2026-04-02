@@ -7,13 +7,13 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import instructorsImg from "@/assets/instructors.jpg";
 import lezioneImg from "@/assets/lezione.jpg";
-import kidsSkiingImg from "@/assets/kids-skiing.jpg";
 import kidsLessonImg from "@/assets/kids-lesson.jpg";
-import freerideImg from "@/assets/freeride.jpg";
-import snowboardImg from "@/assets/snowboard.jpg";
-import privateLessonImg from "@/assets/private-lesson.jpg";
 import scuolaSci1Img from "@/assets/scuola-sci1.jpg";
-import heroImg from "@/assets/hero-dolomites.jpg";
+import img20211218 from "@/assets/20211218_113244.jpg";
+import imgERJZ from "@/assets/ERJZ9913.JPG";
+import img5705 from "@/assets/IMG_5705.JPG";
+import img5854 from "@/assets/IMG_5854.JPG";
+import imgOTBA from "@/assets/OTBA3681.JPG";
 
 const GalleryPage = () => {
   const { lang } = useLanguage();
@@ -29,13 +29,13 @@ const GalleryPage = () => {
   const images = [
     { src: instructorsImg, caption: { it: "Il nostro team di maestri", de: "Unser Skilehrerteam", en: "Our instructor team" }[lang]! },
     { src: lezioneImg, caption: { it: "Lezione sulle piste", de: "Unterricht auf der Piste", en: "Lesson on the slopes" }[lang]! },
-    { src: kidsSkiingImg, caption: { it: "Bambini sugli sci", de: "Kinder auf Skiern", en: "Kids skiing" }[lang]! },
+    { src: img20211218, caption: { it: "Bambini sugli sci", de: "Kinder auf Skiern", en: "Kids skiing" }[lang]! },
     { src: kidsLessonImg, caption: { it: "Lezione per bambini", de: "Kinderskikurs", en: "Kids lesson" }[lang]! },
-    { src: freerideImg, caption: { it: "Freeride nelle Dolomiti", de: "Freeride in den Dolomiten", en: "Freeride in the Dolomites" }[lang]! },
-    { src: snowboardImg, caption: { it: "Snowboard", de: "Snowboard", en: "Snowboard" }[lang]! },
-    { src: privateLessonImg, caption: { it: "Lezione privata", de: "Privatunterricht", en: "Private lesson" }[lang]! },
+    { src: imgERJZ, caption: { it: "Freeride nelle Dolomiti", de: "Freeride in den Dolomiten", en: "Freeride in the Dolomites" }[lang]! },
+    { src: img5705, caption: { it: "Snowboard", de: "Snowboard", en: "Snowboard" }[lang]! },
+    { src: img5854, caption: { it: "Lezione privata", de: "Privatunterricht", en: "Private lesson" }[lang]! },
     { src: scuolaSci1Img, caption: { it: "La nostra scuola", de: "Unsere Schule", en: "Our school" }[lang]! },
-    { src: heroImg, caption: { it: "Dolomiti panorama", de: "Dolomiten Panorama", en: "Dolomites panorama" }[lang]! },
+    { src: imgOTBA, caption: { it: "Dolomiti panorama", de: "Dolomiten Panorama", en: "Dolomites panorama" }[lang]! },
   ];
 
   const navigate = (dir: number) => {
