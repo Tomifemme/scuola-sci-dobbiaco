@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
-import instructorsImg from "@/assets/instructors.jpg";
+import heroImg from "@/assets/scuola-sci1.jpg";
 
 const HeroSection = () => {
   const { lang } = useLanguage();
