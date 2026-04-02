@@ -19,7 +19,7 @@ const SnowboardPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={imgOTBA} />
+      <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={imgHeader} />
 
       <section className="alpine-section">
         <div className="alpine-container">
