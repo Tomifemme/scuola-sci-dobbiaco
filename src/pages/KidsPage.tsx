@@ -7,11 +7,11 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, Language } from "@/i18n/translations";
 import { Snowflake, User, Users, Star, Sun, Baby, Clock } from "lucide-react";
-import kidsImg from "@/assets/kids-lesson.jpg";
-import scuolaSciImg from "@/assets/scuola-sci1.jpg";
-import img5854 from "@/assets/IMG_5854.JPG";
+import headerImg from "@/assets/20190114_111830 (2).jpg";
+import campImg from "@/assets/20200106_111652.jpg";
+import privateImg from "@/assets/Bild Nr. 2.jpg";
 import img5517 from "@/assets/IMG_5517.JPG";
-import img6020 from "@/assets/IMG_6020.JPG";
+import fullDayImg from "@/assets/20211218_113244 copy.jpg";
 import imgERJZ from "@/assets/ERJZ9913.JPG";
 
 const KidsPage = () => {
