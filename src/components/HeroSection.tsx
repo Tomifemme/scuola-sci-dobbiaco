@@ -13,7 +13,7 @@ const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <img
-        src={instructorsImg}
+        src={heroImg}
         alt="Scuola Sci Dobbiaco Team"
         className="absolute inset-0 w-full h-full object-cover"
       />

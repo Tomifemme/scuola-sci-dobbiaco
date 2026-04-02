@@ -76,7 +76,7 @@ const LessonsPage = () => {
       priceIcon: Calendar,
       ...p.weekend,
       color: "bg-alpine-forest",
-      image: img2950,
+      image: weekendImg,
       priceTitle: { it: "Corso Weekend", de: "Wochenendkurs", en: "Weekend Course" } as Record<Language, string>,
       rows: [
         { label: d("3 giorni (Ven-Dom)", "3 Tage (Fr-So)", "3 days (Fri-Sun)"), high: "—", low: "€ 155" },

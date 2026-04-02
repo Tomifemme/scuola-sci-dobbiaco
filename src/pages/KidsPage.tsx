@@ -73,7 +73,7 @@ const KidsPage = () => {
       priceIcon: Baby,
       ...p.specialFullDay,
       color: "bg-alpine-forest",
-      image: img6020,
+      image: fullDayImg,
       priceTitle: { it: "Special Full Day - pranzo incluso", de: "Special Full Day - Mittagessen inklusive", en: "Special Full Day - lunch included" } as Record<Language, string>,
       rows: [
         { label: d("1 giorno", "1 Tag", "1 day"), high: "€ 125", low: "€ 115" },
