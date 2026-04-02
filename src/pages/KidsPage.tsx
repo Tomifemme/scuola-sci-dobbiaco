@@ -185,6 +185,19 @@ const KidsPage = () => {
               />
             </div>
           </motion.div>
+
+          {/* Rental CTA */}
+          <div className="text-center mt-12">
+            <a
+              href="https://www.ski-rent.it/it/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold text-primary-foreground transition-all hover:opacity-90"
+              style={{ background: "var(--gradient-alpine)" }}
+            >
+              {{ it: "Noleggia la tua attrezzatura", de: "Ausrüstung mieten", en: "Rent your equipment" }[lang]}
+            </a>
+          </div>
         </div>
       </section>
 

@@ -149,6 +149,19 @@ const LessonsPage = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Rental CTA */}
+          <div className="text-center mt-12">
+            <a
+              href="https://www.ski-rent.it/it/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold text-primary-foreground transition-all hover:opacity-90"
+              style={{ background: "var(--gradient-alpine)" }}
+            >
+              {d("Noleggia la tua attrezzatura", "Ausrüstung mieten", "Rent your equipment")}
+            </a>
+          </div>
         </div>
       </section>
       <Footer />

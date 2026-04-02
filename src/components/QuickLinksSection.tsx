@@ -15,9 +15,8 @@ const QuickLinksSection = () => {
   ];
 
   const quickLinks = [
-    { label: "Video", href: "https://www.scuolasci-dobbiaco.com/it/VIDEO" },
     { label: "Skilift", href: "http://www.ski-rienza.it/" },
-    { label: { it: "Noleggio", de: "Skiverleih", en: "Rental" }[lang], href: "http://www.ski-rent.it/it/HOME/" },
+    { label: { it: "Noleggio Sci", de: "Skiverleih", en: "Ski Rental" }[lang], href: "https://www.ski-rent.it/it/" },
     { label: { it: "Galleria", de: "Galerie", en: "Gallery" }[lang], href: "/gallery" },
   ];
 
