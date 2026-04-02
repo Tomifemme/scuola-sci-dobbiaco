@@ -7,13 +7,13 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import instructorsImg from "@/assets/instructors.jpg";
 import lezioneImg from "@/assets/lezione.jpg";
-import kidsSkiingImg from "@/assets/kids-skiing.jpg";
 import kidsLessonImg from "@/assets/kids-lesson.jpg";
-import freerideImg from "@/assets/freeride.jpg";
-import snowboardImg from "@/assets/snowboard.jpg";
-import privateLessonImg from "@/assets/private-lesson.jpg";
 import scuolaSci1Img from "@/assets/scuola-sci1.jpg";
-import heroImg from "@/assets/hero-dolomites.jpg";
+import img20211218 from "@/assets/20211218_113244.jpg";
+import imgERJZ from "@/assets/ERJZ9913.JPG";
+import img5705 from "@/assets/IMG_5705.JPG";
+import img5854 from "@/assets/IMG_5854.JPG";
+import imgOTBA from "@/assets/OTBA3681.JPG";
 
 const GalleryPage = () => {
   const { lang } = useLanguage();
