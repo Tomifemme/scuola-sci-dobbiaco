@@ -113,7 +113,7 @@ const KidsPage = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <img src={scuolaSciImg} alt="Yeti Park" className="rounded-2xl shadow-lg w-full" />
+              <img src={campImg} alt="Yeti Park" className="rounded-2xl shadow-lg w-full" />
             </motion.div>
           </div>
         </div>
