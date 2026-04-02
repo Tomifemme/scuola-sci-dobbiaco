@@ -21,10 +21,13 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const lessonsAdultiLabel = { it: "Lezioni Adulti", de: "Erwachsenenkurse", en: "Adult Lessons" }[lang]!;
+  const lezioniBambiniLabel = { it: "Lezioni Bambini", de: "Kinderkurse", en: "Kids Lessons" }[lang]!;
+
   const navItems = [
     { label: t(n.home, lang), href: "/" },
     {
-      label: t(n.lessons, lang),
+      label: lessonsAdultiLabel,
       href: "/lessons",
       children: [
         { label: t(n.privateLessons, lang), href: "/lessons#private" },
@@ -34,7 +37,7 @@ const Navbar = () => {
       ],
     },
     {
-      label: t(n.kids, lang),
+      label: lezioniBambiniLabel,
       href: "/kids",
       children: [
         { label: t(n.kidsPrivate, lang), href: "/kids#private" },
@@ -59,7 +62,6 @@ const Navbar = () => {
         { label: t(n.snowboardGroup, lang), href: "/snowboard#group" },
       ],
     },
-    { label: t(n.prices, lang), href: "/lessons" },
     { label: { it: "Galleria", de: "Galerie", en: "Gallery" }[lang]!, href: "/gallery" },
     { label: t(n.contact, lang), href: "/contact" },
   ];

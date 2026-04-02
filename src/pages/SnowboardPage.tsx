@@ -95,7 +95,7 @@ const SnowboardPage = () => {
               </div>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
-                  <img src={bildNr2} alt="Snowboard Group" className="rounded-2xl w-full h-48 object-cover" />
+                  <img src={imgGroup} alt="Snowboard Group" className="rounded-2xl w-full h-48 object-cover" />
                   <p className="text-muted-foreground font-body leading-relaxed">
                     {d(
                       "Corsi collettivi di snowboard. Gruppi di minimo 3 persone. Dal lunedì al venerdì/sabato, ore 10:00–11:50.",

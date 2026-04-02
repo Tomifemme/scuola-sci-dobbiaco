@@ -126,6 +126,29 @@ const FreeridePage = () => {
               {d("Noleggiare Sci da Freeride", "Freeride-Ski mieten", "Rent Freeride Skis")}
             </a>
           </div>
+
+          {/* YouTube Video */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="mt-16"
+          >
+            <div className="max-w-3xl mx-auto">
+              <div className="relative w-full rounded-2xl overflow-hidden" style={{ paddingBottom: "56.25%" }}>
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/4pES_oYjXd4?si=D1Dbhav6-16GIIPM"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
       <Footer />
