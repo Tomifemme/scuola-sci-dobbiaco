@@ -10,7 +10,7 @@ import LessonsPage from "./pages/LessonsPage";
 import KidsPage from "./pages/KidsPage";
 import FreeridePage from "./pages/FreeridePage";
 import SnowboardPage from "./pages/SnowboardPage";
-import PricesPage from "./pages/PricesPage";
+// PricesPage removed - prices integrated into lesson pages
 import ContactPage from "./pages/ContactPage";
 import GalleryPage from "./pages/GalleryPage";
 import NotFound from "./pages/NotFound";
