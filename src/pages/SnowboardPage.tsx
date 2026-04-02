@@ -54,7 +54,7 @@ const SnowboardPage = () => {
               </div>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
-                  <img src={bildNr1} alt="Snowboard Private" className="rounded-2xl w-full h-48 object-cover" />
+                  <img src={imgPrivate} alt="Snowboard Private" className="rounded-2xl w-full h-48 object-cover" />
                   <p className="text-muted-foreground font-body leading-relaxed">
                     {d(
                       "Lezioni individuali con maestro specializzato di snowboard per tutti i livelli. Durata: 55 minuti. Disponibili tutti i giorni dalle 9:00 alle 16:00.",
