@@ -8,10 +8,10 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, Language } from "@/i18n/translations";
 import { Users, User, Zap, Calendar, Clock, Star, Tag, Percent } from "lucide-react";
 import lezioneImg from "@/assets/lezione.jpg";
-import img5514 from "@/assets/IMG_5514.JPG";
-import scuolaSci1 from "@/assets/scuola-sci1.jpg";
-import img5705 from "@/assets/IMG_5705.JPG";
-import img2950 from "@/assets/IMG_2950.jpg";
+import privateImg from "@/assets/lezione.jpg";
+import groupImg from "@/assets/IMG_5705.JPG";
+import superImg from "@/assets/20190114_111744.jpg";
+import weekendImg from "@/assets/IMG_5854.JPG";
 
 const LessonsPage = () => {
   const { lang } = useLanguage();
