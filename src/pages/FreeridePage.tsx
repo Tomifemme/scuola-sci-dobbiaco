@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, tArray } from "@/i18n/translations";
 import { Mountain, MapPin, Shield, Compass } from "lucide-react";
-import imgE9909 from "@/assets/IMG_E9909.JPG";
-import img20200106 from "@/assets/20200106_111652.jpg";
-import imgConfortola from "@/assets/Imm. BR AMSI∏ _Ph S. Confortola (16).jpg";
+import imgHeader from "@/assets/IMG_5220 (2).jpg";
+import imgBeginners from "@/assets/DJI_20260320120749_0039_1D.JPG";
+import imgExperts from "@/assets/IMG_6020.JPG";
 
 const FreeridePage = () => {
   const { lang } = useLanguage();
@@ -19,7 +19,7 @@ const FreeridePage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={imgE9909} />
+      <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={imgHeader} />
 
       <section className="alpine-section">
         <div className="alpine-container">
@@ -68,7 +68,7 @@ const FreeridePage = () => {
               className="bg-card rounded-2xl overflow-hidden border border-border"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
-              <img src={img20200106} alt={t(p.beginners.title, lang)} className="w-full h-48 object-cover" />
+              <img src={imgBeginners} alt={t(p.beginners.title, lang)} className="w-full h-48 object-cover" />
               <div className="p-8">
                 <div className="bg-alpine-sky w-12 h-12 rounded-xl flex items-center justify-center mb-4">
                   <Shield className="w-6 h-6 text-primary-foreground" />
@@ -86,7 +86,7 @@ const FreeridePage = () => {
               className="bg-card rounded-2xl overflow-hidden border border-border"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
-              <img src={imgConfortola} alt={t(p.experts.title, lang)} className="w-full h-48 object-cover" />
+              <img src={imgExperts} alt={t(p.experts.title, lang)} className="w-full h-48 object-cover" />
               <div className="p-8">
                 <div className="bg-alpine-gold w-12 h-12 rounded-xl flex items-center justify-center mb-4">
                   <Mountain className="w-6 h-6 text-primary-foreground" />
@@ -126,6 +126,29 @@ const FreeridePage = () => {
               {d("Noleggiare Sci da Freeride", "Freeride-Ski mieten", "Rent Freeride Skis")}
             </a>
           </div>
+
+          {/* YouTube Video */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="mt-16"
+          >
+            <div className="max-w-3xl mx-auto">
+              <div className="relative w-full rounded-2xl overflow-hidden" style={{ paddingBottom: "56.25%" }}>
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/4pES_oYjXd4?si=D1Dbhav6-16GIIPM"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
       <Footer />

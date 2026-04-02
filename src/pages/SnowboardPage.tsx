@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, tArray, Language } from "@/i18n/translations";
 import { Check, User, Users, Clock } from "lucide-react";
-import imgOTBA from "@/assets/OTBA3681.JPG";
-import bildNr1 from "@/assets/Bild Nr. 1.jpg";
-import bildNr2 from "@/assets/Bild Nr. 2.jpg";
+import imgHeader from "@/assets/18041813380098.jpg";
+import imgPrivate from "@/assets/_ARC6927.JPG";
+import imgGroup from "@/assets/Imm. BR AMSI∏ _Ph S. Confortola (16).jpg";
 
 const SnowboardPage = () => {
   const { lang } = useLanguage();
@@ -19,7 +19,7 @@ const SnowboardPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={imgOTBA} />
+      <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={imgHeader} />
 
       <section className="alpine-section">
         <div className="alpine-container">
@@ -54,7 +54,7 @@ const SnowboardPage = () => {
               </div>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
-                  <img src={bildNr1} alt="Snowboard Private" className="rounded-2xl w-full h-48 object-cover" />
+                  <img src={imgPrivate} alt="Snowboard Private" className="rounded-2xl w-full h-48 object-cover" />
                   <p className="text-muted-foreground font-body leading-relaxed">
                     {d(
                       "Lezioni individuali con maestro specializzato di snowboard per tutti i livelli. Durata: 55 minuti. Disponibili tutti i giorni dalle 9:00 alle 16:00.",
@@ -95,7 +95,7 @@ const SnowboardPage = () => {
               </div>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
-                  <img src={bildNr2} alt="Snowboard Group" className="rounded-2xl w-full h-48 object-cover" />
+                  <img src={imgGroup} alt="Snowboard Group" className="rounded-2xl w-full h-48 object-cover" />
                   <p className="text-muted-foreground font-body leading-relaxed">
                     {d(
                       "Corsi collettivi di snowboard. Gruppi di minimo 3 persone. Dal lunedì al venerdì/sabato, ore 10:00–11:50.",
