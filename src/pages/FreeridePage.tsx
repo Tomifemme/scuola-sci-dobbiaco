@@ -1,20 +1,25 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
+import PriceTable from "@/components/PriceTable";
+import SeasonLegend from "@/components/SeasonLegend";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, tArray } from "@/i18n/translations";
 import { Mountain, MapPin, Shield, Compass } from "lucide-react";
-import freerideImg from "@/assets/freeride.jpg";
+import imgE9909 from "@/assets/IMG_E9909.JPG";
+import img20200106 from "@/assets/20200106_111652.jpg";
+import imgConfortola from "@/assets/Imm. BR AMSI∏ _Ph S. Confortola (16).jpg";
 
 const FreeridePage = () => {
   const { lang } = useLanguage();
   const p = translations.pages.freeride;
+  const d = (it: string, de: string, en: string) => ({ it, de, en }[lang]!);
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={freerideImg} />
+      <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={imgE9909} />
 
       <section className="alpine-section">
         <div className="alpine-container">
@@ -32,7 +37,7 @@ const FreeridePage = () => {
           <div className="mb-16">
             <h2 className="font-display text-2xl font-bold text-foreground mb-8 text-center flex items-center justify-center gap-3">
               <Compass className="w-7 h-7 text-primary" />
-              {{ it: "Destinazioni", de: "Destinationen", en: "Destinations" }[lang]}
+              {d("Destinazioni", "Destinationen", "Destinations")}
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {tArray(p.destinations, lang).map((dest, i) => (
@@ -52,22 +57,25 @@ const FreeridePage = () => {
             </div>
           </div>
 
-          {/* Beginner & Expert */}
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* Beginner & Expert with images */}
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
             <motion.div
               id="beginners"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="bg-card rounded-2xl p-8 border border-border"
+              className="bg-card rounded-2xl overflow-hidden border border-border"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
-              <div className="bg-alpine-sky w-12 h-12 rounded-xl flex items-center justify-center mb-4">
-                <Shield className="w-6 h-6 text-primary-foreground" />
+              <img src={img20200106} alt={t(p.beginners.title, lang)} className="w-full h-48 object-cover" />
+              <div className="p-8">
+                <div className="bg-alpine-sky w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                  <Shield className="w-6 h-6 text-primary-foreground" />
+                </div>
+                <h3 className="font-display text-xl font-bold text-foreground mb-3">{t(p.beginners.title, lang)}</h3>
+                <p className="text-muted-foreground font-body leading-relaxed">{t(p.beginners.desc, lang)}</p>
               </div>
-              <h3 className="font-display text-xl font-bold text-foreground mb-3">{t(p.beginners.title, lang)}</h3>
-              <p className="text-muted-foreground font-body leading-relaxed">{t(p.beginners.desc, lang)}</p>
             </motion.div>
             <motion.div
               id="experts"
@@ -75,15 +83,35 @@ const FreeridePage = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="bg-card rounded-2xl p-8 border border-border"
+              className="bg-card rounded-2xl overflow-hidden border border-border"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
-              <div className="bg-alpine-gold w-12 h-12 rounded-xl flex items-center justify-center mb-4">
-                <Mountain className="w-6 h-6 text-primary-foreground" />
+              <img src={imgConfortola} alt={t(p.experts.title, lang)} className="w-full h-48 object-cover" />
+              <div className="p-8">
+                <div className="bg-alpine-gold w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                  <Mountain className="w-6 h-6 text-primary-foreground" />
+                </div>
+                <h3 className="font-display text-xl font-bold text-foreground mb-3">{t(p.experts.title, lang)}</h3>
+                <p className="text-muted-foreground font-body leading-relaxed">{t(p.experts.desc, lang)}</p>
               </div>
-              <h3 className="font-display text-xl font-bold text-foreground mb-3">{t(p.experts.title, lang)}</h3>
-              <p className="text-muted-foreground font-body leading-relaxed">{t(p.experts.desc, lang)}</p>
             </motion.div>
+          </div>
+
+          {/* Prices */}
+          <SeasonLegend />
+          <div className="max-w-lg mx-auto">
+            <PriceTable
+              icon={Mountain}
+              title={d("Freeride - giornata con Maestro", "Freeride - Ganztag mit Skilehrer", "Freeride - full day with instructor")}
+              rows={[
+                { label: d("2 pers. – Basic", "2 Pers. – Basic", "2 pers. – Basic"), high: "€ 170", low: "€ 160" },
+                { label: d("2 pers. – Classic", "2 Pers. – Classic", "2 pers. – Classic"), high: "€ 320", low: "€ 295" },
+                { label: d("3 pers. – Basic", "3 Pers. – Basic", "3 pers. – Basic"), high: "€ 130", low: "€ 125" },
+                { label: d("3 pers. – Classic", "3 Pers. – Classic", "3 pers. – Classic"), high: "€ 245", low: "€ 220" },
+                { label: d("4 pers. – Basic", "4 Pers. – Basic", "4 pers. – Basic"), high: "€ 115", low: "€ 105" },
+                { label: d("4 pers. – Classic", "4 Pers. – Classic", "4 pers. – Classic"), high: "€ 210", low: "€ 195" },
+              ]}
+            />
           </div>
 
           {/* Rental Link */}
@@ -95,7 +123,7 @@ const FreeridePage = () => {
               className="inline-flex items-center gap-2 px-8 py-4 rounded-lg font-semibold text-primary-foreground transition-all hover:opacity-90"
               style={{ background: "var(--gradient-alpine)" }}
             >
-              {{ it: "Noleggiare Sci da Freeride", de: "Freeride-Ski mieten", en: "Rent Freeride Skis" }[lang]}
+              {d("Noleggiare Sci da Freeride", "Freeride-Ski mieten", "Rent Freeride Skis")}
             </a>
           </div>
         </div>
