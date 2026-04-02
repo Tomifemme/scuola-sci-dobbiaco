@@ -25,7 +25,7 @@ const LessonsPage = () => {
       priceIcon: Clock,
       ...p.private,
       color: "bg-primary",
-      image: img5514,
+      image: privateImg,
       priceTitle: { it: "Lezioni Private - 1 ora = 55 min.", de: "Privatunterricht - 1 Stunde = 55 Min.", en: "Private Lessons - 1 hour = 55 min." } as Record<Language, string>,
       rows: [
         { label: d("1 persona", "1 Person", "1 person"), high: "€ 60/h", low: "€ 55/h" },
