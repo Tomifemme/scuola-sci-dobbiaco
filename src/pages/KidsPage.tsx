@@ -149,7 +149,7 @@ const KidsPage = () => {
                     icon={s.priceIcon}
                     title={t(s.priceTitle, lang)}
                     rows={s.rows}
-                    note={s.note}
+                    note={'note' in s ? (s as any).note : undefined}
                   />
                 </div>
               </motion.div>
