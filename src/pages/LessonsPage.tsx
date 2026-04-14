@@ -32,7 +32,7 @@ const LessonsPage = () => {
         { label: d("1 persona", "1 Person", "1 person"), high: "€ 60/h", low: "€ 55/h" },
         { label: d("2 persone", "2 Personen", "2 people"), high: "+ € 15/h", low: "+ € 15/h" },
         { label: d("3 persone", "3 Personen", "3 people"), high: "+ € 15/h", low: "+ € 15/h" },
-        { label: d("Dalle ore 13:00", "Ab 13:00 Uhr", "From 1:00 PM"), high: "€ 70/h", low: "€ 70/h" },
+        { label: d("Ore 10:00–13:00 (20.12–09.01)", "10:00–13:00 Uhr (20.12–09.01)", "10:00 AM–1:00 PM (20.12–09.01)"), high: "€ 70/h", low: "—" },
       ] as PriceRow[],
       note: d("1 ora privata = 55 minuti", "1 Privatstunde = 55 Minuten", "1 private hour = 55 minutes"),
     },
