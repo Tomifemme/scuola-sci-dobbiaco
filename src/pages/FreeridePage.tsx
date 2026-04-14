@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, tArray } from "@/i18n/translations";
 import { Mountain, MapPin, Shield, Compass } from "lucide-react";
-import imgHeader from "@/assets/IMG_5220 (2).jpg";
+import imgHeader from "@/assets/freeride-header.jpg";
 import imgBeginners from "@/assets/DJI_20260320120749_0039_1D.JPG";
 import imgExperts from "@/assets/IMG_6020.JPG";
 
