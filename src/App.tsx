@@ -4,7 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/i18n/LanguageContext";
-import ChatWidget from "@/components/ChatWidget";
+
 import Index from "./pages/Index";
 import LessonsPage from "./pages/LessonsPage";
 import KidsPage from "./pages/KidsPage";
@@ -35,7 +35,7 @@ const App = () => (
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-          <ChatWidget />
+          
         </BrowserRouter>
       </TooltipProvider>
     </LanguageProvider>
