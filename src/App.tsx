@@ -19,28 +19,29 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <LanguageProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/lessons" element={<LessonsPage />} />
-            <Route path="/kids" element={<KidsPage />} />
-            <Route path="/freeride" element={<FreeridePage />} />
-            <Route path="/snowboard" element={<SnowboardPage />} />
-            {/* prices integrated into lesson pages */}
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/gallery" element={<GalleryPage />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          
-        </BrowserRouter>
-      </TooltipProvider>
-    </LanguageProvider>
-  </QueryClientProvider>
+  <HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <LanguageProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/lessons" element={<LessonsPage />} />
+              <Route path="/kids" element={<KidsPage />} />
+              <Route path="/freeride" element={<FreeridePage />} />
+              <Route path="/snowboard" element={<SnowboardPage />} />
+              {/* prices integrated into lesson pages */}
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/gallery" element={<GalleryPage />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </LanguageProvider>
+    </QueryClientProvider>
+  </HelmetProvider>
 );
 
 export default App;
