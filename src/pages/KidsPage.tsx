@@ -8,11 +8,11 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, Language } from "@/i18n/translations";
 import { Snowflake, User, Users, Star, Sun, Baby, Clock } from "lucide-react";
-import headerImg from "@/assets/20190114_111830 (2).jpg";
+import headerImg from "@/assets/kids-header.jpg";
 import campImg from "@/assets/20200106_111652.jpg";
-import privateImg from "@/assets/Bild Nr. 2.jpg";
+import privateImg from "@/assets/kids-private.jpg";
 import img5517 from "@/assets/IMG_5517.JPG";
-import fullDayImg from "@/assets/20211218_113244 copy.jpg";
+import fullDayImg from "@/assets/kids-full-day.jpg";
 import imgERJZ from "@/assets/ERJZ9913.JPG";
 
 const KidsPage = () => {
