@@ -14,7 +14,7 @@ const HeroSection = () => {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <img
         src={heroImg}
-        alt="Scuola Sci Dobbiaco Team"
+        alt={{ it: "Maestri della Scuola Sci Dobbiaco sulle piste delle Dolomiti", de: "Skilehrer der Skischule Toblach auf den Dolomiten-Pisten", en: "Ski School Dobbiaco instructors on the Dolomites slopes" }[lang]!}
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0" style={{ background: "var(--gradient-overlay)" }} />

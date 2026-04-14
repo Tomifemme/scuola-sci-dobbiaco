@@ -127,7 +127,7 @@ const KidsPage = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <img src={campImg} alt="Yeti Park" className="rounded-2xl shadow-lg w-full" />
+              <img src={campImg} alt={{ it: "Yeti Park campo scuola bambini Dobbiaco", de: "Yeti Park Kinderskigelände Toblach", en: "Yeti Park kids ski area Dobbiaco" }[lang]!} className="rounded-2xl shadow-lg w-full" />
             </motion.div>
           </div>
         </div>
