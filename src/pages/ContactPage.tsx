@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import BookingForm from "@/components/BookingForm";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
@@ -15,6 +16,19 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={{
+          it: "Contatti e Prenotazioni | Scuola Sci Dobbiaco",
+          de: "Kontakt und Buchung | Skischule Toblach",
+          en: "Contact and Booking | Ski School Dobbiaco",
+        }}
+        description={{
+          it: "Contatta la Scuola Sci Dobbiaco: prenota lezioni di sci, snowboard e freeride. Telefono, email e modulo di prenotazione.",
+          de: "Kontaktieren Sie die Skischule Toblach: Buchen Sie Ski-, Snowboard- und Freeride-Unterricht. Telefon, E-Mail und Buchungsformular.",
+          en: "Contact Ski School Dobbiaco: book ski, snowboard and freeride lessons. Phone, email and booking form.",
+        }}
+        path="/contact"
+      />
       <Navbar />
       <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={instructorsImg} />
 

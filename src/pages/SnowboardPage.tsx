@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import PriceTable, { PriceRow } from "@/components/PriceTable";
 import SeasonLegend from "@/components/SeasonLegend";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, tArray, Language } from "@/i18n/translations";
@@ -18,6 +19,19 @@ const SnowboardPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={{
+          it: "Corsi Snowboard | Scuola Sci Dobbiaco",
+          de: "Snowboardkurse | Skischule Toblach",
+          en: "Snowboard Lessons | Ski School Dobbiaco",
+        }}
+        description={{
+          it: "Corsi di snowboard a Dobbiaco: lezioni private e collettive per tutti i livelli nelle Dolomiti. Maestri specializzati.",
+          de: "Snowboardkurse in Toblach: Privat- und Gruppenunterricht für alle Levels in den Dolomiten. Spezialisierte Lehrer.",
+          en: "Snowboard lessons in Dobbiaco: private and group courses for all levels in the Dolomites. Specialized instructors.",
+        }}
+        path="/snowboard"
+      />
       <Navbar />
       <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={imgHeader} />
 

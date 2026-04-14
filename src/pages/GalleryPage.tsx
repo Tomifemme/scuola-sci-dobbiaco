@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
+import SEO from "@/components/SEO";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
@@ -45,6 +46,19 @@ const GalleryPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={{
+          it: "Galleria Foto | Scuola Sci Dobbiaco",
+          de: "Fotogalerie | Skischule Toblach",
+          en: "Photo Gallery | Ski School Dobbiaco",
+        }}
+        description={{
+          it: "Galleria fotografica della Scuola Sci Dobbiaco: momenti sulle piste delle Dolomiti, lezioni di sci e snowboard.",
+          de: "Fotogalerie der Skischule Toblach: Momente auf den Pisten der Dolomiten, Ski- und Snowboardunterricht.",
+          en: "Photo gallery of Ski School Dobbiaco: moments on the Dolomites slopes, ski and snowboard lessons.",
+        }}
+        path="/gallery"
+      />
       <Navbar />
       <PageHero title={title} subtitle={subtitle} image={scuolaSci1Img} />
 
