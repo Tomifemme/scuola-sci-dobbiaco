@@ -35,6 +35,10 @@ const App = () => (
               {/* prices integrated into lesson pages */}
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/gallery" element={<GalleryPage />} />
+              {/* Redirects for old site URLs */}
+              <Route path="/it/*" element={<Navigate to="/" replace />} />
+              <Route path="/de/*" element={<Navigate to="/" replace />} />
+              <Route path="/en/*" element={<Navigate to="/" replace />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>
