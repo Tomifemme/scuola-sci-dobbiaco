@@ -9,7 +9,7 @@ interface PageHeroProps {
 const PageHero = ({ title, subtitle, image }: PageHeroProps) => {
   return (
     <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
-      <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover" />
+      <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover object-top" />
       <div className="absolute inset-0" style={{ background: "var(--gradient-overlay)" }} />
       <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
         <motion.h1
