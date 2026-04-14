@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import PriceTable, { PriceRow } from "@/components/PriceTable";
 import SeasonLegend from "@/components/SeasonLegend";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, Language } from "@/i18n/translations";
@@ -87,6 +88,19 @@ const LessonsPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={{
+          it: "Lezioni di Sci Adulti | Scuola Sci Dobbiaco",
+          de: "Skikurse Erwachsene | Skischule Toblach",
+          en: "Adult Ski Lessons | Ski School Dobbiaco",
+        }}
+        description={{
+          it: "Lezioni private e corsi collettivi di sci per adulti a Dobbiaco. Prezzi, orari e offerte speciali della Scuola Sci Dobbiaco nelle Dolomiti.",
+          de: "Privatunterricht und Gruppenkurse für Erwachsene in Toblach. Preise, Zeiten und Angebote der Skischule Toblach in den Dolomiten.",
+          en: "Private and group ski lessons for adults in Dobbiaco. Prices, schedules and special offers from Ski School Dobbiaco in the Dolomites.",
+        }}
+        path="/lessons"
+      />
       <Navbar />
       <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={lezioneImg} />
 

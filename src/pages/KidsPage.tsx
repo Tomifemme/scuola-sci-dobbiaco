@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import PriceTable, { PriceRow } from "@/components/PriceTable";
 import SeasonLegend from "@/components/SeasonLegend";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, Language } from "@/i18n/translations";
@@ -88,6 +89,19 @@ const KidsPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={{
+          it: "Corsi Sci Bambini | Scuola Sci Dobbiaco",
+          de: "Kinderskikurse | Skischule Toblach",
+          en: "Kids Ski Lessons | Ski School Dobbiaco",
+        }}
+        description={{
+          it: "Corsi di sci per bambini a Dobbiaco: lezioni private, corsi collettivi, Junior Club e Special Full Day nelle Dolomiti.",
+          de: "Kinderskikurse in Toblach: Privatunterricht, Gruppenkurse, Junior Club und Special Full Day in den Dolomiten.",
+          en: "Kids ski lessons in Dobbiaco: private lessons, group courses, Junior Club and Special Full Day in the Dolomites.",
+        }}
+        path="/kids"
+      />
       <Navbar />
       <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={headerImg} />
 
@@ -113,7 +127,7 @@ const KidsPage = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <img src={campImg} alt="Yeti Park" className="rounded-2xl shadow-lg w-full" />
+              <img src={campImg} alt={{ it: "Yeti Park campo scuola bambini Dobbiaco", de: "Yeti Park Kinderskigelände Toblach", en: "Yeti Park kids ski area Dobbiaco" }[lang]!} className="rounded-2xl shadow-lg w-full" />
             </motion.div>
           </div>
         </div>

@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import PriceTable from "@/components/PriceTable";
 import SeasonLegend from "@/components/SeasonLegend";
+import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, tArray } from "@/i18n/translations";
@@ -18,6 +19,19 @@ const FreeridePage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={{
+          it: "Freeride Dolomiti | Scuola Sci Dobbiaco",
+          de: "Freeride Dolomiten | Skischule Toblach",
+          en: "Freeride Dolomites | Ski School Dobbiaco",
+        }}
+        description={{
+          it: "Freeride nelle Dolomiti con la Scuola Sci Dobbiaco. Escursioni guidate fuoripista per principianti ed esperti con maestri qualificati.",
+          de: "Freeride in den Dolomiten mit der Skischule Toblach. Geführte Off-Piste-Touren für Anfänger und Experten mit qualifizierten Skilehrern.",
+          en: "Freeride in the Dolomites with Ski School Dobbiaco. Guided off-piste tours for beginners and experts with qualified instructors.",
+        }}
+        path="/freeride"
+      />
       <Navbar />
       <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={imgHeader} />
 

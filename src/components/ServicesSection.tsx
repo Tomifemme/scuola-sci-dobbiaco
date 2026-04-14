@@ -13,10 +13,10 @@ const ServicesSection = () => {
   const s = translations.services;
 
   const services = [
-    { ...s.privateLessons, image: lessonImg, alt: "Private ski lesson", link: "/lessons" },
-    { ...s.kidsClub, image: kidsImg, alt: "Kids ski school", link: "/kids" },
-    { ...s.freeride, image: freerideImg, alt: "Freeride Dolomites", link: "/freeride" },
-    { ...s.snowboard, image: snowboardImg, alt: "Snowboard lessons", link: "/snowboard" },
+    { ...s.privateLessons, image: lessonImg, alt: { it: "Lezione privata di sci a Dobbiaco", de: "Privater Skiunterricht in Toblach", en: "Private ski lesson in Dobbiaco" }, link: "/lessons" },
+    { ...s.kidsClub, image: kidsImg, alt: { it: "Corso sci bambini Dobbiaco", de: "Kinderskikurs Toblach", en: "Kids ski course Dobbiaco" }, link: "/kids" },
+    { ...s.freeride, image: freerideImg, alt: { it: "Freeride nelle Dolomiti con maestro", de: "Freeride in den Dolomiten mit Skilehrer", en: "Freeride in the Dolomites with instructor" }, link: "/freeride" },
+    { ...s.snowboard, image: snowboardImg, alt: { it: "Lezione di snowboard a Dobbiaco", de: "Snowboardunterricht in Toblach", en: "Snowboard lesson in Dobbiaco" }, link: "/snowboard" },
   ];
 
   return (
@@ -38,7 +38,7 @@ const ServicesSection = () => {
             >
               <Link to={service.link} className="alpine-card bg-card group cursor-pointer block">
                 <div className="relative h-64 overflow-hidden">
-                  <img src={service.image} alt={service.alt} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
+                  <img src={service.image} alt={service.alt[lang]!} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
                   <div className="absolute inset-0 bg-alpine-deep/20 group-hover:bg-alpine-deep/10 transition-colors" />
                 </div>
                 <div className="p-6">
