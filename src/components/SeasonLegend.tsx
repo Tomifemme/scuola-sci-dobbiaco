@@ -20,14 +20,14 @@ const SeasonLegend = () => {
         <Sun className="w-5 h-5 text-destructive" />
         <div>
           <p className="font-display font-bold text-foreground text-sm">{highLabel}</p>
-          <p className="text-xs text-muted-foreground">21.12 – 09.01 | 08.02 – 08.03</p>
+          <p className="text-xs text-muted-foreground">20.12.26 – 09.01.27 | 06.02.27 – 07.03.27</p>
         </div>
       </div>
       <div className="flex items-center gap-3 bg-primary/10 border border-primary/20 rounded-xl px-5 py-3">
         <Snowflake className="w-5 h-5 text-primary" />
         <div>
           <p className="font-display font-bold text-foreground text-sm">{lowLabel}</p>
-          <p className="text-xs text-muted-foreground">29.11 – 20.12 | 10.01 – 07.02 | 09.03 – 12.04</p>
+          <p className="text-xs text-muted-foreground">28.11.26 – 19.12.26 | 10.01.27 – 05.02.27 | 08.03.27 – 29.04.27</p>
         </div>
       </div>
     </motion.div>
