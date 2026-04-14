@@ -9,7 +9,7 @@ interface SEOProps {
   type?: string;
 }
 
-const BASE_URL = "https://scuola-sci-dobbiaco.lovable.app";
+const BASE_URL = "https://scuolasci-dobbiaco.com";
 
 const SEO = ({ title, description, path, type = "website" }: SEOProps) => {
   const { lang } = useLanguage();
