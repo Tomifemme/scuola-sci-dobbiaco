@@ -25,7 +25,7 @@ const WelcomeSection = () => {
             <p className="text-lg text-muted-foreground leading-relaxed mb-6 font-body">{t(w.text2, lang)}</p>
             
             <div className="relative rounded-xl overflow-hidden mb-6">
-              <img src={instructorsImg} alt={{ it: "Team maestri Scuola Sci Dobbiaco", de: "Skilehrerteam Skischule Toblach", en: "Ski School Dobbiaco instructor team" }[lang]!} className="w-full h-48 object-cover object-top rounded-xl" />
+              <img src={instructorsImg} alt={{ it: "Team maestri Scuola Sci Dobbiaco", de: "Skilehrerteam Skischule Toblach", en: "Ski School Dobbiaco instructor team" }[lang]!} className="w-full h-48 object-cover rounded-xl" />
             </div>
 
             <p className="text-base text-muted-foreground italic font-body">
