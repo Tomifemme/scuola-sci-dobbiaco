@@ -7,7 +7,7 @@ interface PageHeroProps {
   marginTop?: string;
 }
 
-const PageHero = ({ title, subtitle, image, marginTop = "mt-[40px]" }: PageHeroProps) => {
+const PageHero = ({ title, subtitle, image, marginTop = "mt-[10px]" }: PageHeroProps) => {
   return (
     <section
       className={`relative h-[50vh] min-h-[400px] flex items-end justify-center overflow-hidden pb-12 ${marginTop}`}
