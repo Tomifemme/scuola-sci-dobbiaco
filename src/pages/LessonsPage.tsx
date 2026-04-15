@@ -5,7 +5,7 @@ import PriceTable, { PriceRow } from "@/components/PriceTable";
 import SeasonLegend from "@/components/SeasonLegend";
 import SEO from "@/components/SEO";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { translations, t } from "@/i18n/translations";
+import { translations, t, Language } from "@/i18n/translations";
 import { User, Clock, Users, Zap, Star, Calendar, Tag, Percent } from "lucide-react";
 import { motion } from "framer-motion";
 import headerImg from "@/assets/20211218_103945.jpg";
@@ -104,7 +104,7 @@ const LessonsPage = () => {
         path="/lessons"
       />
       <Navbar />
-      <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={lezioneImg} marginTop="mt-[50px]" />
+      <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={headerImg} marginTop="mt-[50px]" />
 
       <section className="alpine-section">
         <div className="alpine-container">
