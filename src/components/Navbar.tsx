@@ -13,7 +13,29 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const { lang } = useLanguage();
   const location = useLocation();
+  const navigate = useNavigate();
   const n = translations.nav;
+
+  const handleNavClick = useCallback((href: string) => {
+    setIsOpen(false);
+    setOpenDropdown(null);
+    const [path, hash] = href.split("#");
+    const targetPath = path || location.pathname;
+    if (location.pathname === targetPath && hash) {
+      const el = document.getElementById(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+    }
+    navigate(href);
+    if (hash) {
+      setTimeout(() => {
+        const el = document.getElementById(hash);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 300);
+    }
+  }, [location.pathname, navigate]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
