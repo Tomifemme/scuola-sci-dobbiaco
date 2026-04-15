@@ -52,7 +52,7 @@
 
     --gradient-alpine: linear-gradient(135deg, hsl(210 80% 42%), hsl(205 85% 58%));
     --gradient-sky: linear-gradient(180deg, hsl(205 85% 58%), hsl(210 80% 42%));
-    --gradient-overlay: linear-gradient(180deg, hsl(215 45% 18% / 0.6), hsl(215 45% 18% / 0.3));
+    --gradient-overlay: linear-gradient(180deg, hsl(215 45% 18% / 0.4), hsl(215 45% 18% / 0.15));
     --gradient-gold: linear-gradient(135deg, hsl(205 80% 45%), hsl(210 85% 55%));
 
     --sidebar-background: 0 0% 98%;
