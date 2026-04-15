@@ -7,7 +7,7 @@ import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, Language } from "@/i18n/translations";
-import { Snowflake, User, Users, Star, Sun, Baby, Clock } from "lucide-react";
+import { Snowflake, User, Users, Star, Sun, Baby, Clock, Tag, Percent } from "lucide-react";
 import headerImg from "@/assets/kids-header.jpg";
 import campImg from "@/assets/20200106_111652.jpg";
 import privateImg from "@/assets/kids-private.jpg";
@@ -137,6 +137,29 @@ const KidsPage = () => {
       <section className="alpine-section">
         <div className="alpine-container">
           <SeasonLegend />
+
+          {/* Special Offers */}
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}
+              className="bg-card rounded-2xl p-6 border border-border" style={{ boxShadow: "var(--shadow-card)" }}>
+              <Tag className="w-8 h-8 text-primary mb-3" />
+              <h3 className="font-display text-lg font-bold text-foreground mb-2">{t(translations.pages.prices.earlyBird.title, lang)}</h3>
+              <p className="text-muted-foreground font-body text-sm">{t(translations.pages.prices.earlyBird.desc, lang)}</p>
+              <p className="text-xs text-muted-foreground mt-2 italic">{t(translations.pages.prices.earlyBird.note, lang)}</p>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }}
+              className="bg-card rounded-2xl p-6 border border-border" style={{ boxShadow: "var(--shadow-card)" }}>
+              <Percent className="w-8 h-8 text-primary mb-3" />
+              <h3 className="font-display text-lg font-bold text-foreground mb-2">{t(translations.pages.prices.familyDiscount.title, lang)}</h3>
+              <p className="text-muted-foreground font-body text-sm">{t(translations.pages.prices.familyDiscount.desc, lang)}</p>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: true }}
+              className="bg-card rounded-2xl p-6 border border-border" style={{ boxShadow: "var(--shadow-card)" }}>
+              <Star className="w-8 h-8 text-primary mb-3" />
+              <h3 className="font-display text-lg font-bold text-foreground mb-2">{t(translations.pages.prices.adventureDay.title, lang)}</h3>
+              <p className="text-muted-foreground font-body text-sm">{t(translations.pages.prices.adventureDay.desc, lang)}</p>
+            </motion.div>
+          </div>
 
           <div className="grid gap-16">
             {sections.map((s, i) => (
