@@ -68,7 +68,7 @@ const SnowboardPage = () => {
               </div>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
-                  <img src={imgPrivate} alt={d("Lezione privata snowboard Dobbiaco", "Privater Snowboardunterricht Toblach", "Private snowboard lesson Dobbiaco")} className="rounded-2xl w-full h-64 object-cover object-bottom" />
+                  <img src={imgPrivate} alt={d("Lezione privata snowboard Dobbiaco", "Privater Snowboardunterricht Toblach", "Private snowboard lesson Dobbiaco")} className="rounded-2xl w-full h-64 md:h-80 lg:h-96 object-cover object-bottom" />
                   <p className="text-muted-foreground font-body leading-relaxed">
                     {d(
                       "Lezioni individuali con maestro specializzato di snowboard per tutti i livelli. Durata: 55 minuti. Disponibili tutti i giorni dalle 9:00 alle 16:00.",
@@ -109,7 +109,7 @@ const SnowboardPage = () => {
               </div>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
-                  <img src={imgGroup} alt={d("Corso collettivo snowboard Dobbiaco", "Snowboard Gruppenkurs Toblach", "Snowboard group course Dobbiaco")} className="rounded-2xl w-full h-64 object-cover object-bottom" />
+                  <img src={imgGroup} alt={d("Corso collettivo snowboard Dobbiaco", "Snowboard Gruppenkurs Toblach", "Snowboard group course Dobbiaco")} className="rounded-2xl w-full h-64 md:h-80 lg:h-96 object-cover object-bottom" />
                   <p className="text-muted-foreground font-body leading-relaxed">
                     {d(
                       "Corsi collettivi di snowboard. Gruppi di minimo 3 persone. Dal lunedì al venerdì/sabato, ore 10:00–11:50.",

@@ -82,7 +82,7 @@ const FreeridePage = () => {
               className="bg-card rounded-2xl overflow-hidden border border-border"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
-              <img src={imgBeginners} alt={t(p.beginners.title, lang)} className="w-full h-64 object-cover object-bottom" />
+              <img src={imgBeginners} alt={t(p.beginners.title, lang)} className="w-full h-64 md:h-80 object-cover object-bottom" />
               <div className="p-8">
                 <div className="bg-alpine-sky w-12 h-12 rounded-xl flex items-center justify-center mb-4">
                   <Shield className="w-6 h-6 text-primary-foreground" />
@@ -100,7 +100,7 @@ const FreeridePage = () => {
               className="bg-card rounded-2xl overflow-hidden border border-border"
               style={{ boxShadow: "var(--shadow-card)" }}
             >
-              <img src={imgExperts} alt={t(p.experts.title, lang)} className="w-full h-64 object-cover object-bottom" />
+              <img src={imgExperts} alt={t(p.experts.title, lang)} className="w-full h-64 md:h-80 object-cover object-bottom" />
               <div className="p-8">
                 <div className="bg-alpine-gold w-12 h-12 rounded-xl flex items-center justify-center mb-4">
                   <Mountain className="w-6 h-6 text-primary-foreground" />
