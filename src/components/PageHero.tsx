@@ -10,7 +10,7 @@ interface PageHeroProps {
 const PageHero = ({ title, subtitle, image, marginTop = "mt-[10px]" }: PageHeroProps) => {
   return (
     <section
-      className={`relative h-[65vh] min-h-[500px] flex items-end justify-center overflow-hidden pb-12 ${marginTop}`}
+      className={`relative h-[75vh] min-h-[550px] flex items-end justify-center overflow-hidden pb-12 ${marginTop}`}
     >
       <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover object-center" />
       <div className="absolute inset-0" style={{ background: "var(--gradient-overlay)" }} />
