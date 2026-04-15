@@ -103,7 +103,7 @@ const KidsPage = () => {
         path="/kids"
       />
       <Navbar />
-      <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={headerImg} />
+      <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={headerImg} marginTop="mt-[60px]" />
 
       {/* Yeti Park Section */}
       <section className="alpine-section bg-secondary/30">

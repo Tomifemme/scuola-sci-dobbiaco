@@ -33,7 +33,7 @@ const FreeridePage = () => {
         path="/freeride"
       />
       <Navbar />
-      <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={imgHeader} />
+      <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={imgHeader} marginTop="mt-[30px]" />
 
       <section className="alpine-section">
         <div className="alpine-container">

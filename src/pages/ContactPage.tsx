@@ -1,13 +1,12 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import PageHero from "@/components/PageHero";
+import { motion } from "framer-motion";
 import BookingForm from "@/components/BookingForm";
 import SEO from "@/components/SEO";
-import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import instructorsImg from "@/assets/instructors.jpg";
+
 
 const ContactPage = () => {
   const { lang } = useLanguage();
@@ -30,7 +29,10 @@ const ContactPage = () => {
         path="/contact"
       />
       <Navbar />
-      <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={instructorsImg} />
+      <div className="pt-24 pb-8 text-center bg-secondary/30">
+        <h1 className="alpine-heading text-4xl md:text-5xl text-foreground mb-3">{t(p.title, lang)}</h1>
+        <p className="text-lg text-muted-foreground font-body">{t(p.subtitle, lang)}</p>
+      </div>
 
       <section className="alpine-section">
         <div className="alpine-container">
