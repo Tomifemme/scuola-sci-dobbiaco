@@ -7,7 +7,7 @@ import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, Language } from "@/i18n/translations";
-import { Snowflake, User, Users, Star, Sun, Baby, Clock } from "lucide-react";
+import { Snowflake, User, Users, Star, Sun, Baby, Clock, Tag, Percent } from "lucide-react";
 import headerImg from "@/assets/kids-header.jpg";
 import campImg from "@/assets/20200106_111652.jpg";
 import privateImg from "@/assets/kids-private.jpg";
