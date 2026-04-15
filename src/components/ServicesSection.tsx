@@ -37,7 +37,7 @@ const ServicesSection = () => {
               viewport={{ once: true }}
             >
               <Link to={service.link} className="alpine-card bg-card group cursor-pointer block">
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-80 overflow-hidden">
                   <img src={service.image} alt={service.alt[lang]!} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
                   <div className="absolute inset-0 bg-alpine-deep/20 group-hover:bg-alpine-deep/10 transition-colors" />
                 </div>

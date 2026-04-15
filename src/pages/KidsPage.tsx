@@ -156,7 +156,7 @@ const KidsPage = () => {
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-4">
-                    <img src={s.image} alt={t(s.title, lang)} className="rounded-2xl w-full h-48 object-cover" />
+                    <img src={s.image} alt={t(s.title, lang)} className="rounded-2xl w-full h-64 object-cover object-bottom" />
                     <p className="text-muted-foreground font-body leading-relaxed">{t(s.desc, lang)}</p>
                   </div>
                   <PriceTable

@@ -11,7 +11,7 @@ const HeroSection = () => {
   const n = translations.nav;
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       <img
         src={heroImg}
         alt={{ it: "Maestri della Scuola Sci Dobbiaco sulle piste delle Dolomiti", de: "Skilehrer der Skischule Toblach auf den Dolomiten-Pisten", en: "Ski School Dobbiaco instructors on the Dolomites slopes" }[lang]!}
