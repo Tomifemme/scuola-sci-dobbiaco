@@ -28,15 +28,15 @@ const GalleryPage = () => {
   }[lang]!;
 
   const images = [
-    { src: instructorsImg, caption: { it: "Il nostro team di maestri", de: "Unser Skilehrerteam", en: "Our instructor team" }[lang]! },
-    { src: lezioneImg, caption: { it: "Lezione sulle piste", de: "Unterricht auf der Piste", en: "Lesson on the slopes" }[lang]! },
-    { src: img20211218, caption: { it: "Bambini sugli sci", de: "Kinder auf Skiern", en: "Kids skiing" }[lang]! },
-    { src: kidsLessonImg, caption: { it: "Lezione per bambini", de: "Kinderskikurs", en: "Kids lesson" }[lang]! },
-    { src: imgERJZ, caption: { it: "Freeride nelle Dolomiti", de: "Freeride in den Dolomiten", en: "Freeride in the Dolomites" }[lang]! },
-    { src: img5705, caption: { it: "Snowboard", de: "Snowboard", en: "Snowboard" }[lang]! },
-    { src: img5854, caption: { it: "Lezione privata", de: "Privatunterricht", en: "Private lesson" }[lang]! },
-    { src: scuolaSci1Img, caption: { it: "La nostra scuola", de: "Unsere Schule", en: "Our school" }[lang]! },
-    { src: imgOTBA, caption: { it: "Dolomiti panorama", de: "Dolomiten Panorama", en: "Dolomites panorama" }[lang]! },
+    instructorsImg,
+    lezioneImg,
+    img20211218,
+    kidsLessonImg,
+    imgERJZ,
+    img5705,
+    img5854,
+    scuolaSci1Img,
+    imgOTBA,
   ];
 
   const navigate = (dir: number) => {
@@ -76,16 +76,11 @@ const GalleryPage = () => {
                 onClick={() => setSelectedIndex(i)}
               >
                 <img
-                  src={img.src}
-                  alt={img.caption}
+                  src={img}
+                  alt=""
                   className="w-full object-cover transition-transform duration-500 group-hover:scale-110"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <p className="absolute bottom-4 left-4 text-white font-display font-semibold text-sm">
-                    {img.caption}
-                  </p>
-                </div>
               </motion.div>
             ))}
           </div>
@@ -125,14 +120,11 @@ const GalleryPage = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
-              src={images[selectedIndex].src}
-              alt={images[selectedIndex].caption}
+              src={images[selectedIndex]}
+              alt=""
               className="max-h-[85vh] max-w-[90vw] object-contain rounded-lg"
               onClick={(e) => e.stopPropagation()}
             />
-            <p className="absolute bottom-6 text-white font-display text-lg">
-              {images[selectedIndex].caption}
-            </p>
           </motion.div>
         )}
       </AnimatePresence>
