@@ -4,11 +4,12 @@ interface PageHeroProps {
   title: string;
   subtitle: string;
   image: string;
+  marginTop?: string;
 }
 
-const PageHero = ({ title, subtitle, image }: PageHeroProps) => {
+const PageHero = ({ title, subtitle, image, marginTop = "mt-[72px]" }: PageHeroProps) => {
   return (
-    <section className="relative h-[50vh] min-h-[400px] flex items-end justify-center overflow-hidden pb-12 mt-[72px]">
+    <section className={`relative h-[50vh] min-h-[400px] flex items-end justify-center overflow-hidden pb-12 ${marginTop}`}>
       <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover object-top" />
       <div className="absolute inset-0" style={{ background: "var(--gradient-overlay)" }} />
       <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
