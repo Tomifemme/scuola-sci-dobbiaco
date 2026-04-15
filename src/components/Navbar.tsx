@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect, useCallback } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
@@ -13,7 +13,29 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const { lang } = useLanguage();
   const location = useLocation();
+  const navigate = useNavigate();
   const n = translations.nav;
+
+  const handleNavClick = useCallback((href: string) => {
+    setIsOpen(false);
+    setOpenDropdown(null);
+    const [path, hash] = href.split("#");
+    const targetPath = path || location.pathname;
+    if (location.pathname === targetPath && hash) {
+      const el = document.getElementById(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+        return;
+      }
+    }
+    navigate(href);
+    if (hash) {
+      setTimeout(() => {
+        const el = document.getElementById(hash);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 300);
+    }
+  }, [location.pathname, navigate]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -106,13 +128,13 @@ const Navbar = () => {
                       className="absolute top-full left-0 mt-0 bg-card rounded-lg shadow-lg border border-border py-2 min-w-[200px]"
                     >
                       {item.children.map((child) => (
-                        <Link
+                        <button
                           key={child.label}
-                          to={child.href}
-                          className="block px-4 py-2 text-sm text-card-foreground hover:bg-secondary transition-colors"
+                          onClick={() => handleNavClick(child.href)}
+                          className="block w-full text-left px-4 py-2 text-sm text-card-foreground hover:bg-secondary transition-colors"
                         >
                           {child.label}
-                        </Link>
+                        </button>
                       ))}
                     </motion.div>
                   )}
@@ -160,14 +182,13 @@ const Navbar = () => {
                   {item.children && (
                     <div className="pl-6 space-y-1">
                       {item.children.map((child) => (
-                        <Link
+                        <button
                           key={child.label}
-                          to={child.href}
-                          onClick={() => setIsOpen(false)}
-                          className="block px-4 py-2 text-sm text-alpine-ice/70 hover:text-primary-foreground transition-colors"
+                          onClick={() => handleNavClick(child.href)}
+                          className="block w-full text-left px-4 py-2 text-sm text-alpine-ice/70 hover:text-primary-foreground transition-colors"
                         >
                           {child.label}
-                        </Link>
+                        </button>
                       ))}
                     </div>
                   )}
