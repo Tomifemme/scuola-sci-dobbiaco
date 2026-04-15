@@ -1,5 +1,4 @@
 import Navbar from "@/components/Navbar";
-import { useScrollToHash } from "@/hooks/useScrollToHash";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import PriceTable, { PriceRow } from "@/components/PriceTable";
@@ -14,7 +13,6 @@ import imgPrivate from "@/assets/18041813380098.jpg";
 import imgGroup from "@/assets/snowboard-group.jpg";
 
 const SnowboardPage = () => {
-  useScrollToHash();
   const { lang } = useLanguage();
   const p = translations.pages.snowboard;
   const d = (it: string, de: string, en: string) => ({ it, de, en }[lang]!);
