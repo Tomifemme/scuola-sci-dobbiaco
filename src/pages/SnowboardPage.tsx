@@ -9,7 +9,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, tArray, Language } from "@/i18n/translations";
 import { Check, User, Users, Clock } from "lucide-react";
 import imgHeader from "@/assets/18041813380098.jpg";
-import imgPrivate from "@/assets/snowboard-private.jpg";
+import imgPrivate from "@/assets/18041813380098.jpg";
 import imgGroup from "@/assets/snowboard-group.jpg";
 
 const SnowboardPage = () => {
@@ -33,7 +33,7 @@ const SnowboardPage = () => {
         path="/snowboard"
       />
       <Navbar />
-      <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={imgHeader} />
+      <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={imgHeader} marginTop="mt-[30px]" />
 
       <section className="alpine-section">
         <div className="alpine-container">

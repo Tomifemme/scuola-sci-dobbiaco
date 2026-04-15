@@ -102,7 +102,7 @@ const LessonsPage = () => {
         path="/lessons"
       />
       <Navbar />
-      <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={lezioneImg} />
+      <PageHero title={t(p.title, lang)} subtitle={t(p.subtitle, lang)} image={lezioneImg} marginTop="mt-[50px]" />
 
       <section className="alpine-section">
         <div className="alpine-container">
