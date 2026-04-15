@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import { useScrollToHash } from "@/hooks/useScrollToHash";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import PriceTable, { PriceRow } from "@/components/PriceTable";
@@ -16,6 +17,7 @@ import fullDayImg from "@/assets/kids-full-day.jpg";
 import imgERJZ from "@/assets/ERJZ9913.JPG";
 
 const KidsPage = () => {
+  useScrollToHash();
   const { lang } = useLanguage();
   const p = translations.pages.kids;
   const d = (it: string, de: string, en: string) => ({ it, de, en }[lang]!);
