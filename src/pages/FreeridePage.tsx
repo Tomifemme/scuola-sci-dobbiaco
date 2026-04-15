@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import { useScrollToHash } from "@/hooks/useScrollToHash";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import PriceTable from "@/components/PriceTable";
@@ -13,6 +14,7 @@ import imgBeginners from "@/assets/DJI_20260320120749_0039_1D.JPG";
 import imgExperts from "@/assets/IMG_6020.JPG";
 
 const FreeridePage = () => {
+  useScrollToHash();
   const { lang } = useLanguage();
   const p = translations.pages.freeride;
   const d = (it: string, de: string, en: string) => ({ it, de, en }[lang]!);

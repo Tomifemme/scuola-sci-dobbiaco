@@ -4,17 +4,17 @@ import PageHero from "@/components/PageHero";
 import PriceTable, { PriceRow } from "@/components/PriceTable";
 import SeasonLegend from "@/components/SeasonLegend";
 import SEO from "@/components/SEO";
-import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { translations, t, Language } from "@/i18n/translations";
-import { Users, User, Zap, Calendar, Clock, Star, Tag, Percent } from "lucide-react";
-import lezioneImg from "@/assets/lezione.jpg";
-import privateImg from "@/assets/lezione.jpg";
-import groupImg from "@/assets/IMG_5705.JPG";
-import superImg from "@/assets/20190114_111744.jpg";
-import weekendImg from "@/assets/IMG_5854.JPG";
+import { translations, t } from "@/i18n/translations";
+import headerImg from "@/assets/20211218_103945.jpg";
+import privateImg from "@/assets/collettive1.jpeg";
+import groupImg from "@/assets/lezione.jpeg";
+import superImg from "@/assets/20211218_103945.jpg";
+import weekendImg from "@/assets/lezione.jpeg";
+import { useScrollToHash } from "@/hooks/useScrollToHash";
 
 const LessonsPage = () => {
+  useScrollToHash();
   const { lang } = useLanguage();
   const p = translations.pages.lessons;
   const d = (it: string, de: string, en: string) => ({ it, de, en }[lang]!);
