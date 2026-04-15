@@ -8,10 +8,10 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t, Language } from "@/i18n/translations";
 import { User, Clock, Users, Zap, Star, Calendar, Tag, Percent } from "lucide-react";
 import { motion } from "framer-motion";
-import headerImg from "@/assets/20211218_103945.jpg";
+import headerImg from "@/assets/20211218_113244.jpg";
 import privateImg from "@/assets/collettive1.jpeg";
 import groupImg from "@/assets/lezione.jpeg";
-import superImg from "@/assets/20211218_103945.jpg";
+import superImg from "@/assets/20211218_113244.jpg";
 import weekendImg from "@/assets/lezione.jpeg";
 import { useScrollToHash } from "@/hooks/useScrollToHash";
 
