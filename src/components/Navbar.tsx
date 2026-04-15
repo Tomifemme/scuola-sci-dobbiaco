@@ -13,7 +13,23 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const { lang } = useLanguage();
   const location = useLocation();
+  const navigate = useNavigate();
   const n = translations.nav;
+
+  const handleHashClick = useCallback((e: React.MouseEvent, href: string) => {
+    const [path, hash] = href.split("#");
+    if (hash && location.pathname === path) {
+      e.preventDefault();
+      const el = document.getElementById(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        window.history.replaceState(null, "", href);
+      }
+    } else if (hash) {
+      // Navigate to new page, useScrollToHash will handle scrolling
+    }
+    setOpenDropdown(null);
+  }, [location.pathname]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
