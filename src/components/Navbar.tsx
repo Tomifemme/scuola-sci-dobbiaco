@@ -128,13 +128,13 @@ const Navbar = () => {
                       className="absolute top-full left-0 mt-0 bg-card rounded-lg shadow-lg border border-border py-2 min-w-[200px]"
                     >
                       {item.children.map((child) => (
-                        <Link
+                        <button
                           key={child.label}
-                          to={child.href}
-                          className="block px-4 py-2 text-sm text-card-foreground hover:bg-secondary transition-colors"
+                          onClick={() => handleNavClick(child.href)}
+                          className="block w-full text-left px-4 py-2 text-sm text-card-foreground hover:bg-secondary transition-colors"
                         >
                           {child.label}
-                        </Link>
+                        </button>
                       ))}
                     </motion.div>
                   )}
@@ -182,14 +182,13 @@ const Navbar = () => {
                   {item.children && (
                     <div className="pl-6 space-y-1">
                       {item.children.map((child) => (
-                        <Link
+                        <button
                           key={child.label}
-                          to={child.href}
-                          onClick={() => setIsOpen(false)}
-                          className="block px-4 py-2 text-sm text-alpine-ice/70 hover:text-primary-foreground transition-colors"
+                          onClick={() => handleNavClick(child.href)}
+                          className="block w-full text-left px-4 py-2 text-sm text-alpine-ice/70 hover:text-primary-foreground transition-colors"
                         >
                           {child.label}
-                        </Link>
+                        </button>
                       ))}
                     </div>
                   )}
