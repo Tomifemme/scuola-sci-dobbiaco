@@ -27,33 +27,33 @@ const PriceTable = ({ icon: Icon, title, rows, note, delay = 0 }: PriceTableProp
       className="bg-card rounded-2xl overflow-hidden border border-border"
       style={{ boxShadow: "var(--shadow-card)" }}
     >
-      <div className="p-4 border-b border-border" style={{ background: "var(--gradient-alpine)" }}>
+      <div className="p-5 border-b border-border" style={{ background: "var(--gradient-alpine)" }}>
         <div className="flex items-center gap-3">
-          <Icon className="w-5 h-5 text-primary-foreground" />
-          <h3 className="font-display text-sm font-bold text-primary-foreground">{title}</h3>
+          <Icon className="w-6 h-6 text-primary-foreground" />
+          <h3 className="font-display text-base font-bold text-primary-foreground">{title}</h3>
         </div>
       </div>
-      <div className="grid grid-cols-3 px-4 py-2 bg-secondary/50 border-b border-border text-xs font-semibold text-muted-foreground">
+      <div className="grid grid-cols-3 px-5 py-3 bg-secondary/50 border-b border-border text-sm font-semibold text-muted-foreground">
         <span></span>
-        <span className="text-center flex items-center justify-center gap-1">
-          <Sun className="w-3 h-3 text-destructive" /> {highLabel}
+        <span className="text-center flex items-center justify-center gap-1.5">
+          <Sun className="w-4 h-4 text-destructive" /> {highLabel}
         </span>
-        <span className="text-center flex items-center justify-center gap-1">
-          <Snowflake className="w-3 h-3 text-primary" /> {lowLabel}
+        <span className="text-center flex items-center justify-center gap-1.5">
+          <Snowflake className="w-4 h-4 text-primary" /> {lowLabel}
         </span>
       </div>
       <div className="divide-y divide-border">
         {rows.map((row, j) => (
-          <div key={j} className="grid grid-cols-3 items-center px-4 py-2.5">
-            <span className="text-foreground font-body text-xs">{row.label}</span>
-            <span className="font-display font-bold text-destructive text-center text-xs">{row.high}</span>
-            <span className="font-display font-bold text-primary text-center text-xs">{row.low}</span>
+          <div key={j} className="grid grid-cols-3 items-center px-5 py-3.5">
+            <span className="text-foreground font-body text-sm">{row.label}</span>
+            <span className="font-display font-bold text-destructive text-center text-sm">{row.high}</span>
+            <span className="font-display font-bold text-primary text-center text-sm">{row.low}</span>
           </div>
         ))}
       </div>
       {note && (
-        <div className="px-4 py-2 bg-secondary/30 border-t border-border">
-          <p className="text-xs text-muted-foreground italic">{note}</p>
+        <div className="px-5 py-3 bg-secondary/30 border-t border-border">
+          <p className="text-sm text-muted-foreground italic">{note}</p>
         </div>
       )}
     </motion.div>
