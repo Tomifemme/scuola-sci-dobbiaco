@@ -42,6 +42,7 @@ const App = () => (
               <Route path="/en/*" element={<Navigate to="/" replace />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
+            <ChatWidget />
           </BrowserRouter>
         </TooltipProvider>
       </LanguageProvider>
