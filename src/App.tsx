@@ -15,6 +15,7 @@ import SnowboardPage from "./pages/SnowboardPage";
 import ContactPage from "./pages/ContactPage";
 import GalleryPage from "./pages/GalleryPage";
 import NotFound from "./pages/NotFound";
+import ChatWidget from "./components/ChatWidget";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +42,7 @@ const App = () => (
               <Route path="/en/*" element={<Navigate to="/" replace />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
+            <ChatWidget />
           </BrowserRouter>
         </TooltipProvider>
       </LanguageProvider>
