@@ -102,7 +102,7 @@ const Navbar = () => {
             </span>
           </Link>
 
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-0.5 xl:gap-1 flex-nowrap whitespace-nowrap">
             {navItems.map((item) => (
               <div
                 key={item.label}
@@ -115,7 +115,7 @@ const Navbar = () => {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="ml-1 px-5 py-2.5 rounded-lg text-sm font-semibold text-primary-foreground transition-all hover:opacity-90 hover:scale-105 flex items-center gap-1"
+                    className="ml-1 px-3 py-2 rounded-lg text-xs xl:text-sm font-semibold text-primary-foreground transition-all hover:opacity-90 hover:scale-105 flex items-center gap-1 whitespace-nowrap"
                     style={{ background: "var(--gradient-alpine)" }}
                   >
                     {item.label}
@@ -124,7 +124,7 @@ const Navbar = () => {
                 ) : (
                   <Link
                     to={item.href}
-                    className={`px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 ${
+                    className={`px-2 py-2 text-xs xl:text-sm font-medium transition-colors flex items-center gap-1 whitespace-nowrap ${
                       location.pathname === item.href
                         ? "text-alpine-sky"
                         : "text-alpine-ice/90 hover:text-primary-foreground"
@@ -160,7 +160,7 @@ const Navbar = () => {
             <LanguageSwitcher />
             <Link
               to="/contact"
-              className="ml-3 px-5 py-2.5 rounded-lg text-sm font-semibold text-primary-foreground transition-all hover:opacity-90 hover:scale-105"
+              className="ml-1 xl:ml-3 px-3 py-2 rounded-lg text-xs xl:text-sm font-semibold text-primary-foreground transition-all hover:opacity-90 hover:scale-105 whitespace-nowrap"
               style={{ background: "var(--gradient-alpine)" }}
             >
               {t(n.bookNow, lang)}
