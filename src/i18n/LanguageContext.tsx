@@ -22,13 +22,24 @@ const detectLang = (): Language => {
   return "it";
 };
 
-export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [lang, setLang] = useState<Language>("it");
+export const LanguageProvider = ({
+  children,
+  forced,
+}: {
+  children: ReactNode;
+  /** When set (localized /de, /en routes), the language is fixed by the URL. */
+  forced?: Language;
+}) => {
+  const [lang, setLang] = useState<Language>(forced ?? "it");
 
   useEffect(() => {
+    if (forced) {
+      setLang(forced);
+      return;
+    }
     const detected = detectLang();
     if (detected !== "it") setLang(detected);
-  }, []);
+  }, [forced]);
 
   const handleSetLang = (newLang: Language) => {
     setLang(newLang);

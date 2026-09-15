@@ -7,6 +7,7 @@ import {
   Scripts,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
 } from "@tanstack/react-router";
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -95,11 +96,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       { rel: "icon", type: "image/png", sizes: "192x192", href: "/logo-192.png" },
       { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
-      { rel: "canonical", href: SITE_URL },
-      { rel: "alternate", hrefLang: "it", href: SITE_URL },
-      { rel: "alternate", hrefLang: "de", href: SITE_URL },
-      { rel: "alternate", hrefLang: "en", href: SITE_URL },
-      { rel: "alternate", hrefLang: "x-default", href: SITE_URL },
     ],
     scripts: [{ type: "application/ld+json", children: JSON_LD }],
   }),
@@ -110,8 +106,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const htmlLang = /^\/de(\/|$)/.test(pathname) ? "de" : /^\/en(\/|$)/.test(pathname) ? "en" : "it";
   return (
-    <html lang="it" suppressHydrationWarning>
+    <html lang={htmlLang} suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>

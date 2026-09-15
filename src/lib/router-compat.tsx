@@ -134,10 +134,17 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(function Link(
   ref,
 ) {
   const { pathname, search, hash } = parseTo(to);
+  const loc = tsLocation();
+  // Keep in-app links inside the current language version (/de, /en).
+  const langPrefix = /^\/(de|en)(?=\/|$)/.exec(loc.pathname)?.[0] ?? "";
+  const finalPath =
+    langPrefix && pathname.startsWith("/") && !new RegExp(`^${langPrefix}(/|$)`).test(pathname)
+      ? `${langPrefix}${pathname === "/" ? "" : pathname}`
+      : pathname;
   return (
     <TSLink
       ref={ref as never}
-      to={pathname as never}
+      to={finalPath as never}
       {...(search ? { search: search as never } : {})}
       {...(hash ? { hash } : {})}
       {...(replace !== undefined ? { replace } : {})}
