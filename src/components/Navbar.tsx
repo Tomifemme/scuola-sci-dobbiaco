@@ -115,7 +115,8 @@ const Navbar = () => {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 text-alpine-ice/90 hover:text-primary-foreground"
+                    className="ml-1 px-5 py-2.5 rounded-lg text-sm font-semibold text-primary-foreground transition-all hover:opacity-90 hover:scale-105 flex items-center gap-1"
+                    style={{ background: "var(--gradient-alpine)" }}
                   >
                     {item.label}
                     <ExternalLink className="w-3 h-3" />
