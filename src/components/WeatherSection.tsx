@@ -33,7 +33,7 @@ const WeatherSection = () => {
               {{ it: "Meteo Dobbiaco", de: "Wetter Toblach", en: "Dobbiaco Weather" }[lang]}
             </h3>
             <iframe
-              src="https://www.meteoblue.com/en/weather/widget/daily?geoloc=detect&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&precipunit=MILLIMETER&coloured=coloured&pictoicon=0&pictoicon=1&maxtemperature=0&maxtemperature=1&mintemperature=0&mintemperature=1&windspeed=0&windgust=0&winddirection=0&uv=0&humidity=0&precipitation=0&precipitation=1&precipitationprobability=0&precipitationprobability=1&spot=0&pressure=0&layout=light&location_url=https%3A%2F%2Fwww.meteoblue.com%2Fen%2Fweather%2Fweek%2Fdobbiaco_italy_3177340&location_mainUrl=https%3A%2F%2Fwww.meteoblue.com%2Fen%2Fweather%2Fweek%2Fdobbiaco_italy_3177340"
+              src="https://www.meteoblue.com/en/weather/widget/daily?geoloc=fixed&lat=46.7351&lon=12.2225&asl=1256&tz=Europe%2FRome&city=Dobbiaco&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&precipunit=MILLIMETER&coloured=coloured&pictoicon=0&pictoicon=1&maxtemperature=0&maxtemperature=1&mintemperature=0&mintemperature=1&windspeed=0&windgust=0&winddirection=0&uv=0&humidity=0&precipitation=0&precipitation=1&precipitationprobability=0&precipitationprobability=1&spot=0&pressure=0&layout=light&location_url=https%3A%2F%2Fwww.meteoblue.com%2Fen%2Fweather%2Fweek%2Fdobbiaco_italy_3177340&location_mainUrl=https%3A%2F%2Fwww.meteoblue.com%2Fen%2Fweather%2Fweek%2Fdobbiaco_italy_3177340"
               className="w-full border-0 rounded-lg"
               height="220"
               loading="lazy"
