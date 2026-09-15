@@ -110,17 +110,29 @@ const Navbar = () => {
                 onMouseEnter={() => item.children && setOpenDropdown(item.label)}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <Link
-                  to={item.href}
-                  className={`px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 ${
-                    location.pathname === item.href
-                      ? "text-alpine-sky"
-                      : "text-alpine-ice/90 hover:text-primary-foreground"
-                  }`}
-                >
-                  {item.label}
-                  {item.children && <ChevronDown className="w-3 h-3" />}
-                </Link>
+                {item.external ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 text-alpine-ice/90 hover:text-primary-foreground"
+                  >
+                    {item.label}
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                ) : (
+                  <Link
+                    to={item.href}
+                    className={`px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 ${
+                      location.pathname === item.href
+                        ? "text-alpine-sky"
+                        : "text-alpine-ice/90 hover:text-primary-foreground"
+                    }`}
+                  >
+                    {item.label}
+                    {item.children && <ChevronDown className="w-3 h-3" />}
+                  </Link>
+                )}
                 <AnimatePresence>
                   {item.children && openDropdown === item.label && (
                     <motion.div
