@@ -1,9 +1,11 @@
-import { Outlet, createFileRoute, redirect } from "@tanstack/react-router";
+import { Outlet, createFileRoute } from "@tanstack/react-router";
+import { LanguageProvider } from "@/i18n/LanguageContext";
 
-// Legacy old-site URL: /en and /en/* redirect to the homepage.
+// English site version: /en and /en/*
 export const Route = createFileRoute("/en")({
-  beforeLoad: () => {
-    throw redirect({ to: "/", replace: true });
-  },
-  component: Outlet,
+  component: () => (
+    <LanguageProvider forced="en">
+      <Outlet />
+    </LanguageProvider>
+  ),
 });
