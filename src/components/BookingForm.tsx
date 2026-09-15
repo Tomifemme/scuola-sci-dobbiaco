@@ -100,7 +100,7 @@ const BookingForm = () => {
               value={formData.courseType}
               onChange={(e) => update("courseType", e.target.value)}
               required
-              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring"
             >
               <option value="">--</option>
               {labels.courses.map((c) => (
@@ -118,7 +118,7 @@ const BookingForm = () => {
               value={formData.level}
               onChange={(e) => update("level", e.target.value)}
               required
-              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring"
             >
               <option value="">--</option>
               {labels.levels.map((l) => (
@@ -133,7 +133,7 @@ const BookingForm = () => {
             value={formData.message}
             onChange={(e) => update("message", e.target.value)}
             rows={3}
-            className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring resize-none"
+            className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring resize-none"
           />
         </div>
         <Button type="submit" className="w-full gap-2" style={{ background: "var(--gradient-alpine)" }}>

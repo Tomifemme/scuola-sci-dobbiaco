@@ -1,0 +1,23 @@
+{
+  "customizations": [
+    { "token": "Google Fonts import (Playfair Display, Source Sans 3)", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--background/--foreground/--card/--popover/--primary/--secondary/--muted/--accent/--destructive/--border/--input/--ring semantic palette", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--radius: 0.75rem", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--alpine-deep", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--alpine-sky", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--alpine-snow", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--alpine-ice", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--alpine-gold", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--alpine-forest", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--font-display / --font-body (font-display, font-body utilities)", "source": "src/index.css + tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "--shadow-card / --shadow-elevated / --shadow-hero", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--gradient-alpine / --gradient-sky / --gradient-overlay / --gradient-overlay-hero / --gradient-gold", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "body font-family + h1-h6 display font base rules", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": ".alpine-section / .alpine-container / .alpine-heading / .alpine-subheading / .alpine-card component classes", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": ".text-gradient-alpine utility", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": ".hero-text-shadow utility", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": ".hero-scrim utility", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "alpine-* color utilities (bg-alpine-deep etc.)", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "fade-in-up / fade-in / accordion keyframes + animations", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" }
+  ]
+}

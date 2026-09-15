@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition — Scuola Sci Dobbiaco alpine theme,
+ * ported from the pre-migration src/index.css + tailwind.config.ts.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-alpine-deep: var(--alpine-deep);
+  --color-alpine-sky: var(--alpine-sky);
+  --color-alpine-snow: var(--alpine-snow);
+  --color-alpine-ice: var(--alpine-ice);
+  --color-alpine-gold: var(--alpine-gold);
+  --color-alpine-forest: var(--alpine-forest);
+}
+
+@theme {
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Source Sans 3', sans-serif;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-fade-in-up: fade-in-up 0.6s ease-out forwards;
+  --animate-fade-in: fade-in 0.8s ease-out forwards;
+
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
+  }
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
+  }
+  @keyframes fade-in-up {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+}
+
+:root {
+  --radius: 0.75rem;
+
+  --background: hsl(210 30% 98%);
+  --foreground: hsl(215 30% 12%);
+
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(215 30% 12%);
+
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(215 30% 12%);
+
+  --primary: hsl(210 80% 42%);
+  --primary-foreground: hsl(0 0% 100%);
+
+  --secondary: hsl(210 20% 94%);
+  --secondary-foreground: hsl(215 30% 12%);
+
+  --muted: hsl(210 15% 93%);
+  --muted-foreground: hsl(215 12% 48%);
+
+  --accent: hsl(205 85% 48%);
+  --accent-foreground: hsl(0 0% 100%);
+
+  --destructive: hsl(0 84.2% 60.2%);
+  --destructive-foreground: hsl(210 40% 98%);
+
+  --border: hsl(210 20% 90%);
+  --input: hsl(210 20% 90%);
+  --ring: hsl(210 80% 42%);
+
+  --alpine-deep: hsl(215 45% 18%);
+  --alpine-sky: hsl(205 85% 58%);
+  --alpine-snow: hsl(210 30% 98%);
+  --alpine-ice: hsl(200 40% 92%);
+  --alpine-gold: hsl(205 80% 52%);
+  --alpine-forest: hsl(155 35% 32%);
+
+  --shadow-card: 0 4px 24px -4px hsl(210 30% 12% / 0.08);
+  --shadow-elevated: 0 12px 40px -8px hsl(210 30% 12% / 0.12);
+  --shadow-hero: 0 20px 60px -12px hsl(210 80% 42% / 0.2);
+
+  --gradient-alpine: linear-gradient(135deg, hsl(210 80% 42%), hsl(205 85% 58%));
+  --gradient-sky: linear-gradient(180deg, hsl(205 85% 58%), hsl(210 80% 42%));
+  --gradient-overlay: linear-gradient(180deg, hsl(215 45% 18% / 0.4), hsl(215 45% 18% / 0.15));
+  --gradient-overlay-hero: linear-gradient(180deg, hsl(215 45% 18% / 0.5), hsl(215 45% 18% / 0.45));
+  --gradient-gold: linear-gradient(135deg, hsl(205 80% 45%), hsl(210 85% 55%));
+
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+
+  --sidebar: hsl(0 0% 98%);
+  --sidebar-foreground: hsl(240 5.3% 26.1%);
+  --sidebar-primary: hsl(240 5.9% 10%);
+  --sidebar-primary-foreground: hsl(0 0% 98%);
+  --sidebar-accent: hsl(240 4.8% 95.9%);
+  --sidebar-accent-foreground: hsl(240 5.9% 10%);
+  --sidebar-border: hsl(220 13% 91%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .alpine-section {
+    @apply py-16 md:py-24 px-4;
+  }
+
+  .alpine-container {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .alpine-heading {
+    font-family: var(--font-display);
+    @apply text-3xl md:text-5xl font-bold tracking-tight;
+  }
+
+  .alpine-subheading {
+    font-family: var(--font-display);
+    @apply text-xl md:text-2xl font-semibold;
+  }
+
+  .alpine-card {
+    @apply rounded-xl overflow-hidden transition-all duration-300;
+    box-shadow: var(--shadow-card);
+  }
+
+  .alpine-card:hover {
+    box-shadow: var(--shadow-elevated);
+    transform: translateY(-4px);
+  }
+}
+
+@layer utilities {
+  .text-gradient-alpine {
+    background: var(--gradient-alpine);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-text-shadow {
+    text-shadow: 0 2px 12px hsl(215 45% 18% / 0.7), 0 1px 3px hsl(215 45% 18% / 0.8);
+  }
+
+  .hero-scrim {
+    background: radial-gradient(ellipse 70% 60% at 50% 50%, hsl(215 45% 18% / 0.45), transparent 75%);
+  }
+}

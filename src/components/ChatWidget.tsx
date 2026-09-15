@@ -49,7 +49,7 @@ const ChatWidget = () => {
 
     try {
       const webhookUrl =
-        import.meta.env.VITE_N8N_WEBHOOK_URL ||
+        import.meta.env["VITE_N8N_WEBHOOK_URL"] ||
         "https://tomifemme.app.n8n.cloud/webhook/dceb4d90-ab4a-490c-80ed-75b12f5fa2be";
 
       if (!webhookUrl) {
