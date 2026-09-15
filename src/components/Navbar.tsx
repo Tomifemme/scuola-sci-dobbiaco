@@ -46,6 +46,8 @@ const Navbar = () => {
   const lessonsAdultiLabel = { it: "Lezioni Adulti", de: "Erwachsenenkurse", en: "Adult Lessons" }[lang]!;
   const lezioniBambiniLabel = { it: "Lezioni Bambini", de: "Kinderkurse", en: "Kids Lessons" }[lang]!;
 
+  const skiRentalLabel = { it: "Noleggio Sci", de: "Skiverleih", en: "Ski Rental" }[lang]!;
+
   const navItems = [
     { label: t(n.home, lang), href: "/" },
     {
@@ -86,6 +88,7 @@ const Navbar = () => {
     },
     { label: { it: "Galleria", de: "Galerie", en: "Gallery" }[lang]!, href: "/gallery" },
     { label: t(n.contact, lang), href: "/contact" },
+    { label: skiRentalLabel, href: "https://www.ski-rent.it/it/", external: true },
   ];
 
   return (
