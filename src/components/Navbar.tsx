@@ -115,8 +115,7 @@ const Navbar = () => {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="ml-1 px-3 py-2 rounded-lg text-xs xl:text-sm font-semibold text-primary-foreground transition-all hover:opacity-90 hover:scale-105 flex items-center gap-1 whitespace-nowrap"
-                    style={{ background: "var(--gradient-alpine)" }}
+                    className="px-2 py-2 text-xs xl:text-sm font-medium transition-colors flex items-center gap-1 whitespace-nowrap text-alpine-ice/90 hover:text-primary-foreground"
                   >
                     {item.label}
                     <ExternalLink className="w-3 h-3" />
@@ -201,10 +200,10 @@ const Navbar = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => setIsOpen(false)}
-                      className="block mx-4 mt-4 px-5 py-3 rounded-lg text-sm font-semibold text-primary-foreground text-center"
-                      style={{ background: "var(--gradient-alpine)" }}
+                      className="block px-4 py-3 text-primary-foreground/90 hover:text-primary-foreground font-medium transition-colors flex items-center gap-1"
                     >
                       {item.label}
+                      <ExternalLink className="w-3 h-3" />
                     </a>
                   ) : (
                     <Link
