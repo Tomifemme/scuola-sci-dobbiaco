@@ -49,10 +49,10 @@ export function useNavigate(): NavigateFn {
     const { pathname, search, hash } = parseTo(to);
     tsNav({
       to: pathname,
-      search: search as never,
-      hash,
-      state: options?.state as never,
-      replace: options?.replace,
+      ...(search ? { search: search as never } : {}),
+      ...(hash ? { hash } : {}),
+      ...(options?.state !== undefined ? { state: options.state as never } : {}),
+      ...(options?.replace !== undefined ? { replace: options.replace } : {}),
     });
   }, [tsNav, router]) as NavigateFn;
 }
