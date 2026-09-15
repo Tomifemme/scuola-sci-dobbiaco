@@ -7,6 +7,7 @@ import {
   Scripts,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
 } from "@tanstack/react-router";
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -105,8 +106,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const htmlLang = /^\/de(\/|$)/.test(pathname) ? "de" : /^\/en(\/|$)/.test(pathname) ? "en" : "it";
   return (
-    <html lang="it" suppressHydrationWarning>
+    <html lang={htmlLang} suppressHydrationWarning>
       <head>
         <HeadContent />
       </head>
