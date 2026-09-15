@@ -17,9 +17,10 @@ const HeroSection = () => {
         alt={{ it: "Maestri della Scuola Sci Dobbiaco sulle piste delle Dolomiti", de: "Skilehrer der Skischule Toblach auf den Dolomiten-Pisten", en: "Ski School Dobbiaco instructors on the Dolomites slopes" }[lang]!}
         className="absolute inset-0 w-full h-full object-cover"
       />
-      <div className="absolute inset-0" style={{ background: "var(--gradient-overlay)" }} />
+      <div className="absolute inset-0" style={{ background: "var(--gradient-overlay-hero)" }} />
+      <div className="absolute inset-0 hero-scrim" />
 
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto hero-text-shadow">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
