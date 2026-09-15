@@ -16,9 +16,9 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     const stored = localStorage.getItem("ski-school-lang");
     if (stored === "it" || stored === "de" || stored === "en") return stored;
     const browser = (navigator.languages?.[0] || navigator.language || "").toLowerCase();
-    if (browser.startsWith("it")) return "it";
+    if (browser.startsWith("de")) return "de";
     if (browser.startsWith("en")) return "en";
-    return "de";
+    return "it";
   });
 
   const handleSetLang = (newLang: Language) => {
