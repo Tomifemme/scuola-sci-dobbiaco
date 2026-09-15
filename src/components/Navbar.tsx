@@ -194,13 +194,25 @@ const Navbar = () => {
             <div className="py-4 px-4 space-y-1 max-h-[80vh] overflow-y-auto">
               {navItems.map((item) => (
                 <div key={item.label}>
-                  <Link
-                    to={item.href}
-                    onClick={() => !item.children && setIsOpen(false)}
-                    className="block px-4 py-3 text-primary-foreground/90 hover:text-primary-foreground font-medium transition-colors"
-                  >
-                    {item.label}
-                  </Link>
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsOpen(false)}
+                      className="block px-4 py-3 text-primary-foreground/90 hover:text-primary-foreground font-medium transition-colors"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      onClick={() => !item.children && setIsOpen(false)}
+                      className="block px-4 py-3 text-primary-foreground/90 hover:text-primary-foreground font-medium transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                   {item.children && (
                     <div className="pl-6 space-y-1">
                       {item.children.map((child) => (
@@ -216,14 +228,6 @@ const Navbar = () => {
                   )}
                 </div>
               ))}
-              <Link
-                to="/contact"
-                onClick={() => setIsOpen(false)}
-                className="block mx-4 mt-4 px-5 py-3 rounded-lg text-sm font-semibold text-primary-foreground text-center"
-                style={{ background: "var(--gradient-alpine)" }}
-              >
-                {t(n.bookNow, lang)}
-              </Link>
             </div>
           </motion.div>
         )}
