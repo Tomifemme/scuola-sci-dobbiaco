@@ -201,7 +201,8 @@ const Navbar = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => setIsOpen(false)}
-                      className="block px-4 py-3 text-primary-foreground/90 hover:text-primary-foreground font-medium transition-colors"
+                      className="block mx-4 mt-4 px-5 py-3 rounded-lg text-sm font-semibold text-primary-foreground text-center"
+                      style={{ background: "var(--gradient-alpine)" }}
                     >
                       {item.label}
                     </a>
