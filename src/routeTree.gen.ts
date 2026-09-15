@@ -19,8 +19,6 @@ import { Route as ItRouteImport } from './routes/it'
 import { Route as KidsRouteImport } from './routes/kids'
 import { Route as LessonsRouteImport } from './routes/lessons'
 import { Route as SnowboardRouteImport } from './routes/snowboard'
-import { Route as DeSplatRouteImport } from './routes/de/$'
-import { Route as EnSplatRouteImport } from './routes/en/$'
 import { Route as ItSplatRouteImport } from './routes/it/$'
 
 const IndexRoute = IndexRouteImport.update({
@@ -73,16 +71,6 @@ const SnowboardRoute = SnowboardRouteImport.update({
   path: '/snowboard',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DeSplatRoute = DeSplatRouteImport.update({
-  id: '/$',
-  path: '/$',
-  getParentRoute: () => DeRoute,
-} as any)
-const EnSplatRoute = EnSplatRouteImport.update({
-  id: '/$',
-  path: '/$',
-  getParentRoute: () => EnRoute,
-} as any)
 const ItSplatRoute = ItSplatRouteImport.update({
   id: '/$',
   path: '/$',
@@ -92,47 +80,41 @@ const ItSplatRoute = ItSplatRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/de': typeof DeRouteWithChildren
-  '/en': typeof EnRouteWithChildren
+  '/de': typeof DeRoute
+  '/en': typeof EnRoute
   '/freeride': typeof FreerideRoute
   '/gallery': typeof GalleryRoute
   '/it': typeof ItRouteWithChildren
   '/kids': typeof KidsRoute
   '/lessons': typeof LessonsRoute
   '/snowboard': typeof SnowboardRoute
-  '/de/$': typeof DeSplatRoute
-  '/en/$': typeof EnSplatRoute
   '/it/$': typeof ItSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/de': typeof DeRouteWithChildren
-  '/en': typeof EnRouteWithChildren
+  '/de': typeof DeRoute
+  '/en': typeof EnRoute
   '/freeride': typeof FreerideRoute
   '/gallery': typeof GalleryRoute
   '/it': typeof ItRouteWithChildren
   '/kids': typeof KidsRoute
   '/lessons': typeof LessonsRoute
   '/snowboard': typeof SnowboardRoute
-  '/de/$': typeof DeSplatRoute
-  '/en/$': typeof EnSplatRoute
   '/it/$': typeof ItSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/de': typeof DeRouteWithChildren
-  '/en': typeof EnRouteWithChildren
+  '/de': typeof DeRoute
+  '/en': typeof EnRoute
   '/freeride': typeof FreerideRoute
   '/gallery': typeof GalleryRoute
   '/it': typeof ItRouteWithChildren
   '/kids': typeof KidsRoute
   '/lessons': typeof LessonsRoute
   '/snowboard': typeof SnowboardRoute
-  '/de/$': typeof DeSplatRoute
-  '/en/$': typeof EnSplatRoute
   '/it/$': typeof ItSplatRoute
 }
 export interface FileRouteTypes {
@@ -148,8 +130,6 @@ export interface FileRouteTypes {
     | '/kids'
     | '/lessons'
     | '/snowboard'
-    | '/de/$'
-    | '/en/$'
     | '/it/$'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -163,8 +143,6 @@ export interface FileRouteTypes {
     | '/kids'
     | '/lessons'
     | '/snowboard'
-    | '/de/$'
-    | '/en/$'
     | '/it/$'
   id:
     | '__root__'
@@ -178,16 +156,14 @@ export interface FileRouteTypes {
     | '/kids'
     | '/lessons'
     | '/snowboard'
-    | '/de/$'
-    | '/en/$'
     | '/it/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
-  DeRoute: typeof DeRouteWithChildren
-  EnRoute: typeof EnRouteWithChildren
+  DeRoute: typeof DeRoute
+  EnRoute: typeof EnRoute
   FreerideRoute: typeof FreerideRoute
   GalleryRoute: typeof GalleryRoute
   ItRoute: typeof ItRouteWithChildren
@@ -268,20 +244,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SnowboardRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/de/$': {
-      id: '/de/$'
-      path: '/$'
-      fullPath: '/de/$'
-      preLoaderRoute: typeof DeSplatRouteImport
-      parentRoute: typeof DeRoute
-    }
-    '/en/$': {
-      id: '/en/$'
-      path: '/$'
-      fullPath: '/en/$'
-      preLoaderRoute: typeof EnSplatRouteImport
-      parentRoute: typeof EnRoute
-    }
     '/it/$': {
       id: '/it/$'
       path: '/$'
@@ -291,26 +253,6 @@ declare module '@tanstack/react-router' {
     }
   }
 }
-
-interface DeRouteChildren {
-  DeSplatRoute: typeof DeSplatRoute
-}
-
-const DeRouteChildren: DeRouteChildren = {
-  DeSplatRoute: DeSplatRoute,
-}
-
-const DeRouteWithChildren = DeRoute._addFileChildren(DeRouteChildren)
-
-interface EnRouteChildren {
-  EnSplatRoute: typeof EnSplatRoute
-}
-
-const EnRouteChildren: EnRouteChildren = {
-  EnSplatRoute: EnSplatRoute,
-}
-
-const EnRouteWithChildren = EnRoute._addFileChildren(EnRouteChildren)
 
 interface ItRouteChildren {
   ItSplatRoute: typeof ItSplatRoute
@@ -325,8 +267,8 @@ const ItRouteWithChildren = ItRoute._addFileChildren(ItRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
-  DeRoute: DeRouteWithChildren,
-  EnRoute: EnRouteWithChildren,
+  DeRoute: DeRoute,
+  EnRoute: EnRoute,
   FreerideRoute: FreerideRoute,
   GalleryRoute: GalleryRoute,
   ItRoute: ItRouteWithChildren,
