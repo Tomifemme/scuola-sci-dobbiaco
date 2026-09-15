@@ -14,7 +14,11 @@ const LanguageContext = createContext<LanguageContextType>({
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLang] = useState<Language>(() => {
     const stored = localStorage.getItem("ski-school-lang");
-    return (stored as Language) || "it";
+    if (stored === "it" || stored === "de" || stored === "en") return stored;
+    const browser = (navigator.languages?.[0] || navigator.language || "").toLowerCase();
+    if (browser.startsWith("it")) return "it";
+    if (browser.startsWith("en")) return "en";
+    return "de";
   });
 
   const handleSetLang = (newLang: Language) => {
