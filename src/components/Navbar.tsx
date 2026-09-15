@@ -168,6 +168,13 @@ const Navbar = () => {
 
           <div className="flex items-center gap-2 lg:hidden">
             <LanguageSwitcher />
+            <Link
+              to="/contact"
+              className="px-3 py-1.5 rounded-md text-xs font-semibold text-primary-foreground whitespace-nowrap transition-all hover:opacity-90"
+              style={{ background: "var(--gradient-alpine)" }}
+            >
+              {t(n.bookNow, lang)}
+            </Link>
             <button onClick={() => setIsOpen(!isOpen)} className="p-2 text-primary-foreground" aria-label="Menu">
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
