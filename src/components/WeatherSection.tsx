@@ -1,12 +1,52 @@
-import { Cloud, Sun, Snowflake, Thermometer, Wind, Mountain } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Cloud, CloudRain, CloudSnow, Sun, Snowflake, Thermometer, Wind, Mountain } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 
+type DailyForecast = {
+  time: string[];
+  weather_code: number[];
+  temperature_2m_max: number[];
+  temperature_2m_min: number[];
+  precipitation_probability_max: number[];
+};
+
+const weatherIcon = (code: number) => {
+  if (code >= 71 && code <= 86) return CloudSnow;
+  if (code >= 51) return CloudRain;
+  if (code >= 2) return Cloud;
+  return Sun;
+};
+
 const WeatherSection = () => {
   const { lang } = useLanguage();
+  const [forecast, setForecast] = useState<DailyForecast | null>(null);
 
   const title = { it: "Meteo & Condizioni Piste", de: "Wetter & Pistenbedingungen", en: "Weather & Slope Conditions" }[lang];
   const subtitle = { it: "Dobbiaco - Alta Pusteria", de: "Toblach - Hochpustertal", en: "Dobbiaco - Alta Pusteria" }[lang];
+
+  useEffect(() => {
+    const controller = new AbortController();
+    const params = new URLSearchParams({
+      latitude: "46.7351",
+      longitude: "12.2225",
+      daily: "weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max",
+      timezone: "Europe/Rome",
+      forecast_days: "4",
+    });
+
+    fetch(`https://api.open-meteo.com/v1/forecast?${params}`, { signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) throw new Error("Weather request failed");
+        return response.json() as Promise<{ daily: DailyForecast }>;
+      })
+      .then((data) => setForecast(data.daily))
+      .catch((error: unknown) => {
+        if (error instanceof Error && error.name !== "AbortError") setForecast(null);
+      });
+
+    return () => controller.abort();
+  }, []);
 
   return (
     <section className="alpine-section bg-secondary/50">
@@ -32,14 +72,30 @@ const WeatherSection = () => {
               <Sun className="w-6 h-6 text-primary" />
               {{ it: "Meteo Dobbiaco", de: "Wetter Toblach", en: "Dobbiaco Weather" }[lang]}
             </h3>
-            <iframe
-              src="https://www.meteoblue.com/en/weather/widget/daily/dobbiaco_italy_3177340?geoloc=fixed&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&precipunit=MILLIMETER&coloured=coloured&pictoicon=1&maxtemperature=1&mintemperature=1&windspeed=0&windgust=0&winddirection=0&uv=0&humidity=0&precipitation=1&precipitationprobability=1&spot=0&pressure=0&layout=light"
-              className="w-full border-0 rounded-lg"
-              height="220"
-              loading="lazy"
-              title="Weather Dobbiaco"
-              sandbox="allow-scripts allow-same-origin"
-            />
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 min-h-[160px]" aria-label={subtitle}>
+              {forecast ? forecast.time.map((date, index) => {
+                const Icon = weatherIcon(forecast.weather_code[index] ?? 0);
+                const day = new Intl.DateTimeFormat(lang, { weekday: "short" }).format(
+                  new Date(`${date}T12:00:00`),
+                );
+                return (
+                  <div key={date} className="flex flex-col items-center justify-center gap-2 rounded-lg bg-secondary/60 p-3 text-center">
+                    <span className="text-sm font-semibold capitalize text-foreground">{day}</span>
+                    <Icon className="h-8 w-8 text-primary" aria-hidden="true" />
+                    <span className="font-semibold text-foreground">
+                      {Math.round(forecast.temperature_2m_max[index] ?? 0)}° / {Math.round(forecast.temperature_2m_min[index] ?? 0)}°
+                    </span>
+                    <span className="text-xs text-muted-foreground">
+                      {forecast.precipitation_probability_max[index] ?? 0}%
+                    </span>
+                  </div>
+                );
+              }) : (
+                <div className="col-span-full flex items-center justify-center text-muted-foreground">
+                  {{ it: "Caricamento meteo di Dobbiaco…", de: "Wetter für Toblach wird geladen…", en: "Loading Dobbiaco weather…" }[lang]}
+                </div>
+              )}
+            </div>
           </motion.div>
 
           <motion.div
