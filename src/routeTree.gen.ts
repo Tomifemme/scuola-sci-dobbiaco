@@ -19,6 +19,20 @@ import { Route as ItRouteImport } from './routes/it'
 import { Route as KidsRouteImport } from './routes/kids'
 import { Route as LessonsRouteImport } from './routes/lessons'
 import { Route as SnowboardRouteImport } from './routes/snowboard'
+import { Route as DeIndexRouteImport } from './routes/de/index'
+import { Route as DeContactRouteImport } from './routes/de/contact'
+import { Route as DeFreerideRouteImport } from './routes/de/freeride'
+import { Route as DeGalleryRouteImport } from './routes/de/gallery'
+import { Route as DeKidsRouteImport } from './routes/de/kids'
+import { Route as DeLessonsRouteImport } from './routes/de/lessons'
+import { Route as DeSnowboardRouteImport } from './routes/de/snowboard'
+import { Route as EnIndexRouteImport } from './routes/en/index'
+import { Route as EnContactRouteImport } from './routes/en/contact'
+import { Route as EnFreerideRouteImport } from './routes/en/freeride'
+import { Route as EnGalleryRouteImport } from './routes/en/gallery'
+import { Route as EnKidsRouteImport } from './routes/en/kids'
+import { Route as EnLessonsRouteImport } from './routes/en/lessons'
+import { Route as EnSnowboardRouteImport } from './routes/en/snowboard'
 import { Route as ItSplatRouteImport } from './routes/it/$'
 
 const IndexRoute = IndexRouteImport.update({
@@ -71,6 +85,76 @@ const SnowboardRoute = SnowboardRouteImport.update({
   path: '/snowboard',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DeIndexRoute = DeIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => DeRoute,
+} as any)
+const DeContactRoute = DeContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => DeRoute,
+} as any)
+const DeFreerideRoute = DeFreerideRouteImport.update({
+  id: '/freeride',
+  path: '/freeride',
+  getParentRoute: () => DeRoute,
+} as any)
+const DeGalleryRoute = DeGalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => DeRoute,
+} as any)
+const DeKidsRoute = DeKidsRouteImport.update({
+  id: '/kids',
+  path: '/kids',
+  getParentRoute: () => DeRoute,
+} as any)
+const DeLessonsRoute = DeLessonsRouteImport.update({
+  id: '/lessons',
+  path: '/lessons',
+  getParentRoute: () => DeRoute,
+} as any)
+const DeSnowboardRoute = DeSnowboardRouteImport.update({
+  id: '/snowboard',
+  path: '/snowboard',
+  getParentRoute: () => DeRoute,
+} as any)
+const EnIndexRoute = EnIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => EnRoute,
+} as any)
+const EnContactRoute = EnContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => EnRoute,
+} as any)
+const EnFreerideRoute = EnFreerideRouteImport.update({
+  id: '/freeride',
+  path: '/freeride',
+  getParentRoute: () => EnRoute,
+} as any)
+const EnGalleryRoute = EnGalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => EnRoute,
+} as any)
+const EnKidsRoute = EnKidsRouteImport.update({
+  id: '/kids',
+  path: '/kids',
+  getParentRoute: () => EnRoute,
+} as any)
+const EnLessonsRoute = EnLessonsRouteImport.update({
+  id: '/lessons',
+  path: '/lessons',
+  getParentRoute: () => EnRoute,
+} as any)
+const EnSnowboardRoute = EnSnowboardRouteImport.update({
+  id: '/snowboard',
+  path: '/snowboard',
+  getParentRoute: () => EnRoute,
+} as any)
 const ItSplatRoute = ItSplatRouteImport.update({
   id: '/$',
   path: '/$',
@@ -80,42 +164,82 @@ const ItSplatRoute = ItSplatRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/de': typeof DeRoute
-  '/en': typeof EnRoute
+  '/de': typeof DeRouteWithChildren
+  '/en': typeof EnRouteWithChildren
   '/freeride': typeof FreerideRoute
   '/gallery': typeof GalleryRoute
   '/it': typeof ItRouteWithChildren
   '/kids': typeof KidsRoute
   '/lessons': typeof LessonsRoute
   '/snowboard': typeof SnowboardRoute
+  '/de/contact': typeof DeContactRoute
+  '/de/freeride': typeof DeFreerideRoute
+  '/de/gallery': typeof DeGalleryRoute
+  '/de/kids': typeof DeKidsRoute
+  '/de/lessons': typeof DeLessonsRoute
+  '/de/snowboard': typeof DeSnowboardRoute
+  '/en/contact': typeof EnContactRoute
+  '/en/freeride': typeof EnFreerideRoute
+  '/en/gallery': typeof EnGalleryRoute
+  '/en/kids': typeof EnKidsRoute
+  '/en/lessons': typeof EnLessonsRoute
+  '/en/snowboard': typeof EnSnowboardRoute
   '/it/$': typeof ItSplatRoute
+  '/de/': typeof DeIndexRoute
+  '/en/': typeof EnIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/de': typeof DeRoute
-  '/en': typeof EnRoute
   '/freeride': typeof FreerideRoute
   '/gallery': typeof GalleryRoute
   '/it': typeof ItRouteWithChildren
   '/kids': typeof KidsRoute
   '/lessons': typeof LessonsRoute
   '/snowboard': typeof SnowboardRoute
+  '/de/contact': typeof DeContactRoute
+  '/de/freeride': typeof DeFreerideRoute
+  '/de/gallery': typeof DeGalleryRoute
+  '/de/kids': typeof DeKidsRoute
+  '/de/lessons': typeof DeLessonsRoute
+  '/de/snowboard': typeof DeSnowboardRoute
+  '/en/contact': typeof EnContactRoute
+  '/en/freeride': typeof EnFreerideRoute
+  '/en/gallery': typeof EnGalleryRoute
+  '/en/kids': typeof EnKidsRoute
+  '/en/lessons': typeof EnLessonsRoute
+  '/en/snowboard': typeof EnSnowboardRoute
   '/it/$': typeof ItSplatRoute
+  '/de': typeof DeIndexRoute
+  '/en': typeof EnIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/de': typeof DeRoute
-  '/en': typeof EnRoute
+  '/de': typeof DeRouteWithChildren
+  '/en': typeof EnRouteWithChildren
   '/freeride': typeof FreerideRoute
   '/gallery': typeof GalleryRoute
   '/it': typeof ItRouteWithChildren
   '/kids': typeof KidsRoute
   '/lessons': typeof LessonsRoute
   '/snowboard': typeof SnowboardRoute
+  '/de/contact': typeof DeContactRoute
+  '/de/freeride': typeof DeFreerideRoute
+  '/de/gallery': typeof DeGalleryRoute
+  '/de/kids': typeof DeKidsRoute
+  '/de/lessons': typeof DeLessonsRoute
+  '/de/snowboard': typeof DeSnowboardRoute
+  '/en/contact': typeof EnContactRoute
+  '/en/freeride': typeof EnFreerideRoute
+  '/en/gallery': typeof EnGalleryRoute
+  '/en/kids': typeof EnKidsRoute
+  '/en/lessons': typeof EnLessonsRoute
+  '/en/snowboard': typeof EnSnowboardRoute
   '/it/$': typeof ItSplatRoute
+  '/de/': typeof DeIndexRoute
+  '/en/': typeof EnIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -130,20 +254,46 @@ export interface FileRouteTypes {
     | '/kids'
     | '/lessons'
     | '/snowboard'
+    | '/de/contact'
+    | '/de/freeride'
+    | '/de/gallery'
+    | '/de/kids'
+    | '/de/lessons'
+    | '/de/snowboard'
+    | '/en/contact'
+    | '/en/freeride'
+    | '/en/gallery'
+    | '/en/kids'
+    | '/en/lessons'
+    | '/en/snowboard'
     | '/it/$'
+    | '/de/'
+    | '/en/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/contact'
-    | '/de'
-    | '/en'
     | '/freeride'
     | '/gallery'
     | '/it'
     | '/kids'
     | '/lessons'
     | '/snowboard'
+    | '/de/contact'
+    | '/de/freeride'
+    | '/de/gallery'
+    | '/de/kids'
+    | '/de/lessons'
+    | '/de/snowboard'
+    | '/en/contact'
+    | '/en/freeride'
+    | '/en/gallery'
+    | '/en/kids'
+    | '/en/lessons'
+    | '/en/snowboard'
     | '/it/$'
+    | '/de'
+    | '/en'
   id:
     | '__root__'
     | '/'
@@ -156,14 +306,28 @@ export interface FileRouteTypes {
     | '/kids'
     | '/lessons'
     | '/snowboard'
+    | '/de/contact'
+    | '/de/freeride'
+    | '/de/gallery'
+    | '/de/kids'
+    | '/de/lessons'
+    | '/de/snowboard'
+    | '/en/contact'
+    | '/en/freeride'
+    | '/en/gallery'
+    | '/en/kids'
+    | '/en/lessons'
+    | '/en/snowboard'
     | '/it/$'
+    | '/de/'
+    | '/en/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
-  DeRoute: typeof DeRoute
-  EnRoute: typeof EnRoute
+  DeRoute: typeof DeRouteWithChildren
+  EnRoute: typeof EnRouteWithChildren
   FreerideRoute: typeof FreerideRoute
   GalleryRoute: typeof GalleryRoute
   ItRoute: typeof ItRouteWithChildren
@@ -244,6 +408,104 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SnowboardRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/de/': {
+      id: '/de/'
+      path: '/'
+      fullPath: '/de/'
+      preLoaderRoute: typeof DeIndexRouteImport
+      parentRoute: typeof DeRoute
+    }
+    '/de/contact': {
+      id: '/de/contact'
+      path: '/contact'
+      fullPath: '/de/contact'
+      preLoaderRoute: typeof DeContactRouteImport
+      parentRoute: typeof DeRoute
+    }
+    '/de/freeride': {
+      id: '/de/freeride'
+      path: '/freeride'
+      fullPath: '/de/freeride'
+      preLoaderRoute: typeof DeFreerideRouteImport
+      parentRoute: typeof DeRoute
+    }
+    '/de/gallery': {
+      id: '/de/gallery'
+      path: '/gallery'
+      fullPath: '/de/gallery'
+      preLoaderRoute: typeof DeGalleryRouteImport
+      parentRoute: typeof DeRoute
+    }
+    '/de/kids': {
+      id: '/de/kids'
+      path: '/kids'
+      fullPath: '/de/kids'
+      preLoaderRoute: typeof DeKidsRouteImport
+      parentRoute: typeof DeRoute
+    }
+    '/de/lessons': {
+      id: '/de/lessons'
+      path: '/lessons'
+      fullPath: '/de/lessons'
+      preLoaderRoute: typeof DeLessonsRouteImport
+      parentRoute: typeof DeRoute
+    }
+    '/de/snowboard': {
+      id: '/de/snowboard'
+      path: '/snowboard'
+      fullPath: '/de/snowboard'
+      preLoaderRoute: typeof DeSnowboardRouteImport
+      parentRoute: typeof DeRoute
+    }
+    '/en/': {
+      id: '/en/'
+      path: '/'
+      fullPath: '/en/'
+      preLoaderRoute: typeof EnIndexRouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/contact': {
+      id: '/en/contact'
+      path: '/contact'
+      fullPath: '/en/contact'
+      preLoaderRoute: typeof EnContactRouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/freeride': {
+      id: '/en/freeride'
+      path: '/freeride'
+      fullPath: '/en/freeride'
+      preLoaderRoute: typeof EnFreerideRouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/gallery': {
+      id: '/en/gallery'
+      path: '/gallery'
+      fullPath: '/en/gallery'
+      preLoaderRoute: typeof EnGalleryRouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/kids': {
+      id: '/en/kids'
+      path: '/kids'
+      fullPath: '/en/kids'
+      preLoaderRoute: typeof EnKidsRouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/lessons': {
+      id: '/en/lessons'
+      path: '/lessons'
+      fullPath: '/en/lessons'
+      preLoaderRoute: typeof EnLessonsRouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/snowboard': {
+      id: '/en/snowboard'
+      path: '/snowboard'
+      fullPath: '/en/snowboard'
+      preLoaderRoute: typeof EnSnowboardRouteImport
+      parentRoute: typeof EnRoute
+    }
     '/it/$': {
       id: '/it/$'
       path: '/$'
@@ -253,6 +515,50 @@ declare module '@tanstack/react-router' {
     }
   }
 }
+
+interface DeRouteChildren {
+  DeContactRoute: typeof DeContactRoute
+  DeFreerideRoute: typeof DeFreerideRoute
+  DeGalleryRoute: typeof DeGalleryRoute
+  DeKidsRoute: typeof DeKidsRoute
+  DeLessonsRoute: typeof DeLessonsRoute
+  DeSnowboardRoute: typeof DeSnowboardRoute
+  DeIndexRoute: typeof DeIndexRoute
+}
+
+const DeRouteChildren: DeRouteChildren = {
+  DeContactRoute: DeContactRoute,
+  DeFreerideRoute: DeFreerideRoute,
+  DeGalleryRoute: DeGalleryRoute,
+  DeKidsRoute: DeKidsRoute,
+  DeLessonsRoute: DeLessonsRoute,
+  DeSnowboardRoute: DeSnowboardRoute,
+  DeIndexRoute: DeIndexRoute,
+}
+
+const DeRouteWithChildren = DeRoute._addFileChildren(DeRouteChildren)
+
+interface EnRouteChildren {
+  EnContactRoute: typeof EnContactRoute
+  EnFreerideRoute: typeof EnFreerideRoute
+  EnGalleryRoute: typeof EnGalleryRoute
+  EnKidsRoute: typeof EnKidsRoute
+  EnLessonsRoute: typeof EnLessonsRoute
+  EnSnowboardRoute: typeof EnSnowboardRoute
+  EnIndexRoute: typeof EnIndexRoute
+}
+
+const EnRouteChildren: EnRouteChildren = {
+  EnContactRoute: EnContactRoute,
+  EnFreerideRoute: EnFreerideRoute,
+  EnGalleryRoute: EnGalleryRoute,
+  EnKidsRoute: EnKidsRoute,
+  EnLessonsRoute: EnLessonsRoute,
+  EnSnowboardRoute: EnSnowboardRoute,
+  EnIndexRoute: EnIndexRoute,
+}
+
+const EnRouteWithChildren = EnRoute._addFileChildren(EnRouteChildren)
 
 interface ItRouteChildren {
   ItSplatRoute: typeof ItSplatRoute
@@ -267,8 +573,8 @@ const ItRouteWithChildren = ItRoute._addFileChildren(ItRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
-  DeRoute: DeRoute,
-  EnRoute: EnRoute,
+  DeRoute: DeRouteWithChildren,
+  EnRoute: EnRouteWithChildren,
   FreerideRoute: FreerideRoute,
   GalleryRoute: GalleryRoute,
   ItRoute: ItRouteWithChildren,
