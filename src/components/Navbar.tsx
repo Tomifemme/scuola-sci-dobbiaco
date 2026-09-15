@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { translations, t } from "@/i18n/translations";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -46,6 +46,8 @@ const Navbar = () => {
   const lessonsAdultiLabel = { it: "Lezioni Adulti", de: "Erwachsenenkurse", en: "Adult Lessons" }[lang]!;
   const lezioniBambiniLabel = { it: "Lezioni Bambini", de: "Kinderkurse", en: "Kids Lessons" }[lang]!;
 
+  const skiRentalLabel = { it: "Noleggio Sci", de: "Skiverleih", en: "Ski Rental" }[lang]!;
+
   const navItems = [
     { label: t(n.home, lang), href: "/" },
     {
@@ -86,6 +88,7 @@ const Navbar = () => {
     },
     { label: { it: "Galleria", de: "Galerie", en: "Gallery" }[lang]!, href: "/gallery" },
     { label: t(n.contact, lang), href: "/contact" },
+    { label: skiRentalLabel, href: "https://www.ski-rent.it/it/", external: true },
   ];
 
   return (
@@ -107,17 +110,29 @@ const Navbar = () => {
                 onMouseEnter={() => item.children && setOpenDropdown(item.label)}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <Link
-                  to={item.href}
-                  className={`px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 ${
-                    location.pathname === item.href
-                      ? "text-alpine-sky"
-                      : "text-alpine-ice/90 hover:text-primary-foreground"
-                  }`}
-                >
-                  {item.label}
-                  {item.children && <ChevronDown className="w-3 h-3" />}
-                </Link>
+                {item.external ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 text-alpine-ice/90 hover:text-primary-foreground"
+                  >
+                    {item.label}
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                ) : (
+                  <Link
+                    to={item.href}
+                    className={`px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 ${
+                      location.pathname === item.href
+                        ? "text-alpine-sky"
+                        : "text-alpine-ice/90 hover:text-primary-foreground"
+                    }`}
+                  >
+                    {item.label}
+                    {item.children && <ChevronDown className="w-3 h-3" />}
+                  </Link>
+                )}
                 <AnimatePresence>
                   {item.children && openDropdown === item.label && (
                     <motion.div
@@ -153,6 +168,13 @@ const Navbar = () => {
 
           <div className="flex items-center gap-2 lg:hidden">
             <LanguageSwitcher />
+            <Link
+              to="/contact"
+              className="px-3 py-1.5 rounded-md text-xs font-semibold text-primary-foreground whitespace-nowrap transition-all hover:opacity-90"
+              style={{ background: "var(--gradient-alpine)" }}
+            >
+              {t(n.bookNow, lang)}
+            </Link>
             <button onClick={() => setIsOpen(!isOpen)} className="p-2 text-primary-foreground" aria-label="Menu">
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -172,13 +194,25 @@ const Navbar = () => {
             <div className="py-4 px-4 space-y-1 max-h-[80vh] overflow-y-auto">
               {navItems.map((item) => (
                 <div key={item.label}>
-                  <Link
-                    to={item.href}
-                    onClick={() => !item.children && setIsOpen(false)}
-                    className="block px-4 py-3 text-primary-foreground/90 hover:text-primary-foreground font-medium transition-colors"
-                  >
-                    {item.label}
-                  </Link>
+                  {item.external ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsOpen(false)}
+                      className="block px-4 py-3 text-primary-foreground/90 hover:text-primary-foreground font-medium transition-colors"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      onClick={() => !item.children && setIsOpen(false)}
+                      className="block px-4 py-3 text-primary-foreground/90 hover:text-primary-foreground font-medium transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                   {item.children && (
                     <div className="pl-6 space-y-1">
                       {item.children.map((child) => (
@@ -194,14 +228,6 @@ const Navbar = () => {
                   )}
                 </div>
               ))}
-              <Link
-                to="/contact"
-                onClick={() => setIsOpen(false)}
-                className="block mx-4 mt-4 px-5 py-3 rounded-lg text-sm font-semibold text-primary-foreground text-center"
-                style={{ background: "var(--gradient-alpine)" }}
-              >
-                {t(n.bookNow, lang)}
-              </Link>
             </div>
           </motion.div>
         )}
