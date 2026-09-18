@@ -310,9 +310,9 @@ export const translations = {
       adventureDay: {
         title: { it: "Nuovo: Adventure Day!", de: "Neu: Adventure Day!", en: "New: Adventure Day!" },
         desc: {
-          it: "Il giovedì grande avventura per tutti i bambini partecipanti ai corsi!",
-          de: "Donnerstags großes Abenteuer für alle Kinder, die an Kursen teilnehmen!",
-          en: "Thursdays a great adventure for all children participating in courses!",
+          it: "Il giovedì grande avventura per i bambini partecipanti ai corsi, su disponibilità.",
+          de: "Donnerstags ein großes Abenteuer für Kinder, die an Kursen teilnehmen – nach Verfügbarkeit.",
+          en: "A great Thursday adventure for children participating in courses, subject to availability.",
         },
       },
       categories: {
