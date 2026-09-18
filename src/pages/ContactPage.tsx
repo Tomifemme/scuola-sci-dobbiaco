@@ -54,7 +54,7 @@ const ContactPage = () => {
                   <div>
                     <p className="font-semibold text-foreground text-lg">{t(w.address, lang)}</p>
                     <a
-                      href="https://maps.google.com/?q=Via+Dolomiti+5,+39040+Dobbiaco+BZ"
+                      href="https://maps.app.goo.gl/Hr2jN6vCNBbdL7Lj7"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary hover:underline font-body"
@@ -105,7 +105,7 @@ const ContactPage = () => {
 
               <div className="mt-6 bg-card rounded-2xl overflow-hidden border border-border" style={{ boxShadow: "var(--shadow-card)" }}>
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2714.123!2d12.2225!3d46.7350!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDbCsDQ0JzA2LjAiTiAxMsKwMTMnMjEuMCJF!5e0!3m2!1sit!2sit!4v1234567890"
+                  src="https://maps.google.com/maps?q=Skischule%20Toblach%2C%20Via%20Dolomiti%205%2C%2039040%20Dobbiaco%20BZ&ll=46.7282105,12.2239104&z=17&output=embed"
                   width="100%"
                   height="250"
                   style={{ border: 0 }}

@@ -9,7 +9,7 @@ const QuickLinksSection = () => {
 
   const stats = [
     { icon: Users, value: "1.700+", label: t(s.followers, lang) },
-    { icon: Award, value: "30+", label: t(s.experience, lang) },
+    { icon: Award, value: "60+", label: t(s.experience, lang) },
     { icon: Mountain, value: "3 Zinnen", label: t(s.resort, lang) },
     { icon: Snowflake, value: "100%", label: t(s.success, lang) },
   ];
