@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Cloud, CloudRain, CloudSnow, Sun, Snowflake, Thermometer, Wind, Mountain } from "lucide-react";
+import { Cloud, CloudRain, CloudSnow, Sun, ExternalLink, Mountain } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 
@@ -110,43 +110,21 @@ const WeatherSection = () => {
               <Mountain className="w-6 h-6 text-primary" />
               {{ it: "Info Piste - 3 Zinnen", de: "Pisteninfo - 3 Zinnen", en: "Slope Info - 3 Zinnen" }[lang]}
             </h3>
-            <div className="space-y-4">
-              <div className="flex items-center justify-between p-3 bg-secondary/60 rounded-lg">
-                <div className="flex items-center gap-3">
-                  <Snowflake className="w-5 h-5 text-primary" />
-                  <span className="font-body text-foreground">{{ it: "Neve in quota", de: "Schnee oben", en: "Snow at summit" }[lang]}</span>
-                </div>
-                <span className="font-semibold text-foreground">80 cm</span>
-              </div>
-              <div className="flex items-center justify-between p-3 bg-secondary/60 rounded-lg">
-                <div className="flex items-center gap-3">
-                  <Snowflake className="w-5 h-5 text-primary" />
-                  <span className="font-body text-foreground">{{ it: "Neve a valle", de: "Schnee unten", en: "Snow at base" }[lang]}</span>
-                </div>
-                <span className="font-semibold text-foreground">30 cm</span>
-              </div>
-              <div className="flex items-center justify-between p-3 bg-secondary/60 rounded-lg">
-                <div className="flex items-center gap-3">
-                  <Thermometer className="w-5 h-5 text-primary" />
-                  <span className="font-body text-foreground">{{ it: "Temperatura", de: "Temperatur", en: "Temperature" }[lang]}</span>
-                </div>
-                <span className="font-semibold text-foreground">-5°C / 2°C</span>
-              </div>
-              <div className="flex items-center justify-between p-3 bg-secondary/60 rounded-lg">
-                <div className="flex items-center gap-3">
-                  <Wind className="w-5 h-5 text-primary" />
-                  <span className="font-body text-foreground">{{ it: "Vento", de: "Wind", en: "Wind" }[lang]}</span>
-                </div>
-                <span className="font-semibold text-foreground">15 km/h</span>
-              </div>
-            </div>
+            <p className="font-body leading-relaxed text-muted-foreground">
+              {{
+                it: "Consulta il sito ufficiale 3 Zinnen Dolomites per le condizioni aggiornate di piste, neve e impianti.",
+                de: "Aktuelle Informationen zu Pisten, Schnee und Liften finden Sie auf der offiziellen Website der 3 Zinnen Dolomites.",
+                en: "Visit the official 3 Zinnen Dolomites website for current slope, snow and lift conditions.",
+              }[lang]}
+            </p>
             <a
               href="https://www.dreizinnen.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-6 text-primary hover:underline font-semibold text-sm"
+              className="inline-flex items-center gap-2 mt-6 text-primary hover:underline font-semibold text-sm"
             >
               {{ it: "Vedi condizioni complete su 3 Zinnen →", de: "Alle Bedingungen auf 3 Zinnen anzeigen →", en: "See full conditions on 3 Zinnen →" }[lang]}
+              <ExternalLink className="h-4 w-4" aria-hidden="true" />
             </a>
           </motion.div>
         </div>
