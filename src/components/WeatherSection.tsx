@@ -141,7 +141,7 @@ const WeatherSection = () => {
               </div>
             </div>
             <a
-              href="https://www.3zinnen.com/it/"
+              href="https://www.dreizinnen.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mt-6 text-primary hover:underline font-semibold text-sm"
