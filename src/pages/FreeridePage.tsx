@@ -118,12 +118,12 @@ const FreeridePage = () => {
               icon={Mountain}
               title={d("Freeride - giornata con Maestro", "Freeride - Ganztag mit Skilehrer", "Freeride - full day with instructor")}
               rows={[
-                { label: d("2 pers. – Basic", "2 Pers. – Basic", "2 pers. – Basic"), high: "€ 170", low: "€ 160" },
-                { label: d("2 pers. – Classic", "2 Pers. – Classic", "2 pers. – Classic"), high: "€ 320", low: "€ 295" },
-                { label: d("3 pers. – Basic", "3 Pers. – Basic", "3 pers. – Basic"), high: "€ 130", low: "€ 125" },
-                { label: d("3 pers. – Classic", "3 Pers. – Classic", "3 pers. – Classic"), high: "€ 245", low: "€ 220" },
-                { label: d("4 pers. – Basic", "4 Pers. – Basic", "4 pers. – Basic"), high: "€ 115", low: "€ 105" },
-                { label: d("4 pers. – Classic", "4 Pers. – Classic", "4 pers. – Classic"), high: "€ 210", low: "€ 195" },
+                { label: d("2 pers. – Basic", "2 Pers. – Basic", "2 pers. – Basic"), high: "€ 175", low: "€ 165" },
+                { label: d("2 pers. – Classic", "2 Pers. – Classic", "2 pers. – Classic"), high: "€ 330", low: "€ 310" },
+                { label: d("3 pers. – Basic", "3 Pers. – Basic", "3 pers. – Basic"), high: "€ 135", low: "€ 130" },
+                { label: d("3 pers. – Classic", "3 Pers. – Classic", "3 pers. – Classic"), high: "€ 255", low: "€ 230" },
+                { label: d("4 pers. – Basic", "4 Pers. – Basic", "4 pers. – Basic"), high: "€ 120", low: "€ 110" },
+                { label: d("4 pers. – Classic", "4 Pers. – Classic", "4 pers. – Classic"), high: "€ 220", low: "€ 205" },
               ]}
             />
           </div>

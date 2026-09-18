@@ -81,10 +81,10 @@ const SnowboardPage = () => {
                   icon={Clock}
                   title={d("Lezioni Private - 1 ora = 55 min.", "Privatunterricht - 1 Stunde = 55 Min.", "Private Lessons - 1 hour = 55 min.")}
                   rows={[
-                    { label: d("1 persona", "1 Person", "1 person"), high: "€ 60/h", low: "€ 55/h" },
+                    { label: d("1 persona", "1 Person", "1 person"), high: "€ 63/h", low: "€ 60/h" },
                     { label: d("2 persone", "2 Personen", "2 people"), high: "+ € 15/h", low: "+ € 15/h" },
                     { label: d("3 persone", "3 Personen", "3 people"), high: "+ € 15/h", low: "+ € 15/h" },
-                    { label: d("Dalle ore 13:00", "Ab 13:00 Uhr", "From 1:00 PM"), high: "€ 70/h", low: "€ 70/h" },
+                    { label: d("Ore 10:00 – 13:00", "10:00 – 13:00 Uhr", "10:00 AM – 1:00 PM"), high: "€ 75/h", low: "€ 75/h" },
                   ]}
                   note={d("1 ora privata = 55 minuti", "1 Privatstunde = 55 Minuten", "1 private hour = 55 minutes")}
                 />
@@ -122,11 +122,11 @@ const SnowboardPage = () => {
                   icon={Users}
                   title={d("Corso Collettivo 2 ore", "Gruppenkurs 2 Stunden", "Group Course 2 hours")}
                   rows={[
-                    { label: d("1 giorno", "1 Tag", "1 day"), high: "€ 62", low: "€ 57" },
-                    { label: d("2 giorni", "2 Tage", "2 days"), high: "€ 113", low: "€ 102" },
-                    { label: d("3 giorni", "3 Tage", "3 days"), high: "€ 150", low: "€ 140" },
-                    { label: d("4 giorni", "4 Tage", "4 days"), high: "€ 180", low: "€ 165" },
-                    { label: d("5 giorni", "5 Tage", "5 days"), high: "€ 185", low: "€ 175" },
+                    { label: d("1 giorno", "1 Tag", "1 day"), high: "€ 65", low: "€ 60" },
+                    { label: d("2 giorni", "2 Tage", "2 days"), high: "€ 120", low: "€ 110" },
+                    { label: d("3 giorni", "3 Tage", "3 days"), high: "€ 155", low: "€ 145" },
+                    { label: d("4 giorni", "4 Tage", "4 days"), high: "€ 185", low: "€ 175" },
+                    { label: d("5 giorni", "5 Tage", "5 days"), high: "€ 195", low: "€ 185" },
                   ]}
                 />
               </div>
