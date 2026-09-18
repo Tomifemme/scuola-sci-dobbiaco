@@ -29,10 +29,10 @@ const LessonsPage = () => {
       image: privateImg,
       priceTitle: { it: "Lezioni Private - 1 ora = 55 min.", de: "Privatunterricht - 1 Stunde = 55 Min.", en: "Private Lessons - 1 hour = 55 min." } as Record<Language, string>,
       rows: [
-        { label: d("1 persona", "1 Person", "1 person"), high: "€ 60/h", low: "€ 55/h" },
+        { label: d("1 persona", "1 Person", "1 person"), high: "€ 63/h", low: "€ 60/h" },
         { label: d("2 persone", "2 Personen", "2 people"), high: "+ € 15/h", low: "+ € 15/h" },
         { label: d("3 persone", "3 Personen", "3 people"), high: "+ € 15/h", low: "+ € 15/h" },
-        { label: d("Ore 10:00–13:00 (20.12–09.01)", "10:00–13:00 Uhr (20.12–09.01)", "10:00 AM–1:00 PM (20.12–09.01)"), high: "€ 70/h", low: "—" },
+        { label: d("Ore 10:00–13:00 (21.12–09.01)", "10:00–13:00 Uhr (21.12–09.01)", "10:00 AM–1:00 PM (21.12–09.01)"), high: "€ 75/h", low: "—" },
       ] as PriceRow[],
       note: d("1 ora privata = 55 minuti", "1 Privatstunde = 55 Minuten", "1 private hour = 55 minutes"),
     },
@@ -45,13 +45,13 @@ const LessonsPage = () => {
       image: groupImg,
       priceTitle: { it: "Corso Collettivo 2 ore", de: "Gruppenkurs 2 Stunden", en: "Group Course 2 hours" } as Record<Language, string>,
       rows: [
-        { label: d("1 giorno", "1 Tag", "1 day"), high: "€ 62", low: "€ 57" },
-        { label: d("2 giorni", "2 Tage", "2 days"), high: "€ 113", low: "€ 102" },
-        { label: d("3 giorni", "3 Tage", "3 days"), high: "€ 150", low: "€ 140" },
-        { label: d("4 giorni", "4 Tage", "4 days"), high: "€ 180", low: "€ 165" },
-        { label: d("5 giorni", "5 Tage", "5 days"), high: "€ 185", low: "€ 175" },
-        { label: d("5 giorni + Adventure Day", "5 Tage + Adventure Day", "5 days + Adventure Day"), high: "€ 220", low: "€ 235" },
-        { label: d("Giorno aggiuntivo", "Zusatztag", "Additional day"), high: "+ € 15", low: "+ € 15" },
+        { label: d("1 giorno", "1 Tag", "1 day"), high: "€ 65", low: "€ 60" },
+        { label: d("2 giorni", "2 Tage", "2 days"), high: "€ 120", low: "€ 110" },
+        { label: d("3 giorni", "3 Tage", "3 days"), high: "€ 155", low: "€ 145" },
+        { label: d("4 giorni", "4 Tage", "4 days"), high: "€ 185", low: "€ 175" },
+        { label: d("5 giorni", "5 Tage", "5 days"), high: "€ 195", low: "€ 185" },
+        { label: d("5 giorni + Adventure Day*", "5 Tage + Adventure Day*", "5 days + Adventure Day*"), high: "€ 230", low: "€ 245" },
+        { label: d("Giorno aggiuntivo", "Zusatztag", "Additional day"), high: "+ € 20", low: "+ € 20" },
       ] as PriceRow[],
     },
     {
@@ -63,12 +63,12 @@ const LessonsPage = () => {
       image: superImg,
       priceTitle: { it: "Supercorsi", de: "Superkurse", en: "Super Courses" } as Record<Language, string>,
       rows: [
-        { label: d("3 pers. – 5 ore", "3 Pers. – 5 Std.", "3 pers. – 5 hrs"), high: "€ 135", low: "€ 125" },
-        { label: d("3 pers. – 10 ore", "3 Pers. – 10 Std.", "3 pers. – 10 hrs"), high: "€ 240", low: "€ 220" },
-        { label: d("4 pers. – 5 ore", "4 Pers. – 5 Std.", "4 pers. – 5 hrs"), high: "€ 125", low: "€ 110" },
-        { label: d("4 pers. – 10 ore", "4 Pers. – 10 Std.", "4 pers. – 10 hrs"), high: "€ 210", low: "€ 195" },
+        { label: d("3 pers. – 5 ore", "3 Pers. – 5 Std.", "3 pers. – 5 hrs"), high: "€ 140", low: "€ 130" },
+        { label: d("3 pers. – 10 ore", "3 Pers. – 10 Std.", "3 pers. – 10 hrs"), high: "€ 260", low: "€ 240" },
+        { label: d("4 pers. – 5 ore", "4 Pers. – 5 Std.", "4 pers. – 5 hrs"), high: "€ 125", low: "€ 115" },
+        { label: d("4 pers. – 10 ore", "4 Pers. – 10 Std.", "4 pers. – 10 hrs"), high: "€ 230", low: "€ 210" },
         { label: d("5 pers. – 5 ore", "5 Pers. – 5 Std.", "5 pers. – 5 hrs"), high: "€ 115", low: "€ 105" },
-        { label: d("5 pers. – 10 ore", "5 Pers. – 10 Std.", "5 pers. – 10 hrs"), high: "€ 195", low: "€ 180" },
+        { label: d("5 pers. – 10 ore", "5 Pers. – 10 Std.", "5 pers. – 10 hrs"), high: "€ 210", low: "€ 190" },
       ] as PriceRow[],
     },
     {
@@ -82,7 +82,7 @@ const LessonsPage = () => {
       rows: [
         { label: d("3 giorni (Ven-Dom)", "3 Tage (Fr-So)", "3 days (Fri-Sun)"), high: "—", low: "€ 155" },
       ] as PriceRow[],
-      note: d("Venerdì 14-16, Sabato e Domenica 10-12. Periodo: 09.01 – 12.04", "Freitag 14-16, Sa & So 10-12. Zeitraum: 09.01 – 12.04", "Friday 14-16, Sat & Sun 10-12. Period: 09.01 – 12.04"),
+      note: d("Venerdì 14-16, Sabato e Domenica 10-12. Periodo: 08.01 – 04.04", "Freitag 14-16, Sa & So 10-12. Zeitraum: 08.01 – 04.04", "Friday 2-4 PM, Sat & Sun 10 AM-12 PM. Period: 08.01 – 04.04"),
     },
   ];
 
