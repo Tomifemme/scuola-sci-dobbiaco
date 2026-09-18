@@ -5,6 +5,7 @@ import ServicesSection from "@/components/ServicesSection";
 import WeatherSection from "@/components/WeatherSection";
 import QuickLinksSection from "@/components/QuickLinksSection";
 import ReviewsSection from "@/components/ReviewsSection";
+import SponsorsSection from "@/components/SponsorsSection";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 
