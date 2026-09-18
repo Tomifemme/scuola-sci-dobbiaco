@@ -50,7 +50,6 @@ const LessonsPage = () => {
         { label: d("3 giorni", "3 Tage", "3 days"), high: "€ 155", low: "€ 145" },
         { label: d("4 giorni", "4 Tage", "4 days"), high: "€ 185", low: "€ 175" },
         { label: d("5 giorni", "5 Tage", "5 days"), high: "€ 195", low: "€ 185" },
-        { label: d("5 giorni + Adventure Day*", "5 Tage + Adventure Day*", "5 days + Adventure Day*"), high: "€ 230", low: "€ 245" },
         { label: d("Giorno aggiuntivo", "Zusatztag", "Additional day"), high: "+ € 20", low: "+ € 20" },
       ] as PriceRow[],
     },
@@ -109,7 +108,7 @@ const LessonsPage = () => {
           <SeasonLegend />
 
           {/* Special Offers */}
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
+          <div className="grid md:grid-cols-2 gap-6 mb-16">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}
               className="bg-card rounded-2xl p-6 border border-border" style={{ boxShadow: "var(--shadow-card)" }}>
               <Tag className="w-8 h-8 text-primary mb-3" />
@@ -122,12 +121,6 @@ const LessonsPage = () => {
               <Percent className="w-8 h-8 text-primary mb-3" />
               <h3 className="font-display text-lg font-bold text-foreground mb-2">{t(translations.pages.prices.familyDiscount.title, lang)}</h3>
               <p className="text-muted-foreground font-body text-sm">{t(translations.pages.prices.familyDiscount.desc, lang)}</p>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} viewport={{ once: true }}
-              className="bg-card rounded-2xl p-6 border border-border" style={{ boxShadow: "var(--shadow-card)" }}>
-              <Star className="w-8 h-8 text-primary mb-3" />
-              <h3 className="font-display text-lg font-bold text-foreground mb-2">{t(translations.pages.prices.adventureDay.title, lang)}</h3>
-              <p className="text-muted-foreground font-body text-sm">{t(translations.pages.prices.adventureDay.desc, lang)}</p>
             </motion.div>
           </div>
 

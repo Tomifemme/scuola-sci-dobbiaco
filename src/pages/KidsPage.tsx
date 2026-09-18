@@ -51,13 +51,13 @@ const KidsPage = () => {
         { label: d("3 giorni", "3 Tage", "3 days"), high: "€ 155", low: "€ 145" },
         { label: d("4 giorni", "4 Tage", "4 days"), high: "€ 185", low: "€ 175" },
         { label: d("5 giorni", "5 Tage", "5 days"), high: "€ 195", low: "€ 185" },
-        { label: d("5 giorni + Adventure Day*", "5 Tage + Adventure Day*", "5 days + Adventure Day*"), high: "€ 230", low: "€ 245" },
+        { label: d("5 giorni + Adventure Day*", "5 Tage + Adventure Day*", "5 days + Adventure Day*"), high: "€ 245", low: "€ 230" },
         { label: d("Giorno aggiuntivo", "Zusatztag", "Additional day"), high: "+ € 20", low: "+ € 20" },
       ] as PriceRow[],
       note: d(
-        "* Adventure Day! Divertimento per i bambini! Tutto il giorno con l'istruttore sulle piste delle Tre Cime di Lavaredo! Pranzo incluso!",
-        "* Adventure Day! Fun für Kids! Den ganzen Tag mit dem Skilehrer auf den Pisten der 3 Zinnen Dolomites! Inklusive Mittagessen!",
-        "* Adventure Day! Fun for kids! All day with the ski instructor on the slopes of the 3 Zinnen Dolomites! Lunch included!"
+        "* Adventure Day su disponibilità. Divertimento per i bambini! Tutto il giorno con l'istruttore sulle piste delle Tre Cime di Lavaredo. Pranzo incluso.",
+        "* Adventure Day nach Verfügbarkeit. Spaß für Kinder! Den ganzen Tag mit dem Skilehrer auf den Pisten der 3 Zinnen Dolomites. Mittagessen inklusive.",
+        "* Adventure Day subject to availability. Fun for kids! All day with the ski instructor on the slopes of the 3 Zinnen Dolomites. Lunch included."
       ),
     },
     {
