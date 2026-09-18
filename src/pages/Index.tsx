@@ -30,9 +30,10 @@ const Index = () => {
       <WelcomeSection />
       <ServicesSection />
       <WeatherSection />
-      <QuickLinksSection />
-      <ReviewsSection />
-      <Footer />
+        <QuickLinksSection />
+        <ReviewsSection />
+        <SponsorsSection />
+        <Footer />
     </div>
   );
 };
