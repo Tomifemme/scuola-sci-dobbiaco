@@ -177,9 +177,9 @@ export const translations = {
       weekend: {
         title: { it: "Corso Weekend", de: "Wochenendkurs", en: "Weekend Course" },
         desc: {
-          it: "Ogni fine settimana a partire dal 09.01.2026. 3 giorni di corso: Venerdì 14:00–16:00, Sabato e Domenica 10:00–12:00. Piccoli gruppi da 2 a 5 persone. A richiesta anche orario differente. Perfetto per famiglie e amici!",
-          de: "Jedes Wochenende ab 09.01.2026. 3 Kurstage: Freitag 14:00–16:00, Samstag und Sonntag 10:00–12:00. Kleine Gruppen von 2 bis 5 Personen. Auf Wunsch auch andere Zeiten. Perfekt für Familien und Freunde!",
-          en: "Every weekend from 09.01.2026. 3 course days: Friday 14:00–16:00, Saturday and Sunday 10:00–12:00. Small groups of 2 to 5 people. Different times available on request. Perfect for families and friends!",
+          it: "Ogni fine settimana a partire dal 08.01.2027. 3 giorni di corso: Venerdì 14:00–16:00, Sabato e Domenica 10:00–12:00. Piccoli gruppi da 2 a 5 persone. A richiesta anche orario differente. Perfetto per famiglie e amici!",
+          de: "Jedes Wochenende ab 08.01.2027. 3 Kurstage: Freitag 14:00–16:00, Samstag und Sonntag 10:00–12:00. Kleine Gruppen von 2 bis 5 Personen. Auf Wunsch auch andere Zeiten. Perfekt für Familien und Freunde!",
+          en: "Every weekend from 08.01.2027. 3 course days: Friday 14:00–16:00, Saturday and Sunday 10:00–12:00. Small groups of 2 to 5 people. Different times available on request. Perfect for families and friends!",
         },
       },
     },
@@ -294,9 +294,9 @@ export const translations = {
           en: "Save money and ski on perfectly groomed slopes in the morning. For private lessons from 9:00 to 10:00, the second person does NOT pay.",
         },
         note: {
-          it: "* Offerta non valida nei periodi dal 21/12/25 - 09/01/26 e dal 08/02/26 - 08/03/26",
-          de: "* Angebot nicht gültig vom 21.12.25 - 09.01.26 und vom 08.02.26 - 08.03.26",
-          en: "* Offer not valid from 21/12/25 - 09/01/26 and from 08/02/26 - 08/03/26",
+          it: "* Offerta non valida nei periodi dal 21/12/26 - 09/01/27 e dal 31/01/27 - 27/02/27",
+          de: "* Angebot nicht gültig vom 21.12.26 - 09.01.27 und vom 31.01.27 - 27.02.27",
+          en: "* Offer not valid from 21/12/26 - 09/01/27 and from 31/01/27 - 27/02/27",
         },
       },
       familyDiscount: {
