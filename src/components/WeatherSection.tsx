@@ -118,7 +118,13 @@ const WeatherSection = () => {
               }[lang]}
             </p>
             <a
-              href="https://www.dreizinnen.com/"
+              href={
+                {
+                  it: "https://www.dreizinnen.com/it/sci-alpino",
+                  de: "https://www.dreizinnen.com/de/skifahren",
+                  en: "https://www.dreizinnen.com/en/skiing",
+                }[lang]
+              }
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 mt-6 text-primary hover:underline font-semibold text-sm"
