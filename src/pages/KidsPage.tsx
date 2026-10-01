@@ -71,7 +71,7 @@ const KidsPage = () => {
       rows: [
         { label: d("1 bambino", "1 Kind", "1 child"), high: "€ 55", low: "€ 55" },
       ] as PriceRow[],
-      note: d("Orario: 12:00 – 15:00, pranzo incluso", "Zeit: 12:00 – 15:00, Mittagessen inklusive", "Time: 12:00 – 15:00, lunch included"),
+      note: d("Orario: 12:00 – 15:00, pranzo incluso. Solo per bambini già iscritti al corso collettivo", "Zeit: 12:00 – 15:00, Mittagessen inklusive. Nur für Kinder, die bereits am Gruppenkurs teilnehmen", "Time: 12:00 – 15:00, lunch included. Only for kids already taking part in the group course"),
     },
     {
       id: "fullday",
@@ -88,7 +88,7 @@ const KidsPage = () => {
         { label: d("4 giorni", "4 Tage", "4 days"), high: "€ 390", low: "€ 375" },
         { label: d("5 giorni", "5 Tage", "5 days"), high: "€ 455", low: "€ 430" },
       ] as PriceRow[],
-      note: d("Orario: 10:00 – 15:30, pranzo incluso", "Zeit: 10:00 – 15:30, Mittagessen inklusive", "Time: 10:00 – 15:30, lunch included"),
+      note: d("Orario: 10:00 – 15:00, pranzo incluso", "Zeit: 10:00 – 15:00, Mittagessen inklusive", "Time: 10:00 – 15:00, lunch included"),
     },
   ];
 
