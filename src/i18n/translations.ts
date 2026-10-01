@@ -217,17 +217,17 @@ export const translations = {
       juniorClub: {
         title: { it: "Junior & Baby Club", de: "Junior & Baby Club", en: "Junior & Baby Club" },
         desc: {
-          it: "Ideale per bambini che vogliono sciare e giocare il più possibile! Dopo il corso mattutino, pranzo insieme e nuove avventure sulla neve. Dal lunedì al venerdì 12:00–15:00. Include: pranzo, accesso al Babypark, slitta/bob. Servizio shuttle dall'albergo su richiesta. Min. 3 bambini. Prezzo: 50€ (pranzo incluso).",
-          de: "Ideal für Kinder, die so viel wie möglich Skifahren und spielen wollen! Nach dem Vormittagskurs gemeinsames Mittagessen und neue Schnee-Abenteuer. Mo–Fr 12:00–15:00. Inklusive: Mittagessen, Babypark-Zugang, Schlitten/Bob. Shuttle-Service vom Hotel auf Anfrage. Min. 3 Kinder. Preis: 50€ (Mittagessen inkl.).",
-          en: "Ideal for kids who want to ski and play as much as possible! After the morning course, lunch together and new snow adventures. Mon–Fri 12:00–15:00. Includes: lunch, Babypark access, sledge/bob. Shuttle service from hotel on request. Min. 3 children. Price: €50 (lunch included).",
+          it: "Ideale per bambini che vogliono sciare e giocare il più possibile! Dopo il corso mattutino, pranzo insieme e nuove avventure sulla neve. Dal lunedì al venerdì 12:00–15:00. Include: pranzo, accesso al Babypark, slitta/bob. Servizio shuttle dall'albergo su richiesta. Min. 3 bambini. Prezzo: 55€ (pranzo incluso). Solo per bambini già iscritti al corso collettivo.",
+          de: "Ideal für Kinder, die so viel wie möglich Skifahren und spielen wollen! Nach dem Vormittagskurs gemeinsames Mittagessen und neue Schnee-Abenteuer. Mo–Fr 12:00–15:00. Inklusive: Mittagessen, Babypark-Zugang, Schlitten/Bob. Shuttle-Service vom Hotel auf Anfrage. Min. 3 Kinder. Preis: 55€ (Mittagessen inkl.). Nur für Kinder, die bereits am Gruppenkurs teilnehmen.",
+          en: "Ideal for kids who want to ski and play as much as possible! After the morning course, lunch together and new snow adventures. Mon–Fri 12:00–15:00. Includes: lunch, Babypark access, sledge/bob. Shuttle service from hotel on request. Min. 3 children. Price: €55 (lunch included). Only for kids already taking part in the group course.",
         },
       },
       specialFullDay: {
         title: { it: "Special Full Day", de: "Special Full Day", en: "Special Full Day" },
         desc: {
-          it: "Per ragazzi che sanno sciare a sci paralleli! 5 ore al giorno (10:00–15:30), Lun–Ven. Nuove piste, passaggi segreti, tecniche avanzate in compagnia dei coetanei. Piste: Monte Elmo, San Candido, Croda Rossa, Cortina, Plan de Corones. Età minima: 7 anni. Pranzo e transfer (su richiesta) inclusi. Min. 3 partecipanti.",
-          de: "Für Jugendliche mit Parallelski-Technik! 5 Std/Tag (10:00–15:30), Mo–Fr. Neue Pisten, geheime Passagen, fortgeschrittene Techniken mit Gleichaltrigen. Pisten: Monte Elmo, San Candido, Croda Rossa, Cortina, Kronplatz. Mindestalter: 7 Jahre. Mittagessen und Transfer (auf Anfrage) inklusive. Min. 3 Teilnehmer.",
-          en: "For kids who can ski parallel! 5 hours/day (10:00–15:30), Mon–Fri. New slopes, secret passages, advanced techniques with peers. Slopes: Monte Elmo, San Candido, Croda Rossa, Cortina, Plan de Corones. Min. age: 7 years. Lunch and transfer (on request) included. Min. 3 participants.",
+          it: "Per ragazzi che sanno sciare a sci paralleli! 5 ore al giorno (10:00–15:00), Lun–Ven. Nuove piste, passaggi segreti, tecniche avanzate in compagnia dei coetanei. Piste: Monte Elmo, San Candido, Croda Rossa, Cortina, Plan de Corones. Età minima: 7 anni. Pranzo e transfer (su richiesta) inclusi. Min. 3 partecipanti.",
+          de: "Für Jugendliche mit Parallelski-Technik! 5 Std/Tag (10:00–15:00), Mo–Fr. Neue Pisten, geheime Passagen, fortgeschrittene Techniken mit Gleichaltrigen. Pisten: Monte Elmo, San Candido, Croda Rossa, Cortina, Kronplatz. Mindestalter: 7 Jahre. Mittagessen und Transfer (auf Anfrage) inklusive. Min. 3 Teilnehmer.",
+          en: "For kids who can ski parallel! 5 hours/day (10:00–15:00), Mon–Fri. New slopes, secret passages, advanced techniques with peers. Slopes: Monte Elmo, San Candido, Croda Rossa, Cortina, Plan de Corones. Min. age: 7 years. Lunch and transfer (on request) included. Min. 3 participants.",
         },
       },
     },
