@@ -21,34 +21,34 @@ export const PAGE_SEO: Record<PageKey, Entry> = {
     it: {
       title: "Scuola Sci Dobbiaco | Corsi di sci nelle Dolomiti",
       description:
-        "Scuola Sci Dobbiaco: corsi di sci per adulti e bambini, snowboard e freeride nelle Dolomiti - 3 Zinnen. Maestri qualificati, lezioni private e collettive.",
+        "Scuola Sci Dobbiaco: lezioni di sci per adulti e bambini sulle piste Rienza a Dobbiaco e sul Monte Elmo a Versciaco, nel comprensorio 3 Zinnen Dolomites.",
     },
     de: {
       title: "Skischule Toblach | Skikurse in den Dolomiten",
       description:
-        "Skischule Toblach: Skikurse für Erwachsene und Kinder, Snowboard und Freeride in den Dolomiten - 3 Zinnen. Qualifizierte Skilehrer, Privat- und Gruppenkurse.",
+        "Skischule Toblach: Skikurse für Erwachsene und Kinder an der Rienzpiste in Toblach und am Helm in Vierschach, im Skigebiet 3 Zinnen Dolomites.",
     },
     en: {
       title: "Ski School Dobbiaco / Toblach | Ski Lessons in the Dolomites",
       description:
-        "Ski School Dobbiaco (Toblach): ski lessons for adults and children, snowboard and freeride in the Dolomites - 3 Zinnen. Qualified instructors, private and group lessons.",
+        "Ski School Dobbiaco (Toblach): ski lessons for adults and children at Rienz and Monte Elmo (Helm), Versciaco (Vierschach), in the 3 Zinnen Dolomites ski area.",
     },
   },
   lessons: {
     it: {
       title: "Corsi di sci per adulti | Scuola Sci Dobbiaco",
       description:
-        "Lezioni private e corsi collettivi di sci per adulti a Dobbiaco, Dolomiti. Maestri qualificati per ogni livello, dal principiante all'esperto.",
+        "Lezioni private e corsi collettivi con la Scuola Sci Dobbiaco sulle piste Rienza e sul Monte Elmo a Versciaco, nelle 3 Zinnen Dolomites. Per ogni livello.",
     },
     de: {
       title: "Skikurse für Erwachsene | Skischule Toblach",
       description:
-        "Privatstunden und Gruppenkurse für Erwachsene in Toblach, Dolomiten. Qualifizierte Skilehrer für jedes Niveau, von Anfänger bis Fortgeschritten.",
+        "Privatstunden und Gruppenkurse mit der Skischule Toblach an der Rienzpiste und am Helm in Vierschach, im Skigebiet 3 Zinnen Dolomites. Für jedes Niveau.",
     },
     en: {
       title: "Adult Ski Lessons | Ski School Dobbiaco",
       description:
-        "Private and group ski lessons for adults in Dobbiaco / Toblach, Dolomites. Qualified instructors for every level, from beginner to advanced.",
+        "Private and group ski lessons with Ski School Dobbiaco at Rienz and Monte Elmo (Helm) in Versciaco (Vierschach), 3 Zinnen Dolomites. For every level.",
     },
   },
   kids: {

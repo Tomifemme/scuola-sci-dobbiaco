@@ -46,6 +46,11 @@ export const translations = {
       de: "Unser Team von Skilehrern heißt Sie willkommen!",
       en: "Our team of instructors welcomes you!",
     },
+    lessonLocations: {
+      it: "La Scuola Sci Dobbiaco offre lezioni di sci sulle piste Rienza a Dobbiaco e sul Monte Elmo a Versciaco, nel comprensorio 3 Zinnen Dolomites.",
+      de: "Die Skischule Toblach bietet Skiunterricht an der Rienzpiste in Toblach und am Helm in Vierschach, im Skigebiet 3 Zinnen Dolomites.",
+      en: "Ski School Dobbiaco offers ski lessons on the Rienz slopes in Dobbiaco (Toblach) and at Monte Elmo (Helm) in Versciaco (Vierschach), in the 3 Zinnen Dolomites ski area.",
+    },
     text1: {
       it: "Sci, Snowboard, Freeride, Fun for Kids, gite con gli sci nelle Dolomiti e tanta emozione vi offriamo nella nostra Scuola di Sci. Potete scegliere se partecipare ad un corso di gruppo, lezioni individuali, o ad un Supercorso.",
       de: "Ski, Snowboard, Freeride, Fun for Kids, Skitouren in den Dolomiten und viel Emotion bieten wir Ihnen in unserer Skischule. Sie können zwischen Gruppenkursen, Privatunterricht oder Superkursen wählen.",

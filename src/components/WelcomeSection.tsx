@@ -21,11 +21,12 @@ const WelcomeSection = () => {
           >
             <p className="text-sm font-semibold tracking-[0.2em] uppercase text-primary mb-3">{t(w.label, lang)}</p>
             <h2 className="alpine-heading text-foreground mb-6">{t(w.title, lang)}</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6 font-body">{t(w.lessonLocations, lang)}</p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6 font-body">{t(w.text1, lang)}</p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6 font-body">{t(w.text2, lang)}</p>
             
             <div className="relative rounded-xl overflow-hidden mb-6">
-              <img src={instructorsImg} alt={{ it: "Team maestri Scuola Sci Dobbiaco", de: "Skilehrerteam Skischule Toblach", en: "Ski School Dobbiaco instructor team" }[lang]!} className="w-full object-cover object-bottom rounded-xl" />
+              <img src={instructorsImg} alt={{ it: "Team maestri Scuola Sci Dobbiaco", de: "Skilehrerteam Skischule Toblach", en: "Ski School Dobbiaco instructor team" }[lang]} className="w-full object-cover object-bottom rounded-xl" />
             </div>
 
             <p className="text-base text-muted-foreground italic font-body">
