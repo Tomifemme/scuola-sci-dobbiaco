@@ -8,6 +8,7 @@ import {
   createRootRouteWithContext,
   useRouter,
   useRouterState,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -20,8 +21,6 @@ import { reportLovableError } from "@/lib/lovable-error-reporting";
 import appCss from "../styles.css?url";
 
 const SITE_URL = "https://scuolasci-dobbiaco.com/";
-const OG_IMAGE =
-  "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/daba281a-f7f1-437c-8d86-69bd0d05638e/id-preview-1a6ee43b--90565fcc-7e80-4f71-ab05-bd15e7023161.lovable.app-1773932156762.png";
 
 const JSON_LD = JSON.stringify({
   "@context": "https://schema.org",
@@ -36,7 +35,7 @@ const JSON_LD = JSON.stringify({
   ],
   url: SITE_URL,
   description:
-    "Scuola Sci Dobbiaco / Skischule Toblach: corsi di sci, snowboard e freeride nelle Dolomiti - 3 Zinnen Dolomites.",
+    "Scuola Sci Dobbiaco / Skischule Toblach: lezioni di sci sulle piste Rienza a Dobbiaco e sul Monte Elmo (Helm) a Versciaco (Vierschach), nel comprensorio 3 Zinnen Dolomites.",
   telephone: "+390474972581",
   address: {
     "@type": "PostalAddress",
@@ -47,7 +46,7 @@ const JSON_LD = JSON.stringify({
     addressCountry: "IT",
   },
   geo: { "@type": "GeoCoordinates", latitude: 46.735, longitude: 12.2225 },
-  areaServed: ["Toblach", "Dobbiaco", "Alta Pusteria", "Hochpustertal", "3 Zinnen Dolomites"],
+  areaServed: ["Toblach", "Dobbiaco", "Rienz / Rienza", "Helm / Monte Elmo", "Vierschach / Versciaco", "Alta Pusteria", "Hochpustertal", "3 Zinnen Dolomites"],
 });
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
@@ -82,14 +81,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:locale", content: "it_IT" },
       { property: "og:locale:alternate", content: "de_DE" },
       { property: "og:locale:alternate", content: "en_US" },
-      { property: "og:image", content: OG_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Scuola Sci Dobbiaco | Skischule Toblach" },
       {
         name: "twitter:description",
         content: "Corsi di sci, snowboard e freeride nelle Dolomiti. Skikurse in den Dolomiten.",
       },
-      { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -139,7 +136,7 @@ function RootComponent() {
   );
 }
 
-function RootErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function RootErrorComponent({ error, reset }: ErrorComponentProps) {
   const router = useRouter();
 
   useEffect(() => {
