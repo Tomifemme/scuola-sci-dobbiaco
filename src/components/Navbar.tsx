@@ -96,14 +96,14 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-alpine-deep backdrop-blur-lg shadow-lg" : "bg-alpine-deep/95 backdrop-blur-md"} border-b border-primary/20`}>
       <div className="alpine-container">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link to="/" className="flex items-center gap-3">
+          <Link to="/" className="flex shrink-0 items-center gap-3">
             <img src={logo} alt="Scuola Sci Dobbiaco" className="h-10 md:h-12 w-10 md:w-12 rounded-full object-cover" />
-            <span className="hidden sm:block font-display text-lg md:text-xl font-bold text-primary-foreground tracking-tight">
+            <span className="hidden sm:block lg:hidden 2xl:block font-display text-lg md:text-xl font-bold text-primary-foreground tracking-tight">
               Scuola Sci Dobbiaco
             </span>
           </Link>
 
-          <div className="hidden 2xl:flex items-center gap-0.5 xl:gap-1 flex-nowrap whitespace-nowrap">
+          <div className="hidden lg:flex items-center gap-0 xl:gap-1 flex-nowrap whitespace-nowrap">
             {navItems.map((item) => (
               <div
                 key={item.label}
@@ -116,7 +116,7 @@ const Navbar = () => {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-2 py-2 text-xs xl:text-sm font-medium transition-colors flex items-center gap-1 whitespace-nowrap text-alpine-ice/90 hover:text-primary-foreground"
+                    className="px-1 xl:px-2 py-2 text-xs xl:text-sm font-medium transition-colors flex items-center gap-1 whitespace-nowrap text-alpine-ice/90 hover:text-primary-foreground"
                   >
                     {item.label}
                     <ExternalLink className="w-3 h-3" />
@@ -124,7 +124,7 @@ const Navbar = () => {
                 ) : (
                   <Link
                     to={item.href}
-                    className={`px-2 py-2 text-xs xl:text-sm font-medium transition-colors flex items-center gap-1 whitespace-nowrap ${
+                    className={`px-1 xl:px-2 py-2 text-xs xl:text-sm font-medium transition-colors flex items-center gap-1 whitespace-nowrap ${
                       location.pathname === item.href
                         ? "text-alpine-sky"
                         : "text-alpine-ice/90 hover:text-primary-foreground"
@@ -167,7 +167,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <div className="flex items-center gap-2 2xl:hidden">
+          <div className="flex items-center gap-2 lg:hidden">
             <LanguageSwitcher />
             <Link
               to="/contact"
@@ -190,7 +190,7 @@ const Navbar = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="2xl:hidden bg-alpine-deep/98 backdrop-blur-md border-t border-primary/20 overflow-hidden"
+            className="lg:hidden bg-alpine-deep/98 backdrop-blur-md border-t border-primary/20 overflow-hidden"
           >
             <div className="py-4 px-4 space-y-1 max-h-[80vh] overflow-y-auto">
               {navItems.map((item) => (
