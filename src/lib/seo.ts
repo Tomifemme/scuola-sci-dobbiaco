@@ -1,14 +1,16 @@
 import type { Language } from "@/i18n/translations";
+import crossCountryShare from "@/assets/cross-country-dobbiaco-share.jpg.asset.json";
 
 const BASE = "https://scuolasci-dobbiaco.com";
 
-export type PageKey = "index" | "lessons" | "kids" | "snowboard" | "freeride" | "gallery" | "contact";
+export type PageKey = "index" | "lessons" | "kids" | "snowboard" | "freeride" | "gallery" | "contact" | "crossCountry";
 
 type Entry = Record<Language, { title: string; description: string }>;
 
 export const SLUGS: Record<PageKey, string> = {
   index: "",
   lessons: "/lessons",
+  crossCountry: "/cross-country",
   kids: "/kids",
   snowboard: "/snowboard",
   freeride: "/freeride",
@@ -17,6 +19,20 @@ export const SLUGS: Record<PageKey, string> = {
 };
 
 export const PAGE_SEO: Record<PageKey, Entry> = {
+  crossCountry: {
+    it: {
+      title: "Sci da fondo Dobbiaco | Scuola Sci Dobbiaco",
+      description: "Cerchi una scuola sci da fondo a Dobbiaco? La Scuola Sci Dobbiaco offre lezioni private e corsi collettivi di sci da fondo nelle Dolomiti. Scopri prezzi e prenotazioni.",
+    },
+    de: {
+      title: "Langlauf Toblach | Langlaufkurse – Skischule Toblach",
+      description: "Langlaufschule in Toblach gesucht? Die Skischule Toblach bietet Langlauf-Privatunterricht und Gruppenkurse in den Dolomiten. Preise und Buchung entdecken.",
+    },
+    en: {
+      title: "Cross-country ski lessons Dobbiaco | Ski School Toblach",
+      description: "Cross-country ski school in Dobbiaco (Toblach): private lessons and group cross-country skiing courses with Ski School Dobbiaco. View prices and book your lesson.",
+    },
+  },
   index: {
     it: {
       title: "Scuola Sci Dobbiaco | Corsi di sci nelle Dolomiti",
@@ -162,6 +178,10 @@ export function pageHead(page: PageKey, lang: Language) {
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: entry.title },
       { name: "twitter:description", content: entry.description },
+      ...(page === "crossCountry" ? [
+        { property: "og:image", content: `${BASE}${crossCountryShare.url}` },
+        { name: "twitter:image", content: `${BASE}${crossCountryShare.url}` },
+      ] : []),
     ],
     links: [
       { rel: "canonical", href: url },

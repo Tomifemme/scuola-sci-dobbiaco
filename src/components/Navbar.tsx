@@ -86,6 +86,7 @@ const Navbar = () => {
         { label: t(n.snowboardGroup, lang), href: "/snowboard#group" },
       ],
     },
+    { label: t(n.crossCountry, lang), href: "/cross-country" },
     { label: { it: "Galleria", de: "Galerie", en: "Gallery" }[lang]!, href: "/gallery" },
     { label: t(n.contact, lang), href: "/contact" },
     { label: skiRentalLabel, href: "https://www.ski-rent.it/it/", external: true },
@@ -97,12 +98,12 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center gap-3">
             <img src={logo} alt="Scuola Sci Dobbiaco" className="h-10 md:h-12 w-10 md:w-12 rounded-full object-cover" />
-            <span className="font-display text-lg md:text-xl font-bold text-primary-foreground tracking-tight">
+            <span className="hidden sm:block font-display text-lg md:text-xl font-bold text-primary-foreground tracking-tight">
               Scuola Sci Dobbiaco
             </span>
           </Link>
 
-          <div className="hidden lg:flex items-center gap-0.5 xl:gap-1 flex-nowrap whitespace-nowrap">
+          <div className="hidden 2xl:flex items-center gap-0.5 xl:gap-1 flex-nowrap whitespace-nowrap">
             {navItems.map((item) => (
               <div
                 key={item.label}
@@ -166,7 +167,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          <div className="flex items-center gap-2 lg:hidden">
+          <div className="flex items-center gap-2 2xl:hidden">
             <LanguageSwitcher />
             <Link
               to="/contact"
@@ -189,7 +190,7 @@ const Navbar = () => {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-alpine-deep/98 backdrop-blur-md border-t border-primary/20 overflow-hidden"
+            className="2xl:hidden bg-alpine-deep/98 backdrop-blur-md border-t border-primary/20 overflow-hidden"
           >
             <div className="py-4 px-4 space-y-1 max-h-[80vh] overflow-y-auto">
               {navItems.map((item) => (

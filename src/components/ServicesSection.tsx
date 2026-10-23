@@ -7,6 +7,7 @@ import kidsImg from "@/assets/kids-lesson.jpg";
 import freerideImg from "@/assets/IMG_6020.JPG";
 import snowboardImg from "@/assets/18041813380098.jpg";
 import lessonImg from "@/assets/lezione.jpg";
+import crossCountryPhoto from "@/assets/cross-country-dobbiaco.jpg.asset.json";
 
 const ServicesSection = () => {
   const { lang } = useLanguage();
@@ -17,6 +18,7 @@ const ServicesSection = () => {
     { ...s.kidsClub, image: kidsImg, alt: { it: "Corso sci bambini Dobbiaco", de: "Kinderskikurs Toblach", en: "Kids ski course Dobbiaco" }, link: "/kids" },
     { ...s.freeride, image: freerideImg, alt: { it: "Freeride nelle Dolomiti con maestro", de: "Freeride in den Dolomiten mit Skilehrer", en: "Freeride in the Dolomites with instructor" }, link: "/freeride" },
     { ...s.snowboard, image: snowboardImg, alt: { it: "Lezione di snowboard a Dobbiaco", de: "Snowboardunterricht in Toblach", en: "Snowboard lesson in Dobbiaco" }, link: "/snowboard" },
+    { title: translations.nav.crossCountry, desc: translations.pages.crossCountry.subtitle, image: crossCountryPhoto.url, alt: translations.pages.crossCountry.title, link: "/cross-country" },
   ];
 
   return (
