@@ -46,7 +46,7 @@ export default function CrossCountryPage() {
                     <p className="font-body text-muted-foreground leading-relaxed mb-6">{t(section.content.desc, lang)}</p>
                     <Button asChild><Link to="/contact">{t(translations.nav.bookNow, lang)}<ArrowRight /></Link></Button>
                   </div>
-                  <PriceTable icon={section.icon} title={t(section.priceTitle, lang)} rows={section.rows} note={section.note} />
+                  <PriceTable icon={section.icon} title={t(section.priceTitle, lang)} rows={section.rows} {...(section.note ? { note: section.note } : {})} />
                 </motion.section>
               ))}
             </div>

@@ -16,11 +16,12 @@ export function privateLessonRows(lang: Language): PriceRow[] {
     it: ["1 persona", "2 persone", "3 persone", "Ore 10:00–13:00 (21.12–09.01)"],
     de: ["1 Person", "2 Personen", "3 Personen", "10:00–13:00 Uhr (21.12–09.01)"],
     en: ["1 person", "2 people", "3 people", "10:00 AM–1:00 PM (21.12–09.01)"],
-  }[lang];
+  } as const;
+  const localizedLabels = labels[lang];
   return [
-    { label: labels[0], high: `€ ${PRIVATE_LESSON_RATES.high}/h`, low: `€ ${PRIVATE_LESSON_RATES.low}/h` },
-    ...labels.slice(1, 3).map((label) => ({ label, high: `+ € ${PRIVATE_LESSON_RATES.additionalPerson}/h`, low: `+ € ${PRIVATE_LESSON_RATES.additionalPerson}/h` })),
-    { label: labels[3], high: `€ ${PRIVATE_LESSON_RATES.peakSlot}/h`, low: "—" },
+    { label: localizedLabels[0], high: `€ ${PRIVATE_LESSON_RATES.high}/h`, low: `€ ${PRIVATE_LESSON_RATES.low}/h` },
+    ...localizedLabels.slice(1, 3).map((label) => ({ label, high: `+ € ${PRIVATE_LESSON_RATES.additionalPerson}/h`, low: `+ € ${PRIVATE_LESSON_RATES.additionalPerson}/h` })),
+    { label: localizedLabels[3], high: `€ ${PRIVATE_LESSON_RATES.peakSlot}/h`, low: "—" },
   ];
 }
 
