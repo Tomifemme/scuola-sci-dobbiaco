@@ -13,7 +13,7 @@ const Footer = () => {
     { label: t(n.kids, lang), to: "/kids" },
     { label: t(n.freeride, lang), to: "/freeride" },
     { label: t(n.snowboard, lang), to: "/snowboard" },
-    { label: t(n.prices, lang), to: "/prices" },
+    { label: t(n.crossCountry, lang), to: "/cross-country" },
     { label: t(n.contact, lang), to: "/contact" },
   ];
 

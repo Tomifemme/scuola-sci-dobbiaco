@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CrossCountryRouteImport } from './routes/cross-country'
 import { Route as DeRouteImport } from './routes/de'
 import { Route as EnRouteImport } from './routes/en'
 import { Route as FreerideRouteImport } from './routes/freeride'
@@ -21,6 +22,7 @@ import { Route as LessonsRouteImport } from './routes/lessons'
 import { Route as SnowboardRouteImport } from './routes/snowboard'
 import { Route as DeIndexRouteImport } from './routes/de/index'
 import { Route as DeContactRouteImport } from './routes/de/contact'
+import { Route as DeCrossCountryRouteImport } from './routes/de/cross-country'
 import { Route as DeFreerideRouteImport } from './routes/de/freeride'
 import { Route as DeGalleryRouteImport } from './routes/de/gallery'
 import { Route as DeKidsRouteImport } from './routes/de/kids'
@@ -28,6 +30,7 @@ import { Route as DeLessonsRouteImport } from './routes/de/lessons'
 import { Route as DeSnowboardRouteImport } from './routes/de/snowboard'
 import { Route as EnIndexRouteImport } from './routes/en/index'
 import { Route as EnContactRouteImport } from './routes/en/contact'
+import { Route as EnCrossCountryRouteImport } from './routes/en/cross-country'
 import { Route as EnFreerideRouteImport } from './routes/en/freeride'
 import { Route as EnGalleryRouteImport } from './routes/en/gallery'
 import { Route as EnKidsRouteImport } from './routes/en/kids'
@@ -43,6 +46,11 @@ const IndexRoute = IndexRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CrossCountryRoute = CrossCountryRouteImport.update({
+  id: '/cross-country',
+  path: '/cross-country',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DeRoute = DeRouteImport.update({
@@ -95,6 +103,11 @@ const DeContactRoute = DeContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => DeRoute,
 } as any)
+const DeCrossCountryRoute = DeCrossCountryRouteImport.update({
+  id: '/cross-country',
+  path: '/cross-country',
+  getParentRoute: () => DeRoute,
+} as any)
 const DeFreerideRoute = DeFreerideRouteImport.update({
   id: '/freeride',
   path: '/freeride',
@@ -128,6 +141,11 @@ const EnIndexRoute = EnIndexRouteImport.update({
 const EnContactRoute = EnContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => EnRoute,
+} as any)
+const EnCrossCountryRoute = EnCrossCountryRouteImport.update({
+  id: '/cross-country',
+  path: '/cross-country',
   getParentRoute: () => EnRoute,
 } as any)
 const EnFreerideRoute = EnFreerideRouteImport.update({
@@ -164,6 +182,7 @@ const ItSplatRoute = ItSplatRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/cross-country': typeof CrossCountryRoute
   '/de': typeof DeRouteWithChildren
   '/en': typeof EnRouteWithChildren
   '/freeride': typeof FreerideRoute
@@ -173,12 +192,14 @@ export interface FileRoutesByFullPath {
   '/lessons': typeof LessonsRoute
   '/snowboard': typeof SnowboardRoute
   '/de/contact': typeof DeContactRoute
+  '/de/cross-country': typeof DeCrossCountryRoute
   '/de/freeride': typeof DeFreerideRoute
   '/de/gallery': typeof DeGalleryRoute
   '/de/kids': typeof DeKidsRoute
   '/de/lessons': typeof DeLessonsRoute
   '/de/snowboard': typeof DeSnowboardRoute
   '/en/contact': typeof EnContactRoute
+  '/en/cross-country': typeof EnCrossCountryRoute
   '/en/freeride': typeof EnFreerideRoute
   '/en/gallery': typeof EnGalleryRoute
   '/en/kids': typeof EnKidsRoute
@@ -191,6 +212,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/cross-country': typeof CrossCountryRoute
   '/freeride': typeof FreerideRoute
   '/gallery': typeof GalleryRoute
   '/it': typeof ItRouteWithChildren
@@ -198,12 +220,14 @@ export interface FileRoutesByTo {
   '/lessons': typeof LessonsRoute
   '/snowboard': typeof SnowboardRoute
   '/de/contact': typeof DeContactRoute
+  '/de/cross-country': typeof DeCrossCountryRoute
   '/de/freeride': typeof DeFreerideRoute
   '/de/gallery': typeof DeGalleryRoute
   '/de/kids': typeof DeKidsRoute
   '/de/lessons': typeof DeLessonsRoute
   '/de/snowboard': typeof DeSnowboardRoute
   '/en/contact': typeof EnContactRoute
+  '/en/cross-country': typeof EnCrossCountryRoute
   '/en/freeride': typeof EnFreerideRoute
   '/en/gallery': typeof EnGalleryRoute
   '/en/kids': typeof EnKidsRoute
@@ -217,6 +241,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/cross-country': typeof CrossCountryRoute
   '/de': typeof DeRouteWithChildren
   '/en': typeof EnRouteWithChildren
   '/freeride': typeof FreerideRoute
@@ -226,12 +251,14 @@ export interface FileRoutesById {
   '/lessons': typeof LessonsRoute
   '/snowboard': typeof SnowboardRoute
   '/de/contact': typeof DeContactRoute
+  '/de/cross-country': typeof DeCrossCountryRoute
   '/de/freeride': typeof DeFreerideRoute
   '/de/gallery': typeof DeGalleryRoute
   '/de/kids': typeof DeKidsRoute
   '/de/lessons': typeof DeLessonsRoute
   '/de/snowboard': typeof DeSnowboardRoute
   '/en/contact': typeof EnContactRoute
+  '/en/cross-country': typeof EnCrossCountryRoute
   '/en/freeride': typeof EnFreerideRoute
   '/en/gallery': typeof EnGalleryRoute
   '/en/kids': typeof EnKidsRoute
@@ -246,6 +273,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/contact'
+    | '/cross-country'
     | '/de'
     | '/en'
     | '/freeride'
@@ -255,12 +283,14 @@ export interface FileRouteTypes {
     | '/lessons'
     | '/snowboard'
     | '/de/contact'
+    | '/de/cross-country'
     | '/de/freeride'
     | '/de/gallery'
     | '/de/kids'
     | '/de/lessons'
     | '/de/snowboard'
     | '/en/contact'
+    | '/en/cross-country'
     | '/en/freeride'
     | '/en/gallery'
     | '/en/kids'
@@ -273,6 +303,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/contact'
+    | '/cross-country'
     | '/freeride'
     | '/gallery'
     | '/it'
@@ -280,12 +311,14 @@ export interface FileRouteTypes {
     | '/lessons'
     | '/snowboard'
     | '/de/contact'
+    | '/de/cross-country'
     | '/de/freeride'
     | '/de/gallery'
     | '/de/kids'
     | '/de/lessons'
     | '/de/snowboard'
     | '/en/contact'
+    | '/en/cross-country'
     | '/en/freeride'
     | '/en/gallery'
     | '/en/kids'
@@ -298,6 +331,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/contact'
+    | '/cross-country'
     | '/de'
     | '/en'
     | '/freeride'
@@ -307,12 +341,14 @@ export interface FileRouteTypes {
     | '/lessons'
     | '/snowboard'
     | '/de/contact'
+    | '/de/cross-country'
     | '/de/freeride'
     | '/de/gallery'
     | '/de/kids'
     | '/de/lessons'
     | '/de/snowboard'
     | '/en/contact'
+    | '/en/cross-country'
     | '/en/freeride'
     | '/en/gallery'
     | '/en/kids'
@@ -326,6 +362,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
+  CrossCountryRoute: typeof CrossCountryRoute
   DeRoute: typeof DeRouteWithChildren
   EnRoute: typeof EnRouteWithChildren
   FreerideRoute: typeof FreerideRoute
@@ -350,6 +387,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cross-country': {
+      id: '/cross-country'
+      path: '/cross-country'
+      fullPath: '/cross-country'
+      preLoaderRoute: typeof CrossCountryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/de': {
@@ -422,6 +466,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DeContactRouteImport
       parentRoute: typeof DeRoute
     }
+    '/de/cross-country': {
+      id: '/de/cross-country'
+      path: '/cross-country'
+      fullPath: '/de/cross-country'
+      preLoaderRoute: typeof DeCrossCountryRouteImport
+      parentRoute: typeof DeRoute
+    }
     '/de/freeride': {
       id: '/de/freeride'
       path: '/freeride'
@@ -471,6 +522,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnContactRouteImport
       parentRoute: typeof EnRoute
     }
+    '/en/cross-country': {
+      id: '/en/cross-country'
+      path: '/cross-country'
+      fullPath: '/en/cross-country'
+      preLoaderRoute: typeof EnCrossCountryRouteImport
+      parentRoute: typeof EnRoute
+    }
     '/en/freeride': {
       id: '/en/freeride'
       path: '/freeride'
@@ -518,6 +576,7 @@ declare module '@tanstack/react-router' {
 
 interface DeRouteChildren {
   DeContactRoute: typeof DeContactRoute
+  DeCrossCountryRoute: typeof DeCrossCountryRoute
   DeFreerideRoute: typeof DeFreerideRoute
   DeGalleryRoute: typeof DeGalleryRoute
   DeKidsRoute: typeof DeKidsRoute
@@ -528,6 +587,7 @@ interface DeRouteChildren {
 
 const DeRouteChildren: DeRouteChildren = {
   DeContactRoute: DeContactRoute,
+  DeCrossCountryRoute: DeCrossCountryRoute,
   DeFreerideRoute: DeFreerideRoute,
   DeGalleryRoute: DeGalleryRoute,
   DeKidsRoute: DeKidsRoute,
@@ -540,6 +600,7 @@ const DeRouteWithChildren = DeRoute._addFileChildren(DeRouteChildren)
 
 interface EnRouteChildren {
   EnContactRoute: typeof EnContactRoute
+  EnCrossCountryRoute: typeof EnCrossCountryRoute
   EnFreerideRoute: typeof EnFreerideRoute
   EnGalleryRoute: typeof EnGalleryRoute
   EnKidsRoute: typeof EnKidsRoute
@@ -550,6 +611,7 @@ interface EnRouteChildren {
 
 const EnRouteChildren: EnRouteChildren = {
   EnContactRoute: EnContactRoute,
+  EnCrossCountryRoute: EnCrossCountryRoute,
   EnFreerideRoute: EnFreerideRoute,
   EnGalleryRoute: EnGalleryRoute,
   EnKidsRoute: EnKidsRoute,
@@ -573,6 +635,7 @@ const ItRouteWithChildren = ItRoute._addFileChildren(ItRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
+  CrossCountryRoute: CrossCountryRoute,
   DeRoute: DeRouteWithChildren,
   EnRoute: EnRouteWithChildren,
   FreerideRoute: FreerideRoute,

@@ -18,6 +18,7 @@ export const translations = {
     freerideBeginner: { it: "Principianti", de: "Anfänger", en: "Beginners" },
     freerideExpert: { it: "Esperti", de: "Experten", en: "Experts" },
     snowboard: { it: "Snowboard", de: "Snowboard", en: "Snowboard" },
+    crossCountry: { it: "Sci da fondo", de: "Langlauf", en: "Cross-country" },
     snowboardPrivate: { it: "Lezioni Private", de: "Privatunterricht", en: "Private Lessons" },
     snowboardGroup: { it: "Corso Collettivo", de: "Gruppenkurs", en: "Group Course" },
     prices: { it: "Prezzi", de: "Preise", en: "Prices" },
@@ -148,6 +149,25 @@ export const translations = {
 
   // Pages
   pages: {
+    crossCountry: {
+      title: { it: "Sci da fondo a Dobbiaco", de: "Langlauf in Toblach", en: "Cross-country skiing in Dobbiaco" },
+      subtitle: { it: "Lezioni private e corsi collettivi con la Scuola Sci Dobbiaco", de: "Privatunterricht und Gruppenkurse mit der Skischule Toblach", en: "Private lessons and group courses with Ski School Dobbiaco / Toblach" },
+      intro: {
+        it: "Scopri lo sci da fondo a Dobbiaco con la Scuola Sci Dobbiaco. Scegli una lezione privata o un corso collettivo per muovere i primi passi sulla neve o migliorare la tua tecnica nelle Dolomiti.",
+        de: "Entdecken Sie Langlauf in Toblach mit der Skischule Toblach. Wählen Sie Langlauf-Privatunterricht oder einen Gruppenkurs für Ihre ersten Schritte auf der Loipe oder um Ihre Technik in den Dolomiten zu verbessern.",
+        en: "Discover cross-country skiing in Dobbiaco (Toblach) with Ski School Dobbiaco. Choose a private lesson or a group course to get started on the trails or improve your technique in the Dolomites.",
+      },
+      private: {
+        title: { it: "Lezioni private di sci da fondo", de: "Langlauf-Privatunterricht", en: "Private cross-country ski lessons" },
+        desc: { it: "Un maestro dedicato alle tue esigenze: lezioni individuali per iniziare con lo sci da fondo o perfezionare la tecnica al tuo ritmo.", de: "Ein Lehrer, der auf Ihre Bedürfnisse eingeht: individueller Langlaufunterricht für den Einstieg oder zur Verbesserung Ihrer Technik in Ihrem eigenen Tempo.", en: "An instructor focused on your needs: individual cross-country lessons to get started or refine your technique at your own pace." },
+      },
+      group: {
+        title: { it: "Corsi collettivi di sci da fondo", de: "Langlauf-Gruppenkurse", en: "Group cross-country ski courses" },
+        desc: { it: "Impara e migliora lo sci da fondo in compagnia. Un corso collettivo per condividere l'esperienza sulla neve e lavorare sulla tecnica insieme al maestro.", de: "Gemeinsam Langlaufen lernen und die Technik verbessern. Im Gruppenkurs teilen Sie das Erlebnis auf der Loipe und üben mit Ihrem Lehrer.", en: "Learn and improve your cross-country skiing together. Share the experience on the trails and work on your technique with your instructor in a group course." },
+      },
+      privateNote: { it: "1 ora privata = 55 minuti. Supplemento di €15/h per ogni persona aggiuntiva, fino a 3 persone.", de: "1 Privatstunde = 55 Minuten. Jede weitere Person kostet zusätzlich €15/Std., bis zu 3 Personen.", en: "1 private hour = 55 minutes. Each additional person costs €15/hour extra, up to 3 people." },
+      bookingNote: { it: "Contattaci per concordare orari, disponibilità e punto di ritrovo a Dobbiaco.", de: "Kontaktieren Sie uns, um Zeiten, Verfügbarkeit und Treffpunkt in Toblach abzustimmen.", en: "Contact us to arrange times, availability and the meeting point in Dobbiaco." },
+    },
     lessons: {
       title: { it: "Lezioni di Sci", de: "Skiunterricht", en: "Ski Lessons" },
       subtitle: {

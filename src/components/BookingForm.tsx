@@ -5,6 +5,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { translations, t } from "@/i18n/translations";
 
 const BookingForm = () => {
   const { lang } = useLanguage();
@@ -32,6 +33,8 @@ const BookingForm = () => {
     message: { it: "Messaggio / Richieste", de: "Nachricht / Wünsche", en: "Message / Requests" }[lang]!,
     send: { it: "Invia Richiesta", de: "Anfrage Senden", en: "Send Request" }[lang]!,
     courses: [
+      t(translations.pages.crossCountry.private.title, lang),
+      t(translations.pages.crossCountry.group.title, lang),
       { it: "Lezione Privata Sci", de: "Privater Skiunterricht", en: "Private Ski Lesson" }[lang]!,
       { it: "Corso Collettivo Sci", de: "Ski-Gruppenkurs", en: "Group Ski Course" }[lang]!,
       { it: "Lezione Bambini", de: "Kinderkurs", en: "Kids Lesson" }[lang]!,
