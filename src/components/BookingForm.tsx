@@ -15,6 +15,7 @@ const BookingForm = () => {
     email: "",
     phone: "",
     date: "",
+    dateTo: "",
     courseType: "",
     participants: "1",
     level: "",
@@ -26,7 +27,8 @@ const BookingForm = () => {
     name: { it: "Nome e Cognome", de: "Vor- und Nachname", en: "Full Name" }[lang]!,
     email: { it: "Email", de: "E-Mail", en: "Email" }[lang]!,
     phone: { it: "Telefono", de: "Telefon", en: "Phone" }[lang]!,
-    date: { it: "Data preferita", de: "Wunschdatum", en: "Preferred Date" }[lang]!,
+    date: { it: "Dal", de: "Von", en: "From" }[lang]!,
+    dateTo: { it: "Al (facoltativo)", de: "Bis (optional)", en: "To (optional)" }[lang]!,
     courseType: { it: "Tipo di Corso", de: "Kursart", en: "Course Type" }[lang]!,
     participants: { it: "Partecipanti", de: "Teilnehmer", en: "Participants" }[lang]!,
     level: { it: "Livello", de: "Niveau", en: "Level" }[lang]!,
@@ -54,7 +56,7 @@ const BookingForm = () => {
     e.preventDefault();
     const subject = encodeURIComponent(`Booking Request - ${formData.courseType}`);
     const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nDate: ${formData.date}\nCourse: ${formData.courseType}\nParticipants: ${formData.participants}\nLevel: ${formData.level}\n\nMessage:\n${formData.message}`
+      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nDate: ${formData.date}${formData.dateTo && formData.dateTo !== formData.date ? ` - ${formData.dateTo}` : ""}\nCourse: ${formData.courseType}\nParticipants: ${formData.participants}\nLevel: ${formData.level}\n\nMessage:\n${formData.message}`
     );
     window.location.href = `mailto:info@scuolasci-dobbiaco.com?subject=${subject}&body=${body}`;
     toast({
@@ -93,7 +95,11 @@ const BookingForm = () => {
           </div>
           <div>
             <label className="block text-sm font-medium text-foreground mb-1">{labels.date}</label>
-            <Input type="date" value={formData.date} onChange={(e) => update("date", e.target.value)} required />
+            <Input type="date" value={formData.date} onChange={(e) => { update("date", e.target.value); if (formData.dateTo && formData.dateTo < e.target.value) update("dateTo", ""); }} required />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-foreground mb-1">{labels.dateTo}</label>
+            <Input type="date" min={formData.date || undefined} value={formData.dateTo} onChange={(e) => update("dateTo", e.target.value)} />
           </div>
         </div>
         <div className="grid sm:grid-cols-3 gap-4">
