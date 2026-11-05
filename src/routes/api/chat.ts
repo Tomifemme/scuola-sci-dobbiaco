@@ -8,7 +8,7 @@ export const Route = createFileRoute("/api/chat")({
   server: {
     handlers: {
       POST: async ({ request }) => {
-        const url = process.env.CHAT_WEBHOOK_URL;
+        const url = process.env['CHAT_WEBHOOK_URL'];
         if (!url) return Response.json({ error: "unavailable" }, { status: 503 });
 
         let body: unknown;
@@ -28,7 +28,7 @@ export const Route = createFileRoute("/api/chat")({
 
         try {
           const headers: Record<string, string> = { "Content-Type": "application/json" };
-          const secret = process.env.CHAT_WEBHOOK_SECRET;
+          const secret = process.env['CHAT_WEBHOOK_SECRET'];
           if (secret) headers["X-Chat-Secret"] = secret;
           const res = await fetch(url, {
             method: "POST",
