@@ -1,9 +1,13 @@
 import { useState, useRef, useEffect } from "react";
-import { MessageCircle, X, Send, Loader2, Mail, Phone } from "lucide-react";
+import { MessageCircle, X, Send, Loader2, Mail, Phone, CalendarCheck } from "lucide-react";
+import { Link } from "@/lib/router-compat";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-type Message = { role: "user" | "bot"; text: string };
+type Message = { role: "user" | "bot"; text: string; book?: boolean; contact?: boolean };
+
+// Booking-intent keywords (IT/DE/EN); matching shows the booking-form button.
+const BOOKING_RE = /prenot|book|buch|reserv|anmeld|iscri|disponib|verfügbar|availab/i;
 
 const COPY = {
   it: {
@@ -12,6 +16,7 @@ const COPY = {
     greeting: "Ciao! Posso rispondere a domande generali sulla scuola. Per prenotazioni e disponibilità contattaci direttamente.",
     placeholder: "Scrivi una domanda…", send: "Invia", typing: "Sto scrivendo…",
     unavailable: "La chat non è disponibile al momento. Contattaci:",
+    book: "Vai al modulo di prenotazione", contactIntro: "Per una risposta sicura contattaci direttamente:",
     note: "Le risposte non confermano prenotazioni né disponibilità.",
   },
   de: {
@@ -20,6 +25,7 @@ const COPY = {
     greeting: "Hallo! Ich beantworte allgemeine Fragen zur Skischule. Für Buchungen und Verfügbarkeit kontaktieren Sie uns bitte direkt.",
     placeholder: "Frage eingeben…", send: "Senden", typing: "Schreibt…",
     unavailable: "Der Chat ist derzeit nicht verfügbar. Kontaktieren Sie uns:",
+    book: "Zum Buchungsformular", contactIntro: "Für eine sichere Auskunft kontaktieren Sie uns direkt:",
     note: "Antworten bestätigen keine Buchungen oder Verfügbarkeit.",
   },
   en: {
@@ -28,6 +34,7 @@ const COPY = {
     greeting: "Hi! I can answer general questions about the school. For bookings and availability please contact us directly.",
     placeholder: "Type a question…", send: "Send", typing: "Typing…",
     unavailable: "Chat is currently unavailable. Please contact us:",
+    book: "Go to the booking form", contactIntro: "For a reliable answer please contact us directly:",
     note: "Replies don't confirm bookings or availability.",
   },
 } as const;
@@ -68,6 +75,7 @@ const ChatWidget = () => {
     if (!sessionId.current) sessionId.current = newSessionId();
     setInput("");
     setUnavailable(false);
+    const wantsBooking = BOOKING_RE.test(text);
     setMessages((m) => [...m, { role: "user", text }]);
     setLoading(true);
     try {
@@ -78,10 +86,11 @@ const ChatWidget = () => {
       });
       const data = res.ok ? await res.json() : null;
       if (data && typeof data.reply === "string" && data.reply.trim()) {
-        setMessages((m) => [...m, { role: "bot", text: data.reply }]);
-      } else setUnavailable(true);
+        setMessages((m) => [...m, { role: "bot", text: data.reply, book: wantsBooking || data.showBooking === true, contact: data.showContact === true }]);
+      } else { setUnavailable(true); if (wantsBooking) setMessages((m) => [...m, { role: "bot", text: "", book: true }]); }
     } catch {
       setUnavailable(true);
+      if (wantsBooking) setMessages((m) => [...m, { role: "bot", text: "", book: true }]);
     } finally {
       setLoading(false);
     }
@@ -128,9 +137,26 @@ const ChatWidget = () => {
             <div className="flex-1 space-y-3 overflow-y-auto p-4 text-sm" aria-live="polite">
               <div className="max-w-[85%] rounded-lg bg-secondary px-3 py-2 text-secondary-foreground">{c.greeting}</div>
               {messages.map((m, i) => (
-                <div key={i}
-                  className={`max-w-[85%] whitespace-pre-wrap rounded-lg px-3 py-2 ${m.role === "user" ? "ml-auto bg-primary text-primary-foreground" : "bg-secondary text-secondary-foreground"}`}>
-                  {m.text}
+                <div key={i} className="space-y-2">
+                  {m.text && (
+                    <div className={`max-w-[85%] whitespace-pre-wrap rounded-lg px-3 py-2 ${m.role === "user" ? "ml-auto bg-primary text-primary-foreground" : "bg-secondary text-secondary-foreground"}`}>
+                      {m.text}
+                    </div>
+                  )}
+                  {m.book && (
+                    <Link to="/contact" onClick={() => setOpen(false)}
+                      className="inline-flex items-center gap-2 rounded-md px-3 py-2 text-sm font-semibold text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                      style={{ background: "var(--gradient-alpine)" }}>
+                      <CalendarCheck className="h-4 w-4" /> {c.book}
+                    </Link>
+                  )}
+                  {m.contact && (
+                    <div className="max-w-[85%] rounded-lg border border-border px-3 py-2">
+                      <p className="mb-1">{c.contactIntro}</p>
+                      <a href="mailto:info@scuolasci-dobbiaco.com" className="flex items-center gap-2 text-primary underline"><Mail className="h-4 w-4" /> info@scuolasci-dobbiaco.com</a>
+                      <a href="tel:+390474972581" className="mt-1 flex items-center gap-2 text-primary underline"><Phone className="h-4 w-4" /> +39 0474 972581</a>
+                    </div>
+                  )}
                 </div>
               ))}
               {loading && (
