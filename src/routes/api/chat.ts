@@ -42,17 +42,21 @@ export const Route = createFileRoute("/api/chat")({
           }
           const text = await res.text();
           let reply = "";
+          let showBooking = false;
+          let showContact = false;
           try {
             const data = JSON.parse(text);
             const d = Array.isArray(data) ? data[0] : data;
             reply = typeof d === "string" ? d : d?.reply ?? d?.output ?? d?.text ?? "";
+            showBooking = d?.showBooking === true;
+            showContact = d?.showContact === true;
           } catch {
             reply = text;
           }
           if (typeof reply !== "string" || !reply.trim()) {
             return Response.json({ error: "empty" }, { status: 502 });
           }
-          return Response.json({ reply: reply.trim().slice(0, 4000) });
+          return Response.json({ reply: reply.trim().slice(0, 4000), showBooking, showContact });
         } catch (e) {
           console.error("Chat webhook error", e);
           return Response.json({ error: "upstream" }, { status: 502 });
