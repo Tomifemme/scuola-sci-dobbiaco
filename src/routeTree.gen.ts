@@ -20,6 +20,7 @@ import { Route as ItRouteImport } from './routes/it'
 import { Route as KidsRouteImport } from './routes/kids'
 import { Route as LessonsRouteImport } from './routes/lessons'
 import { Route as SnowboardRouteImport } from './routes/snowboard'
+import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as DeIndexRouteImport } from './routes/de/index'
 import { Route as DeContactRouteImport } from './routes/de/contact'
 import { Route as DeCrossCountryRouteImport } from './routes/de/cross-country'
@@ -91,6 +92,11 @@ const LessonsRoute = LessonsRouteImport.update({
 const SnowboardRoute = SnowboardRouteImport.update({
   id: '/snowboard',
   path: '/snowboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiChatRoute = ApiChatRouteImport.update({
+  id: '/api/chat',
+  path: '/api/chat',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DeIndexRoute = DeIndexRouteImport.update({
@@ -191,6 +197,7 @@ export interface FileRoutesByFullPath {
   '/kids': typeof KidsRoute
   '/lessons': typeof LessonsRoute
   '/snowboard': typeof SnowboardRoute
+  '/api/chat': typeof ApiChatRoute
   '/de/contact': typeof DeContactRoute
   '/de/cross-country': typeof DeCrossCountryRoute
   '/de/freeride': typeof DeFreerideRoute
@@ -219,6 +226,7 @@ export interface FileRoutesByTo {
   '/kids': typeof KidsRoute
   '/lessons': typeof LessonsRoute
   '/snowboard': typeof SnowboardRoute
+  '/api/chat': typeof ApiChatRoute
   '/de/contact': typeof DeContactRoute
   '/de/cross-country': typeof DeCrossCountryRoute
   '/de/freeride': typeof DeFreerideRoute
@@ -250,6 +258,7 @@ export interface FileRoutesById {
   '/kids': typeof KidsRoute
   '/lessons': typeof LessonsRoute
   '/snowboard': typeof SnowboardRoute
+  '/api/chat': typeof ApiChatRoute
   '/de/contact': typeof DeContactRoute
   '/de/cross-country': typeof DeCrossCountryRoute
   '/de/freeride': typeof DeFreerideRoute
@@ -282,6 +291,7 @@ export interface FileRouteTypes {
     | '/kids'
     | '/lessons'
     | '/snowboard'
+    | '/api/chat'
     | '/de/contact'
     | '/de/cross-country'
     | '/de/freeride'
@@ -310,6 +320,7 @@ export interface FileRouteTypes {
     | '/kids'
     | '/lessons'
     | '/snowboard'
+    | '/api/chat'
     | '/de/contact'
     | '/de/cross-country'
     | '/de/freeride'
@@ -340,6 +351,7 @@ export interface FileRouteTypes {
     | '/kids'
     | '/lessons'
     | '/snowboard'
+    | '/api/chat'
     | '/de/contact'
     | '/de/cross-country'
     | '/de/freeride'
@@ -371,6 +383,7 @@ export interface RootRouteChildren {
   KidsRoute: typeof KidsRoute
   LessonsRoute: typeof LessonsRoute
   SnowboardRoute: typeof SnowboardRoute
+  ApiChatRoute: typeof ApiChatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -450,6 +463,13 @@ declare module '@tanstack/react-router' {
       path: '/snowboard'
       fullPath: '/snowboard'
       preLoaderRoute: typeof SnowboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/chat': {
+      id: '/api/chat'
+      path: '/api/chat'
+      fullPath: '/api/chat'
+      preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/de/': {
@@ -644,6 +664,7 @@ const rootRouteChildren: RootRouteChildren = {
   KidsRoute: KidsRoute,
   LessonsRoute: LessonsRoute,
   SnowboardRoute: SnowboardRoute,
+  ApiChatRoute: ApiChatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
