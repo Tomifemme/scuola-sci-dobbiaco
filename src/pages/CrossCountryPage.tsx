@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PriceTable from "@/components/PriceTable";
 import SeasonLegend from "@/components/SeasonLegend";
+import SeasonOffers from "@/components/SeasonOffers";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/lib/router-compat";
 import { privateLessonRows, groupLessonRows } from "@/lib/lesson-pricing";
@@ -37,6 +38,7 @@ export default function CrossCountryPage() {
           <div className="alpine-container">
             <p className="text-lg font-body text-muted-foreground max-w-3xl mb-10">{t(p.intro, lang)}</p>
             <SeasonLegend />
+          <SeasonOffers includeMorning={false} />
             <div className="space-y-16">
               {sections.map((section) => (
                 <motion.section key={section.id} id={section.id} className="grid md:grid-cols-2 gap-8 scroll-mt-24" initial={reducedMotion ? false : { opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: reducedMotion ? 0 : 0.4 }}>

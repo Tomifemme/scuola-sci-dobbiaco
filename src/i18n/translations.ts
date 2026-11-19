@@ -332,6 +332,25 @@ export const translations = {
           en: "For the entire winter season, families of 3 people participating in a group course of minimum 4 days receive a 15% discount on the course price. This discount cannot be combined with other offers.",
         },
       },
+      seasonalOffers: {
+        heading: { it: "Vantaggi per la stagione", de: "Vorteile für die Wintersaison", en: "Winter season offers" },
+        premiere: {
+          title: { it: "Dolomiti Super Première", de: "Dolomiti Super Première", en: "Dolomiti Super Première" },
+          desc: {
+            it: "15% di sconto sul corso collettivo di 5 giorni. Per ottenere lo sconto, presenta il voucher rilasciato dall’albergo. Non cumulabile con altre offerte.",
+            de: "15% Ermäßigung auf den 5-tägigen Gruppenkurs. Bitte den Gutschein aus Ihrer Unterkunft vorlegen. Nicht mit anderen Angeboten kombinierbar.",
+            en: "15% off a 5-day group course. Present the voucher provided by your accommodation. Cannot be combined with other offers.",
+          },
+        },
+        spring: {
+          title: { it: "Dolomiti Springdays · Speciale primavera", de: "Dolomiti Springdays · Frühlingsspecial", en: "Dolomiti Springdays · Spring special" },
+          desc: {
+            it: "Scia al sole di primavera: 15% di sconto sul corso collettivo di almeno 5 giorni, fino a fine stagione.",
+            de: "Skifahren in der Frühlingssonne: 15% Ermäßigung auf einen Gruppenkurs von mindestens 5 Tagen bis zum Saisonende.",
+            en: "Enjoy spring skiing with 15% off a group course of at least 5 days, until the end of the season.",
+          },
+        },
+      },
       adventureDay: {
         title: { it: "Nuovo: Adventure Day!", de: "Neu: Adventure Day!", en: "New: Adventure Day!" },
         desc: {

@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import PriceTable, { PriceRow } from "@/components/PriceTable";
 import SeasonLegend from "@/components/SeasonLegend";
+import SeasonOffers from "@/components/SeasonOffers";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -48,6 +49,7 @@ const SnowboardPage = () => {
           </motion.div>
 
           <SeasonLegend />
+          <SeasonOffers />
 
           <div className="grid gap-16 mb-12">
             {/* Private Snowboard */}

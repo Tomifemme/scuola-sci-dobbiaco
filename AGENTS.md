@@ -4,3 +4,4 @@
 - Keep alpine and cross-country private/group prices in the shared lesson-pricing module; both pages must use the same row builders to prevent price drift.
 - Cross-country lessons use one shared translated page with Italian, German and English leaf routes, following the existing localized route structure.
 - Run pricing unit tests with the standalone Vitest config, keeping them independent of the application server plugins.
+- Keep seasonal course offers in the shared SeasonOffers component and season-offers module, with multilingual copy in the dictionary, so dates and conditions stay consistent across course pages.
